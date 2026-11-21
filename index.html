@@ -255,6 +255,22 @@
     .card.cert .icon { transition: transform .4s; } .card.cert:hover .icon { transform: rotate(-8deg) scale(1.12); }
     @media (prefers-reduced-motion: reduce) { .gw-logo, .tool-card .badges span, .shot { animation: none; } .shot::after { display: none; } }
 
+
+    /* ---------- AI tools, certificate previews, autoplay video ---------- */
+    .ai-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; max-width: 900px; margin: 24px auto 0; }
+    .ai-card { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center; transition: transform .35s, box-shadow .35s; }
+    .ai-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-glow); }
+    .ai-card p { color: var(--text-soft); font-size: .92rem; }
+    .ai-logo { height: 54px; width: auto; max-width: 100%; animation: gwFloat 5s ease-in-out infinite; }
+    .ai-icon { height: 62px; filter: drop-shadow(0 6px 12px rgba(124, 58, 237, .35)); }
+    .ai-name { font-weight: 600; font-size: 1.25rem; color: var(--white); margin-top: -4px; }
+    .ai-card:nth-child(2) .ai-logo { animation-delay: .6s; } .ai-card:nth-child(3) .ai-logo { animation-delay: 1.2s; }
+    .cert-thumb { width: 100%; aspect-ratio: 4/3; object-fit: contain; background: #f4f0fa; border-radius: 12px; margin-bottom: 16px; cursor: zoom-in; transition: transform .4s, box-shadow .4s; }
+    .cert-thumb:hover, .cert-thumb:focus-visible { transform: scale(1.03); box-shadow: var(--shadow-glow); outline: none; }
+    .vwrap { position: relative; }
+    .snd { position: absolute; right: 12px; top: 12px; background: rgba(10, 10, 15, .78); color: #fff; border: 1px solid var(--purple); border-radius: 999px; padding: 7px 14px; font: 600 .85rem var(--font-body); cursor: pointer; animation: chipPop .6s backwards; }
+    .snd[hidden] { display: none; }
+
     /* ---------- Scroll reveal ---------- */
     .reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform .8s ease; }
     .reveal.visible { opacity: 1; transform: none; }
@@ -549,9 +565,9 @@
           <p class="lead">Selected voice-over projects. Press play to listen.</p>
         </div>
         <div class="card-grid three">
-          <article class="card video-card reveal"><video controls preload="none" playsinline poster="voice-over-1.jpg" src="voice-over-1.mp4"></video><h4>Voice-Over Project 1</h4><p class="cert-meta">3:58</p></article>
-          <article class="card video-card reveal"><video controls preload="none" playsinline poster="voice-over-2.jpg" src="voice-over-2.mp4"></video><h4>Voice-Over Project 2</h4><p class="cert-meta">3:19</p></article>
-          <article class="card video-card reveal"><video controls preload="none" playsinline poster="voice-over-3.jpg" src="voice-over-3.mp4"></video><h4>Voice-Over Project 3</h4><p class="cert-meta">1:43</p></article>
+          <article class="card video-card reveal"><div class="vwrap"><video controls muted playsinline preload="metadata" poster="voice-over-1.jpg" src="voice-over-1.mp4"></video><button type="button" class="snd">&#128266; Tap for sound</button></div><h4>Voice-Over Project 1</h4><p class="cert-meta">3:58</p></article>
+          <article class="card video-card reveal"><div class="vwrap"><video controls muted playsinline preload="metadata" poster="voice-over-2.jpg" src="voice-over-2.mp4"></video><button type="button" class="snd">&#128266; Tap for sound</button></div><h4>Voice-Over Project 2</h4><p class="cert-meta">3:19</p></article>
+          <article class="card video-card reveal"><div class="vwrap"><video controls muted playsinline preload="metadata" poster="voice-over-3.jpg" src="voice-over-3.mp4"></video><button type="button" class="snd">&#128266; Tap for sound</button></div><h4>Voice-Over Project 3</h4><p class="cert-meta">1:43</p></article>
         </div>
       </div>
     </section>
@@ -577,11 +593,11 @@
           <p class="lead">Open any certificate as a PDF, or verify it with the issuer.</p>
         </div>
         <div class="card-grid">
-          <article class="card cert reveal"><div class="icon">&#128218;</div><h4>TEFL Course (120 Hours) - Distinction</h4><p class="cert-meta">TEFL Professional Institute - Teacher Record<br>June 2026 &middot; Certificate No. TR2069005284</p><div class="cert-btns"><a href="tefl.pdf" class="btn btn-small" target="_blank" rel="noopener">View PDF</a></div></article>
-          <article class="card cert reveal"><div class="icon">&#127942;</div><h4>EF SET English Certificate - C2 Proficient</h4><p class="cert-meta">Score 71/100 &middot; Awarded 2 Jul 2026<br>Reading C2 &middot; Writing C2 &middot; Speaking B2 &middot; Listening B1</p><div class="cert-btns"><a href="efset-c2.pdf" class="btn btn-small" target="_blank" rel="noopener">View PDF</a><a href="https://cert.efset.org/hzNKGT" class="btn btn-outline btn-small" target="_blank" rel="noopener">Verify</a></div></article>
-          <article class="card cert reveal"><div class="icon">&#128187;</div><h4>Build a Free Website with WordPress</h4><p class="cert-meta">Coursera Project Certificate<br>3 Jul 2026</p><div class="cert-btns"><a href="wordpress.pdf" class="btn btn-small" target="_blank" rel="noopener">View PDF</a><a href="https://coursera.org/verify/6J430LDN7VSU" class="btn btn-outline btn-small" target="_blank" rel="noopener">Verify</a></div></article>
-          <article class="card cert reveal"><div class="icon">&#128172;</div><h4>Enhancing Communication with Remind</h4><p class="cert-meta">Coursera Project Certificate<br>3 Jul 2026</p><div class="cert-btns"><a href="remind.pdf" class="btn btn-small" target="_blank" rel="noopener">View PDF</a><a href="https://coursera.org/verify/4CI58THKO63O" class="btn btn-outline btn-small" target="_blank" rel="noopener">Verify</a></div></article>
-          <article class="card cert reveal"><div class="icon">&#127912;</div><h4>Use Canva to Design Digital Course Collateral</h4><p class="cert-meta">Coursera Project Certificate<br>2 Jul 2026</p><div class="cert-btns"><a href="canva.pdf" class="btn btn-small" target="_blank" rel="noopener">View PDF</a><a href="https://coursera.org/verify/BI7LQBKPUUXS" class="btn btn-outline btn-small" target="_blank" rel="noopener">Verify</a></div></article>
+          <article class="card cert reveal"><img class="cert-thumb" src="certimg-tefl.jpg" alt="Certificate preview" loading="lazy" tabindex="0"><h4>TEFL Course (120 Hours) - Distinction</h4><p class="cert-meta">TEFL Professional Institute - Teacher Record<br>June 2026 &middot; Certificate No. TR2069005284</p><div class="cert-btns"><a href="tefl.pdf" class="btn btn-small" target="_blank" rel="noopener">View PDF</a></div></article>
+          <article class="card cert reveal"><img class="cert-thumb" src="certimg-efset-c2.jpg" alt="Certificate preview" loading="lazy" tabindex="0"><h4>EF SET English Certificate - C2 Proficient</h4><p class="cert-meta">Score 71/100 &middot; Awarded 2 Jul 2026<br>Reading C2 &middot; Writing C2 &middot; Speaking B2 &middot; Listening B1</p><div class="cert-btns"><a href="efset-c2.pdf" class="btn btn-small" target="_blank" rel="noopener">View PDF</a><a href="https://cert.efset.org/hzNKGT" class="btn btn-outline btn-small" target="_blank" rel="noopener">Verify</a></div></article>
+          <article class="card cert reveal"><img class="cert-thumb" src="certimg-wordpress.jpg" alt="Certificate preview" loading="lazy" tabindex="0"><h4>Build a Free Website with WordPress</h4><p class="cert-meta">Coursera Project Certificate<br>3 Jul 2026</p><div class="cert-btns"><a href="wordpress.pdf" class="btn btn-small" target="_blank" rel="noopener">View PDF</a><a href="https://coursera.org/verify/6J430LDN7VSU" class="btn btn-outline btn-small" target="_blank" rel="noopener">Verify</a></div></article>
+          <article class="card cert reveal"><img class="cert-thumb" src="certimg-remind.jpg" alt="Certificate preview" loading="lazy" tabindex="0"><h4>Enhancing Communication with Remind</h4><p class="cert-meta">Coursera Project Certificate<br>3 Jul 2026</p><div class="cert-btns"><a href="remind.pdf" class="btn btn-small" target="_blank" rel="noopener">View PDF</a><a href="https://coursera.org/verify/4CI58THKO63O" class="btn btn-outline btn-small" target="_blank" rel="noopener">Verify</a></div></article>
+          <article class="card cert reveal"><img class="cert-thumb" src="certimg-canva.jpg" alt="Certificate preview" loading="lazy" tabindex="0"><h4>Use Canva to Design Digital Course Collateral</h4><p class="cert-meta">Coursera Project Certificate<br>2 Jul 2026</p><div class="cert-btns"><a href="canva.pdf" class="btn btn-small" target="_blank" rel="noopener">View PDF</a><a href="https://coursera.org/verify/BI7LQBKPUUXS" class="btn btn-outline btn-small" target="_blank" rel="noopener">Verify</a></div></article>
         </div>
       </div>
     </section>
@@ -857,6 +873,31 @@
       if(l)root.removeAttribute('data-theme');else root.setAttribute('data-theme','light');
       try{localStorage.setItem('theme',l?'dark':'light');}catch(e){} paint();});
     paint();
+  })();
+</script>
+<script>
+  (function(){
+    // certificate previews open in the image viewer
+    var lb=document.getElementById('lightbox'),li=lb.querySelector('img');
+    document.querySelectorAll('.cert-thumb').forEach(function(t){
+      function open(){li.src=t.src;li.alt=t.alt;lb.classList.add('open');document.body.style.overflow='hidden';}
+      t.addEventListener('click',open);t.addEventListener('keydown',function(e){if(e.key==='Enter'){open();}});
+    });
+    // voice-over videos start (muted) when scrolled into view, pause when away
+    var vids=[].slice.call(document.querySelectorAll('.vwrap video'));
+    vids.forEach(function(v){
+      var b=v.parentNode.querySelector('.snd');
+      b.addEventListener('click',function(){v.muted=false;v.play();});
+      v.addEventListener('volumechange',function(){b.hidden=!v.muted;});
+    });
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(es){es.forEach(function(e){
+        var v=e.target;
+        if(e.isIntersecting){vids.forEach(function(o){if(o!==v)o.pause();});var p=v.play();if(p&&p.catch)p.catch(function(){});}
+        else v.pause();
+      });},{threshold:.6});
+      vids.forEach(function(v){io.observe(v);});
+    }
   })();
 </script>
 </body>
