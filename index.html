@@ -279,6 +279,7 @@
     .cx-track > * { flex: 0 0 min(300px, 78%); scroll-snap-align: start; }
     .cx-track.cx-wide > * { flex-basis: min(380px, 86%); }
     .cx-track.cx-cert > * { flex-basis: min(330px, 84%); }
+    .cx-track.cx-link { scroll-snap-type: none; }
     .cx-btn { position: absolute; top: calc(50% - 22px); width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--purple); background: rgba(10, 10, 15, .82); color: #fff; font-size: 1.2rem; cursor: pointer; z-index: 5; transition: .25s; }
     .cx-btn:hover { background: var(--violet); transform: scale(1.08); }
     .cx-prev { left: -10px; } .cx-next { right: -10px; }
@@ -952,9 +953,29 @@
       ['mouseenter','focusin','touchstart'].forEach(function(e){stage.addEventListener(e,function(){paused=true;},{passive:true});});
       ['mouseleave','focusout','touchend'].forEach(function(e){stage.addEventListener(e,function(){paused=false;},{passive:true});});
       build();restart();
+      if(opt.link&&!reduce){
+        track.classList.add('cx-link');
+        var c={track:track,stage:stage,hold:0};linked.push(c);
+        function hold(){c.hold=Date.now()+2500;}
+        ['touchstart','pointerdown','keydown'].forEach(function(e){stage.addEventListener(e,hold,{passive:true});});
+        stage.addEventListener('wheel',function(ev){if(Math.abs(ev.deltaX)>Math.abs(ev.deltaY))hold();},{passive:true});
+        prev.addEventListener('click',hold);next.addEventListener('click',hold);dots.addEventListener('click',hold);
+      }
     }
-    carousel(document.querySelector('#certificates .card-grid'),{auto:4200,cls:'cx-cert'});
-    carousel(document.querySelector('#hosting .gallery'),{auto:3600});
+    var linked=[];
+    (function tick(){
+      var vh=window.innerHeight,now=Date.now();
+      linked.forEach(function(c){
+        if(now<c.hold)return;
+        var r=c.stage.getBoundingClientRect();if(r.bottom<0||r.top>vh)return;
+        var p=(vh-r.top)/(vh+r.height);p=Math.max(0,Math.min(1,(p-0.12)/0.6));
+        var max=c.track.scrollWidth-c.track.clientWidth,target=p*max,cur=c.track.scrollLeft,d=target-cur;
+        if(Math.abs(d)>0.4)c.track.scrollLeft=cur+d*0.1;
+      });
+      requestAnimationFrame(tick);
+    })();
+    carousel(document.querySelector('#certificates .card-grid'),{link:true,cls:'cx-cert'});
+    carousel(document.querySelector('#hosting .gallery'),{link:true});
     carousel(document.querySelector('#voiceover .card-grid'),{cls:'cx-wide'});
   })();
 </script>
