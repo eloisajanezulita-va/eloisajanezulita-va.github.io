@@ -4,1208 +4,543 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Eloisa Jane L. Zulita | Social Media & Customer Support VA</title>
-  <meta name="description" content="Portfolio of Eloisa Jane L. Zulita - Social Media and Customer Support Virtual Assistant, Online ESL Instructor and Operations Support Coordinator. EF SET C2 Proficient English." />
-  <meta name="keywords" content="Customer Support VA, Social Media VA, Virtual Assistant, Philippines, ESL Instructor, Canva, CapCut, Meta Business Suite" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Eloisa Jane L. Zulita | Social Media & Customer Support VA" />
-  <meta property="og:description" content="Supporting customers with warmth. Giving brands a voice." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="profile.jpeg" />
-
-  <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%237c3aed'/%3E%3Ctext x='50' y='66' font-size='52' text-anchor='middle' fill='white' font-family='Georgia' font-style='italic'%3EE%3C/text%3E%3C/svg%3E" />
-
-  <!-- Fonts: Instrument Serif (headings) + DM Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    /* =========================================================
-       EASY EDIT: change the colors and fonts below
-       ========================================================= */
     :root {
-      --black: #0a0a0f;
-      --dark-purple: #1a0b2e;
-      --deep-purple: #2a1250;
-      --violet: #7c3aed;
-      --purple: #a855f7;
-      --lavender: #c4b5fd;
-      --white: #ffffff;
-      --text: #ffffff;
-      --text-soft: #e4dcfb;
-      --card-bg: rgba(255, 255, 255, 0.06);
-      --card-border: rgba(196, 181, 253, 0.22);
-      --radius: 18px;
-      --shadow-glow: 0 0 40px rgba(124, 58, 237, 0.35);
-      --font-heading: 'Instrument Serif', Georgia, 'Times New Roman', serif;
-      --font-body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --bg-deep: #0b0618;
+      --bg-purple: #1e0b3b;
+      --primary: #4c1d95;
+      --accent: #9333ea;
+      --accent-glow: rgba(147, 51, 234, 0.35);
+      --glass-bg: rgba(255, 255, 255, 0.06);
+      --glass-border: rgba(255, 255, 255, 0.14);
+      --text-main: #f8fafc;
+      --text-muted: #cbd5e1;
+      --text-dim: #94a3b8;
     }
 
-    /* ---------- Reset & base ---------- */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    [hidden] { display: none !important; }
-    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
-    body { font-family: var(--font-body); background: var(--black); color: var(--text); line-height: 1.7; overflow-x: hidden; font-size: 1.02rem; }
-    h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height: 1.1; color: var(--white); letter-spacing: -0.01em; }
-    h1 em, h2 em, h3 em { font-style: italic; color: var(--purple); }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    ul { list-style: none; }
-    .container { width: min(1120px, 92%); margin: 0 auto; }
-
-    /* ---------- Buttons ---------- */
-    .btn {
-      display: inline-block; padding: 14px 32px; border-radius: 999px;
-      background: linear-gradient(135deg, var(--violet), var(--purple));
-      color: var(--white); font-weight: 600; border: 2px solid transparent; cursor: pointer;
-      font-size: 1rem; font-family: var(--font-body);
-      transition: transform .25s, box-shadow .25s; box-shadow: 0 6px 24px rgba(124, 58, 237, 0.45);
-    }
-    .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 34px rgba(168, 85, 247, 0.6); }
-    .btn-outline { background: transparent; border-color: var(--lavender); box-shadow: none; }
-    .btn-outline:hover { background: rgba(196, 181, 253, 0.15); }
-    .btn-small { padding: 10px 24px; font-size: .95rem; }
-
-    /* ---------- Navbar ---------- */
-    .navbar { position: fixed; top: 0; left: 0; width: 100%; z-index: 100; background: rgba(10, 10, 15, 0.75); backdrop-filter: blur(14px); border-bottom: 1px solid var(--card-border); transition: background .3s; }
-    .navbar.scrolled { background: rgba(10, 10, 15, 0.95); }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 76px; gap: 20px; }
-    .logo { font-family: var(--font-heading); font-size: 1.5rem; color: var(--white); line-height: 1.1; white-space: nowrap; }
-    .logo span { color: var(--purple); font-style: italic; }
-    .nav-links { display: flex; align-items: center; gap: 24px; }
-    .nav-links a:not(.btn) { color: var(--text-soft); font-weight: 500; transition: color .2s; font-size: .98rem; }
-    .nav-links a:not(.btn):hover, .nav-links a.active { color: var(--white); }
-    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
-    .hamburger span { display: block; width: 26px; height: 3px; background: var(--white); margin: 5px 0; border-radius: 2px; transition: .3s; }
-
-    /* ---------- Hero ---------- */
-    .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding: 130px 0 80px; background: linear-gradient(160deg, var(--black) 0%, var(--dark-purple) 55%, var(--deep-purple) 100%); overflow: hidden; }
-    .glow { position: absolute; border-radius: 50%; filter: blur(110px); opacity: .5; pointer-events: none; }
-    .glow-1 { width: 420px; height: 420px; background: var(--violet); top: -80px; right: -60px; }
-    .glow-2 { width: 360px; height: 360px; background: var(--purple); bottom: -100px; left: -80px; opacity: .3; }
-    .hero-inner { position: relative; display: grid; grid-template-columns: 1.3fr 1fr; gap: 50px; align-items: center; }
-    .eyebrow { color: var(--lavender); font-size: 1.05rem; font-weight: 500; margin-bottom: 14px; }
-    .hero h1 { font-size: clamp(2.9rem, 6.2vw, 5rem); line-height: 1.04; }
-    .tagline { color: var(--text-soft); margin: 24px 0 32px; max-width: 560px; font-size: 1.15rem; }
-    .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
-    .hero-photo { display: flex; justify-content: center; }
-    .photo-frame { width: min(380px, 80vw); aspect-ratio: 4/5; border-radius: 28px; overflow: hidden; border: 3px solid var(--purple); box-shadow: var(--shadow-glow), 0 0 80px rgba(168, 85, 247, 0.3); background: linear-gradient(145deg, var(--deep-purple), var(--violet)); position: relative; }
-    .photo-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top center; opacity: 0; transition: opacity .6s; }
-    .photo-frame img.loaded { opacity: 1; }
-    .photo-fallback { display: none; position: absolute; inset: 0; align-items: center; justify-content: center; font-family: var(--font-heading); font-style: italic; font-size: 6rem; color: var(--white); }
-    .photo-frame.no-photo .photo-fallback { display: flex; }
-
-    /* ---------- Sections ---------- */
-    .section { padding: 100px 0; background: var(--black); }
-    .section-alt { background: linear-gradient(180deg, var(--dark-purple), var(--black)); }
-    .section-head { text-align: center; margin-bottom: 55px; }
-    .section-head h2 { font-size: clamp(2.3rem, 5vw, 3.5rem); }
-    .lead { color: var(--text-soft); max-width: 580px; margin: 16px auto 0; }
-
-    /* ---------- About ---------- */
-    .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 50px; align-items: center; }
-    .about-text p { color: var(--text-soft); margin-bottom: 18px; }
-    .about-text strong { color: var(--white); }
-    .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    .stat { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 24px 16px; text-align: center; }
-    .stat .num { display: block; font-family: var(--font-heading); font-size: 2.6rem; line-height: 1.1; color: var(--purple); }
-    .stat .label { font-size: .9rem; color: var(--text-soft); }
-
-    /* ---------- Cards ---------- */
-    .group-title { font-size: 2rem; margin: 10px 0 24px; color: var(--lavender); }
-    .group-title:not(:first-of-type) { margin-top: 60px; }
-    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
-    .card-grid.three { grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); }
-    .card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 30px 26px; backdrop-filter: blur(8px); transition: transform .3s, border-color .3s, box-shadow .3s; }
-    .card:hover { transform: translateY(-8px); border-color: var(--purple); box-shadow: var(--shadow-glow); }
-    .card .icon { width: 54px; height: 54px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 18px; background: linear-gradient(135deg, var(--violet), var(--purple)); color: var(--white); }
-    .card h4 { font-size: 1.5rem; margin-bottom: 8px; }
-    .card p { color: var(--text-soft); font-size: .96rem; }
-
-    /* ---------- Timeline ---------- */
-    .timeline { position: relative; max-width: 800px; margin: 0 auto; padding-left: 40px; }
-    .timeline::before { content: ''; position: absolute; left: 11px; top: 0; bottom: 0; width: 3px; background: linear-gradient(var(--purple), var(--violet), transparent); border-radius: 3px; }
-    .t-item { position: relative; margin-bottom: 36px; }
-    .t-dot { position: absolute; left: -40px; top: 26px; width: 24px; height: 24px; border-radius: 50%; background: var(--black); border: 4px solid var(--purple); box-shadow: 0 0 18px var(--purple); }
-    .t-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 26px; }
-    .t-date { display: inline-block; background: rgba(124, 58, 237, 0.35); color: var(--white); padding: 4px 14px; border-radius: 999px; font-size: .82rem; font-weight: 600; margin-bottom: 10px; }
-    .t-card h4 { font-size: 1.7rem; }
-    .t-company { color: var(--lavender); margin-bottom: 12px; font-weight: 500; }
-    .t-card li { color: var(--text-soft); position: relative; padding-left: 20px; margin-bottom: 6px; font-size: .96rem; }
-    .t-card li::before { content: '\2726'; position: absolute; left: 0; color: var(--purple); }
-
-    /* ---------- Skills ---------- */
-    .skill-cats { margin-bottom: 40px; }
-    .skill-cats .card h4 { color: var(--lavender); }
-    .badges { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
-    .badges span { padding: 9px 18px; border-radius: 999px; background: rgba(124, 58, 237, 0.2); border: 1px solid var(--violet); color: var(--white); font-size: .92rem; font-weight: 500; transition: .25s; }
-    .badges span:hover { background: var(--violet); transform: translateY(-3px); }
-
-    /* ---------- Work ---------- */
-    .work-thumb { height: 150px; border-radius: 12px; margin-bottom: 18px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--deep-purple), var(--violet)); color: var(--white); font-family: var(--font-heading); font-size: 1.6rem; }
-    .work p { margin-bottom: 18px; }
-
-    /* ---------- Image galleries (certificates, recruitment, hosting) ---------- */
-    .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 22px; }
-    .shot { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--card-border); background: #000; cursor: zoom-in; transition: transform .3s, border-color .3s, box-shadow .3s; }
-    .shot:hover, .shot:focus-visible { transform: translateY(-6px); border-color: var(--purple); box-shadow: var(--shadow-glow); outline: none; }
-    .shot img { width: 100%; height: 100%; aspect-ratio: 4/3; object-fit: contain; background: #0d0716; }
-    .gallery.cover .shot img { aspect-ratio: 4/5; object-fit: cover; }
-    .hint { text-align: center; color: var(--text-soft); font-size: .9rem; margin-top: 22px; }
-
-
-    /* ---------- Certificate cards & voice-over ---------- */
-    .cert-meta { color: var(--text-soft); font-size: .92rem; margin-bottom: 16px; }
-    .cert-btns { display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto; }
-    .card.cert { display: flex; flex-direction: column; }
-    .video-card video { width: 100%; border-radius: 12px; background: #000; display: block; aspect-ratio: 16/9; }
-    .video-card h4 { margin-top: 14px; }
-
-    .lightbox { position: fixed; inset: 0; z-index: 200; background: rgba(5, 3, 10, 0.94); display: none; align-items: center; justify-content: center; padding: 24px; cursor: zoom-out; }
-    .lightbox.open { display: flex; }
-    .lightbox img { max-width: 100%; max-height: 90vh; border-radius: 12px; box-shadow: var(--shadow-glow); }
-    .lb-close { position: absolute; top: 18px; right: 22px; font-size: 2.4rem; line-height: 1; background: none; border: none; color: var(--white); cursor: pointer; }
-
-    /* ---------- Carousel ---------- */
-    .carousel { max-width: 760px; margin: 0 auto; text-align: center; }
-    .slides { position: relative; min-height: 210px; }
-    .slide { position: absolute; inset: 0; opacity: 0; transition: opacity .6s; pointer-events: none; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 36px 30px; }
-    .slide.active { opacity: 1; pointer-events: auto; position: relative; }
-    .slide p { font-family: var(--font-heading); font-size: 1.6rem; line-height: 1.3; color: var(--white); font-style: italic; margin-bottom: 18px; }
-    .slide cite { color: var(--lavender); font-style: normal; font-weight: 600; }
-    .carousel-controls { display: flex; align-items: center; justify-content: center; gap: 20px; margin-top: 24px; }
-    .carousel-controls button { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--purple); background: transparent; color: var(--white); font-size: 1.1rem; cursor: pointer; transition: .25s; }
-    .carousel-controls button:hover { background: var(--violet); }
-    .dots { display: flex; gap: 10px; }
-    .dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255, 255, 255, 0.3); border: none; cursor: pointer; padding: 0; }
-    .dot.active { background: var(--purple); transform: scale(1.3); }
-
-    /* ---------- Contact ---------- */
-    .contact-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: start; }
-    .form { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 32px; }
-    .form label { display: block; font-weight: 600; margin: 14px 0 6px; color: var(--white); }
-    .form label:first-child { margin-top: 0; }
-    .form input, .form textarea { width: 100%; padding: 13px 16px; border-radius: 12px; background: rgba(0, 0, 0, 0.45); border: 1px solid var(--card-border); color: var(--white); font-family: var(--font-body); font-size: 1rem; }
-    .form input::placeholder, .form textarea::placeholder { color: #b9acd9; }
-    .form input:focus, .form textarea:focus { outline: none; border-color: var(--purple); box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.3); }
-    .form .btn { margin-top: 22px; width: 100%; }
-    .contact-links { display: flex; flex-direction: column; gap: 14px; }
-    .link-btn { display: block; padding: 14px 20px; border-radius: 14px; background: var(--card-bg); border: 1px solid var(--card-border); color: var(--white); font-weight: 500; transition: .25s; word-break: break-word; }
-    .link-btn:hover { border-color: var(--purple); background: rgba(124, 58, 237, 0.25); transform: translateX(6px); }
-    .contact-links .btn-outline { text-align: center; margin-top: 8px; }
-
-    /* ---------- Footer ---------- */
-    .footer { background: #050508; border-top: 1px solid var(--card-border); padding: 30px 0; }
-    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
-    .footer p { color: var(--text-soft); font-size: .9rem; }
-    .footer-links { display: flex; gap: 22px; }
-    .footer-links a { color: var(--lavender); font-size: .9rem; }
-    .footer-links a:hover { color: var(--white); }
-    .to-top { position: fixed; right: 22px; bottom: 22px; width: 46px; height: 46px; border-radius: 50%; border: none; cursor: pointer; background: linear-gradient(135deg, var(--violet), var(--purple)); color: var(--white); font-size: 1.2rem; box-shadow: var(--shadow-glow); opacity: 0; pointer-events: none; transition: .3s; z-index: 90; }
-    .to-top.show { opacity: 1; pointer-events: auto; }
-
-
-    /* ---------- Nav polish, theme toggle, tools ---------- */
-    .nav-links a, .btn, .logo { white-space: nowrap; }
-    .btn { color: #fff; } .btn-outline { color: var(--white); }
-    .theme-toggle { width: 42px; height: 42px; flex: none; border-radius: 50%; border: 1px solid var(--card-border); background: transparent; color: var(--white); font-size: 1.1rem; cursor: pointer; transition: .25s; }
-    .theme-toggle:hover { border-color: var(--purple); background: var(--card-bg); }
-    .lb-close { color: #fff; }
-    .tools-block { margin-top: 60px; text-align: center; }
-    .tools-block h3 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
-    .tool-card { max-width: 620px; margin: 28px auto 0; }
-    .tool-card .gw { font-family: var(--font-body); font-weight: 600; font-size: 1.7rem; color: var(--white); margin-bottom: 16px; }
-    .gw .b{color:#4285f4}.gw .r{color:#ea4335}.gw .y{color:#fbbc05}.gw .g{color:#34a853}
-    html[data-theme="light"] {
-      --black: #faf7ff; --dark-purple: #f1e9ff; --deep-purple: #e4d6ff; --white: #1a0b2e; --text: #2a1f3d;
-      --text-soft: #5b4d78; --lavender: #6d28d9; --card-bg: rgba(124, 58, 237, 0.06); --card-border: rgba(124, 58, 237, 0.22);
-      --shadow-glow: 0 0 30px rgba(124, 58, 237, 0.18);
-    }
-    html[data-theme="light"] .navbar { background: rgba(250, 247, 255, 0.82); }
-    html[data-theme="light"] .navbar.scrolled { background: rgba(250, 247, 255, 0.97); }
-    html[data-theme="light"] .footer { background: #efe6ff; }
-    html[data-theme="light"] .card .icon, html[data-theme="light"] .work-thumb, html[data-theme="light"] .to-top, html[data-theme="light"] .photo-fallback, html[data-theme="light"] .badges span:hover, html[data-theme="light"] .carousel-controls button:hover { color: #fff; }
-    html[data-theme="light"] .shot { background: #ece4fb; }
-    html[data-theme="light"] .shot img { background: #ece4fb; }
-    html[data-theme="light"] .form input, html[data-theme="light"] .form textarea { background: rgba(255, 255, 255, 0.85); }
-    html[data-theme="light"] .link-btn:hover { background: rgba(124, 58, 237, 0.12); }
-    @media (max-width: 1040px) { html[data-theme="light"] .nav-links { background: rgba(250, 247, 255, 0.98); } .theme-toggle { margin: 8px auto 0; } }
-
-
-    /* ---------- Effects & animation ---------- */
-    .gw-logo { display: block; margin: 0 auto 22px; width: min(420px, 85%); height: auto; animation: gwFloat 5s ease-in-out infinite, gwGlow 5s ease-in-out infinite; transition: transform .4s; }
-    .gw-logo:hover { transform: scale(1.06) rotate(-1deg); }
-    .gw-for-light { display: none; } html[data-theme="light"] .gw-for-light { display: block; } html[data-theme="light"] .gw-for-dark { display: none; }
-    @keyframes gwFloat { 0%, 100% { translate: 0 0; } 50% { translate: 0 -9px; } }
-    @keyframes gwGlow { 0%, 100% { filter: drop-shadow(0 4px 10px rgba(124, 58, 237, .15)); } 50% { filter: drop-shadow(0 12px 24px rgba(168, 85, 247, .5)); } }
-    .tool-card .badges span { animation: chipPop .6s cubic-bezier(.2, 1.4, .4, 1) backwards; }
-    .tool-card .badges span:nth-child(1) { animation-delay: .1s; } .tool-card .badges span:nth-child(2) { animation-delay: .2s; } .tool-card .badges span:nth-child(3) { animation-delay: .3s; } .tool-card .badges span:nth-child(4) { animation-delay: .4s; }
-    .tool-card .badges span:nth-child(5) { animation-delay: .5s; } .tool-card .badges span:nth-child(6) { animation-delay: .6s; } .tool-card .badges span:nth-child(7) { animation-delay: .7s; } .tool-card .badges span:nth-child(8) { animation-delay: .8s; }
-    @keyframes chipPop { from { opacity: 0; transform: scale(.4) translateY(14px); } to { opacity: 1; transform: none; } }
-    .shot { position: relative; animation: shotIn .8s ease backwards; }
-    .shot:nth-child(2) { animation-delay: .12s; } .shot:nth-child(3) { animation-delay: .24s; } .shot:nth-child(4) { animation-delay: .36s; } .shot:nth-child(5) { animation-delay: .48s; } .shot:nth-child(n+6) { animation-delay: .6s; }
-    @keyframes shotIn { from { opacity: 0; transform: translateY(34px) scale(.94); } to { opacity: 1; transform: none; } }
-    .shot img { transition: transform .6s ease; }
-    .shot:hover img { transform: scale(1.07); }
-    .shot::after { content: ""; position: absolute; inset: 0; background: linear-gradient(115deg, transparent 35%, rgba(255, 255, 255, .28) 50%, transparent 65%); transform: translateX(-120%); transition: transform .8s ease; pointer-events: none; }
-    .shot:hover::after { transform: translateX(120%); }
-    .video-card { transition: transform .35s, box-shadow .35s; } .video-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-glow); }
-    .card.cert .icon { transition: transform .4s; } .card.cert:hover .icon { transform: rotate(-8deg) scale(1.12); }
-    @media (prefers-reduced-motion: reduce) { .gw-logo, .tool-card .badges span, .shot { animation: none; } .shot::after { display: none; } }
-
-
-    /* ---------- AI tools, certificate previews, autoplay video ---------- */
-    .ai-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; max-width: 900px; margin: 24px auto 0; }
-    .ai-card { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center; transition: transform .35s, box-shadow .35s; }
-    .ai-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-glow); }
-    .ai-card p { color: var(--text-soft); font-size: .92rem; }
-    .ai-logo { height: 54px; width: auto; max-width: 100%; animation: gwFloat 5s ease-in-out infinite; }
-    .ai-icon { height: 62px; filter: drop-shadow(0 6px 12px rgba(124, 58, 237, .35)); }
-    .ai-name { font-weight: 600; font-size: 1.25rem; color: var(--white); margin-top: -4px; }
-    .ai-card:nth-child(2) .ai-logo { animation-delay: .6s; } .ai-card:nth-child(3) .ai-logo { animation-delay: 1.2s; }
-    .cert-thumb { width: 100%; aspect-ratio: 4/3; object-fit: contain; background: #f4f0fa; border-radius: 12px; margin-bottom: 16px; cursor: zoom-in; transition: transform .4s, box-shadow .4s; }
-    .cert-thumb:hover, .cert-thumb:focus-visible { transform: scale(1.03); box-shadow: var(--shadow-glow); outline: none; }
-    .vwrap { position: relative; }
-    .snd { position: absolute; right: 12px; top: 12px; background: rgba(10, 10, 15, .78); color: #fff; border: 1px solid var(--purple); border-radius: 999px; padding: 7px 14px; font: 600 .85rem var(--font-body); cursor: pointer; animation: chipPop .6s backwards; }
-    .snd[hidden] { display: none; }
-
-
-    /* ---------- Moving carousels ---------- */
-    .cx-stage { position: relative; }
-    .cx-track { display: flex !important; grid-template-columns: none !important; gap: 22px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; padding: 10px 4px 18px; }
-    .cx-track::-webkit-scrollbar { display: none; }
-    .cx-track > * { flex: 0 0 min(300px, 78%); scroll-snap-align: start; }
-    .cx-track.cx-wide > * { flex-basis: min(380px, 86%); }
-    .cx-track.cx-cert > * { flex-basis: min(330px, 84%); }
-    .cx-track.cx-link { scroll-snap-type: none; }
-    .cx-run { scroll-snap-type: none !important; }
-    .cx-track { -webkit-mask-image: linear-gradient(90deg, transparent, #000 3%, #000 97%, transparent); mask-image: linear-gradient(90deg, transparent, #000 3%, #000 97%, transparent); }
-    .cx-btn { position: absolute; top: calc(50% - 22px); width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--purple); background: rgba(10, 10, 15, .82); color: #fff; font-size: 1.2rem; cursor: pointer; z-index: 5; transition: .25s; }
-    .cx-btn:hover { background: var(--violet); transform: scale(1.08); }
-    .cx-prev { left: -10px; } .cx-next { right: -10px; }
-    .cx-dots { display: flex; gap: 10px; justify-content: center; margin-top: 4px; flex-wrap: wrap; }
-    .cx-dots button { width: 10px; height: 10px; border-radius: 50%; border: none; padding: 0; background: rgba(255, 255, 255, .3); cursor: pointer; transition: .3s; }
-    html[data-theme="light"] .cx-dots button { background: rgba(124, 58, 237, .25); }
-    .cx-dots button.on { background: var(--purple); transform: scale(1.4); }
-    @media (max-width: 700px) { .cx-prev { left: 2px; } .cx-next { right: 2px; } .cx-btn { width: 40px; height: 40px; } }
-
-    /* ---------- Scroll reveal ---------- */
-    .reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform .8s ease; }
-    .reveal.visible { opacity: 1; transform: none; }
-
-    /* ---------- Responsive ---------- */
-    @media (max-width: 1040px) {
-      .hamburger { display: block; }
-      .nav-links { position: absolute; top: 76px; left: 0; width: 100%; flex-direction: column; gap: 0; padding: 10px 0 20px; background: rgba(10, 10, 15, 0.98); border-bottom: 1px solid var(--card-border); max-height: 0; overflow: hidden; opacity: 0; transition: .35s; }
-      .nav-links.open { max-height: 560px; opacity: 1; }
-      .nav-links a { padding: 14px 0; width: 100%; text-align: center; }
-      .nav-links .btn { width: auto; margin-top: 8px; }
-    }
-    @media (max-width: 880px) {
-      .hero-inner, .about-grid, .contact-grid { grid-template-columns: 1fr; }
-      .hero-inner { text-align: center; }
-      .hero-text { order: 2; }
-      .hero-photo { order: 1; }
-      .tagline { margin-left: auto; margin-right: auto; }
-      .hero-buttons { justify-content: center; }
-      .section { padding: 75px 0; }
-      .footer-inner { justify-content: center; text-align: center; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      * { transition: none !important; scroll-behavior: auto !important; }
-      .reveal { opacity: 1; transform: none; }
-    }
-  
-
-    /* =========================================================
-       3-PAGE LAYOUT: Main Info / Photos / Certificates
-       ========================================================= */
-    /* before JS runs, show the page the URL points to (prevents a flash of the wrong page) */
-    html[data-start="photos"] [data-view="info"], html[data-start="certificates"] [data-view="info"] { display: none; }
-    html[data-start="photos"] [data-view="photos"], html[data-start="certificates"] [data-view="certificates"] { display: block; }
-
-    .view { display: none; }
-    .view.is-active { display: block; }
-    .view:focus { outline: none; }
-
-    /* ---------- Page transition: leave = fade up, enter = rise in + stagger ---------- */
-    .view.is-leaving  { animation: viewOut .26s cubic-bezier(.4, 0, 1, 1) forwards; pointer-events: none; }
-    .view.is-entering { animation: viewIn .75s cubic-bezier(.2, .8, .2, 1) backwards; }
-    .view.is-entering-soft { animation: viewFade .5s ease backwards; }
-    @keyframes viewOut  { to { opacity: 0; transform: translateY(-16px) scale(.99); } }
-    @keyframes viewIn   { from { opacity: 0; transform: translateY(30px) scale(.985); } }
-    @keyframes viewFade { from { opacity: 0; } }
-
-    /* thin gradient progress line that sweeps across the top on every page change */
-    .route-bar { position: fixed; top: 0; left: 0; width: 100%; height: 3px; z-index: 130; pointer-events: none; opacity: 0;
-      background: linear-gradient(90deg, var(--violet), var(--purple), var(--lavender)); transform: scaleX(0); transform-origin: left; }
-    .route-bar.run { animation: routeBar .9s cubic-bezier(.3, .7, .2, 1) forwards; }
-    @keyframes routeBar { 0% { transform: scaleX(0); opacity: 1; } 70% { transform: scaleX(.92); opacity: 1; } 100% { transform: scaleX(1); opacity: 0; } }
-
-    /* ---------- Tabs with a sliding glass pill ---------- */
-    .nav-pill { position: absolute; top: 50%; left: 0; width: 0; height: 40px; margin-top: -20px; border-radius: 999px; pointer-events: none; opacity: 0;
-      background: var(--card-bg); border: 1px solid var(--card-border); box-shadow: 0 0 22px rgba(124, 58, 237, .35);
-      transition: left .5s cubic-bezier(.3, 1.15, .4, 1), width .5s cubic-bezier(.3, 1.15, .4, 1), opacity .3s; }
-    .nav-pill.ready { opacity: 1; }
-    .nav-pill.snap { transition: none; }
-    @media (min-width: 1041px) {
-      .nav-links { position: relative; gap: 6px; }
-      .nav-links a.tab { padding: 9px 20px; border-radius: 999px; position: relative; z-index: 1; }
-      .nav-links .btn { margin-left: 14px; }
-      .theme-toggle { margin-left: 6px; }
-    }
-    @media (max-width: 1040px) {
-      .nav-pill { display: none; }
-      .nav-links a.tab { padding: 14px 0; width: 100%; }
-      .nav-links a.tab.active { background: var(--card-bg); color: var(--white); }
-      .nav-links .btn.btn-small { padding: 12px 32px; width: auto; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    /* ---------- Page headers (Photos, Certificates) ---------- */
-    .page-hero { position: relative; padding: 150px 0 70px; text-align: center; overflow: hidden;
-      background: linear-gradient(160deg, var(--black) 0%, var(--dark-purple) 60%, var(--deep-purple) 100%); }
-    .page-hero .container { position: relative; }
-    .page-hero h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); line-height: 1.05; max-width: 820px; margin: 0 auto; }
-    .page-hero .lead { font-size: 1.12rem; }
-    .subnav { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 32px; }
-    .subnav a { padding: 9px 22px; border-radius: 999px; border: 1px solid var(--card-border); background: var(--card-bg); color: var(--white); font-weight: 500; font-size: .95rem; transition: .25s; }
-    .subnav a:hover { border-color: var(--purple); background: rgba(124, 58, 237, .25); transform: translateY(-2px); }
-    .section.tight { padding-top: 64px; }
-    .section-cta { text-align: center; margin-top: 44px; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at 15% 15%, #3b0764 0%, var(--bg-purple) 40%, var(--bg-deep) 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow-x: hidden;
+    }
 
-    /* ---------- "Keep exploring" cards that link to the other pages ---------- */
-    .explore-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 24px; max-width: 1000px; margin: 0 auto; }
-    .explore-card { position: relative; display: block; padding: 34px 30px; border-radius: var(--radius); overflow: hidden;
-      border: 1px solid var(--card-border); background: var(--card-bg); transition: transform .35s, border-color .35s, box-shadow .35s; }
-    .explore-card::before { content: ""; position: absolute; inset: 0; opacity: 0; transition: opacity .4s;
-      background: linear-gradient(135deg, rgba(124, 58, 237, .35), rgba(168, 85, 247, .08)); }
-    .explore-card > * { position: relative; }
-    .explore-card:hover { transform: translateY(-8px); border-color: var(--purple); box-shadow: var(--shadow-glow); }
-    .explore-card:hover::before { opacity: 1; }
-    .explore-card .num { font-family: var(--font-heading); font-style: italic; color: var(--purple); font-size: 1.25rem; }
-    .explore-card h3 { font-size: 2.1rem; margin: 4px 0 8px; }
-    .explore-card p { color: var(--text-soft); font-size: .96rem; }
-    .explore-card .arrow { display: inline-block; margin-top: 16px; font-size: 1.6rem; color: var(--white); transition: transform .35s; }
-    .explore-card:hover .arrow { transform: translateX(10px); }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
 
-    @media (prefers-reduced-motion: reduce) {
-      .view.is-leaving, .view.is-entering, .view.is-entering-soft, .route-bar.run { animation: none !important; }
-      .nav-pill { transition: none; }
+    .container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 780px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      padding: 36px 32px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55), 0 0 40px var(--accent-glow);
+      transition: all 0.3s ease;
+    }
+
+    /* Hero / First Screen View */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .avatar-wrap {
+      position: relative;
+      width: 118px;
+      height: 118px;
+      border-radius: 50%;
+      padding: 4px;
+      background: linear-gradient(135deg, #c084fc, var(--accent), var(--primary));
+      box-shadow: 0 0 28px var(--accent-glow);
+      margin-bottom: 18px;
+    }
+
+    .avatar-wrap img,
+    .avatar-fallback {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      background: #1a0b36;
+    }
+
+    .avatar-fallback {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #e9d5ff;
+      letter-spacing: 1px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(147, 51, 234, 0.22);
+      border: 1px solid rgba(192, 132, 252, 0.4);
+      color: #e9d5ff;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+      letter-spacing: 0.3px;
+    }
+
+    h1 {
+      font-size: 1.95rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .role {
+      font-size: 1.02rem;
+      font-weight: 500;
+      color: #d8b4fe;
+      margin-bottom: 18px;
+    }
+
+    .about-me {
+      font-size: 0.96rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin-bottom: 26px;
+    }
+
+    .about-me strong {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    /* Action Buttons Row (Bottom Navigation) */
+    .nav-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .nav-btn {
+      appearance: none;
+      border: 1px solid var(--glass-border);
+      background: rgba(255, 255, 255, 0.07);
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 11px 18px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .nav-btn:hover {
+      background: rgba(147, 51, 234, 0.25);
+      border-color: #c084fc;
+      transform: translateY(-1px);
+    }
+
+    .nav-btn.active {
+      background: linear-gradient(135deg, var(--accent), #7e22ce);
+      border-color: #d8b4fe;
+      box-shadow: 0 6px 20px var(--accent-glow);
+    }
+
+    /* Expandable Content Drawer */
+    .drawer {
+      display: none;
+      margin-top: 26px;
+      padding-top: 24px;
+      border-top: 1px solid var(--glass-border);
+      animation: fadeIn 0.25s ease forwards;
+    }
+
+    .drawer.open {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .drawer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .drawer-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #f3e8ff;
+    }
+
+    .close-btn {
+      background: transparent;
+      border: 1px solid var(--glass-border);
+      color: var(--text-dim);
+      font-size: 0.8rem;
+      padding: 5px 11px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .close-btn:hover {
+      color: #fff;
+      border-color: #c084fc;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .card {
+      background: rgba(15, 8, 34, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #e9d5ff;
+      margin-bottom: 8px;
+    }
+
+    .card p,
+    .card li {
+      font-size: 0.86rem;
+      line-height: 1.55;
+      color: var(--text-muted);
+    }
+
+    .card ul {
+      padding-left: 16px;
+    }
+
+    .card li {
+      margin-bottom: 5px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .tag {
+      font-size: 0.74rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(147, 51, 234, 0.2);
+      color: #e9d5ff;
+      border: 1px solid rgba(192, 132, 252, 0.25);
+    }
+
+    .sample-link {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #c084fc;
+      text-decoration: none;
+    }
+
+    .sample-link:hover {
+      text-decoration: underline;
+      color: #e9d5ff;
+    }
+
+    .cta-box {
+      text-align: center;
+      padding: 18px;
+      background: rgba(147, 51, 234, 0.14);
+      border: 1px solid rgba(192, 132, 252, 0.3);
+      border-radius: 14px;
+    }
+
+    .cta-box p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .primary-link {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent), #7e22ce);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px var(--accent-glow);
+    }
+
+    .secondary-link {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--glass-border);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 26px 20px;
+      }
+      h1 {
+        font-size: 1.55rem;
+      }
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .nav-btn {
+        width: 100%;
+        justify-content: center;
+      }
     }
   </style>
-<script>(function(){try{var h=location.hash.replace("#","");if(h==="photos"||h==="certificates")document.documentElement.setAttribute("data-start",h);}catch(e){}})();</script>
-<script>try{var t=localStorage.getItem('theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}</script>
 </head>
 <body>
+  <main class="container">
+    <!-- Initial Above-the-Fold View -->
+    <section class="hero">
+      <div class="avatar-wrap">
+        <img
+          src="profile.jpg"
+          alt="Eloisa Jane L. Zulita"
+          onerror="this.style.display='none'; document.getElementById('avatarFallback').style.display='flex';"
+        />
+        <div id="avatarFallback" class="avatar-fallback" style="display: none;">EJZ</div>
+      </div>
 
-  <div class="route-bar" id="routeBar" aria-hidden="true"></div>
+      <div class="badge">EF SET C2 Proficient English (76/100)</div>
+      <h1>Eloisa Jane L. Zulita</h1>
+      <p class="role">Social Media &amp; Customer Support Virtual Assistant</p>
 
-  <!-- ===== NAVBAR: 3 page tabs ===== -->
-  <header class="navbar" id="navbar">
-    <div class="container nav-inner">
-      <a href="#info" class="logo">Eloisa Jane <span>Zulita</span></a>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="nav-links" id="navLinks">
-        <span class="nav-pill" id="navPill" aria-hidden="true"></span>
-        <a href="#info" class="tab" data-tab="info">Main Info</a>
-        <a href="#photos" class="tab" data-tab="photos">Photos</a>
-        <a href="#certificates" class="tab" data-tab="certificates">Certificates</a>
-        <a href="#contact" class="btn btn-small">Get in touch</a>
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode">&#9728;</button>
+      <p class="about-me">
+        Hi! I’m <strong>Eloisa</strong>—a detail-oriented Virtual Assistant who keeps your brand active, organized, and responsive. I help busy founders and growing businesses turn daily inbox overload and content tasks into smooth systems using <strong>Canva, CapCut Pro, Adobe Premiere Pro, and ChatGPT workflows</strong>, backed by a zero-downtime home workstation across <strong>US, UK, and APAC</strong> hours.
+      </p>
+
+      <!-- Interactive Hyperlink / Section Buttons -->
+      <nav class="nav-buttons" aria-label="Portfolio sections">
+        <button class="nav-btn" data-tab="services" onclick="toggleTab('services', this)">
+          Services &amp; Tools
+        </button>
+        <button class="nav-btn" data-tab="samples" onclick="toggleTab('samples', this)">
+          Work Samples
+        </button>
+        <button class="nav-btn" data-tab="resume" onclick="toggleTab('resume', this)">
+          Resume &amp; Setup
+        </button>
+        <button class="nav-btn" data-tab="contact" onclick="toggleTab('contact', this)">
+          Hire Me
+        </button>
       </nav>
-    </div>
-  </header>
+    </section>
 
-  <!-- ================= PAGE 1: MAIN INFO ================= -->
-  <main class="view is-active" data-view="info" id="page-info" tabindex="-1">
-    <!-- ===== HERO ===== -->
-    <section class="hero" id="home">
-      <div class="glow glow-1"></div>
-      <div class="glow glow-2"></div>
-      <div class="container hero-inner">
-        <div class="hero-text reveal">
-          <p class="eyebrow">Social Media VA, Customer Support VA, online ESL instructor</p>
-          <h1>Supporting customers with warmth. <em>Giving brands a voice.</em></h1>
-          <p class="tagline">I'm Eloisa Jane L. Zulita. I manage social media accounts, create branded content and resolve customer inquiries across email, live chat and DMs, with EF SET C2 Proficient English.</p>
-          <div class="hero-buttons">
-            <a href="#contact" class="btn">Get in touch</a>
-            <a href="#work" class="btn btn-outline">View my work</a>
+    <!-- Tab 1: Services & Tools -->
+    <section id="tab-services" class="drawer" aria-hidden="true">
+      <div class="drawer-header">
+        <h2 class="drawer-title">Services &amp; Core Tools</h2>
+        <button class="close-btn" onclick="closeAll()">Close ✕</button>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Social Media &amp; Content Creation</h3>
+          <ul>
+            <li>Daily Instagram, Facebook &amp; LinkedIn management</li>
+            <li>DM engagement, comment moderation &amp; lead capture</li>
+            <li>30-day content calendars, captions &amp; hashtag research</li>
+            <li>Scroll-stopping Reels, carousels &amp; branded graphics</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">Canva</span>
+            <span class="tag">CapCut Pro</span>
+            <span class="tag">Premiere Pro</span>
+            <span class="tag">Meta Business Suite</span>
           </div>
         </div>
-        <div class="hero-photo reveal">
-          <div class="photo-frame" id="photoFrame">
-            <img id="heroPhoto" alt="Portrait of Eloisa Jane L. Zulita" />
-            <span class="photo-fallback">EJ</span>
+        <div class="card">
+          <h3>Customer Support &amp; Operations</h3>
+          <ul>
+            <li>Fast, empathetic replies via email, live chat &amp; DMs</li>
+            <li>Standard Operating Procedures (SOPs) &amp; FAQ banks</li>
+            <li>Lead tracking, onboarding records &amp; inbox zero</li>
+            <li>AI-assisted response templates &amp; workflow speed</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">ChatGPT</span>
+            <span class="tag">Google Workspace</span>
+            <span class="tag">SOPs</span>
+            <span class="tag">C2 English</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== ABOUT ===== -->
-    <section class="section" id="about">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">About me</p>
-          <h2>Support that <em>feels human</em></h2>
+    <!-- Tab 2: Work Samples -->
+    <section id="tab-samples" class="drawer" aria-hidden="true">
+      <div class="drawer-header">
+        <h2 class="drawer-title">Ready-to-View Portfolio Samples</h2>
+        <button class="close-btn" onclick="closeAll()">Close ✕</button>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Instagram DM Triage SOP</h3>
+          <p>Step-by-step workflow for prioritizing leads, maintaining 2-hour response SLAs, and logging inquiries.</p>
+          <a class="sample-link" href="Eloisa_Jane_Zulita_Portfolio_SOP_Sample.pdf" target="_blank" rel="noopener">View SOP PDF →</a>
         </div>
-        <div class="about-grid">
-          <div class="about-text reveal">
-            <p>I'm a <strong>Social Media &amp; Customer Support Virtual Assistant</strong> based in Governor Generoso, Davao Oriental, Philippines. I have hands-on experience managing social media accounts, creating branded graphics and short-form videos, and resolving high-volume customer inquiries across email, live chat and DMs.</p>
-            <p>Working as an <strong>Online ESL Instructor</strong> and <strong>Operations Manager &amp; Support Coordinator</strong> taught me to communicate patiently, guide people step by step and keep everything organized with clear SOPs and trackers. I use AI tools like Claude, Gemini and ChatGPT every day to draft captions, support macros and documentation, so work stays fast and consistent.</p>
-            <p>I'm also a 4th-year BSED English major, certified at <strong>C2 Proficient</strong> English (EF SET 71/100), and ready to cover shifts across US, UK or APAC time zones.</p>
-          </div>
-          <div class="stats reveal">
-            <div class="stat"><span class="num">C2</span><span class="label">EF SET English (71/100)</span></div>
-            <div class="stat"><span class="num">2025</span><span class="label">Working remotely since</span></div>
-            <div class="stat"><span class="num">3</span><span class="label">Time zones covered: US, UK, APAC</span></div>
-            <div class="stat"><span class="num">4</span><span class="label">Remote &amp; digital roles</span></div>
-          </div>
+        <div class="card">
+          <h3>Customer Support FAQ Bank</h3>
+          <p>Polite, brand-aligned response templates and ticket escalation rules for consistent client support.</p>
+          <a class="sample-link" href="Eloisa_Jane_Zulita_Portfolio_FAQ_Templates_SOP.pdf" target="_blank" rel="noopener">View FAQ PDF →</a>
+        </div>
+        <div class="card">
+          <h3>Canva Visual Brand Kit</h3>
+          <p>Typography hierarchy, color palette standards, and safe-zone specs for carousels, stories, and reels.</p>
+          <a class="sample-link" href="Eloisa_Jane_Zulita_Portfolio_Canva_Branded_Graphics.pdf" target="_blank" rel="noopener">View Brand Brief PDF →</a>
+        </div>
+        <div class="card">
+          <h3>4-Format Social Graphic Suite</h3>
+          <p>Executed ready-to-post carousel cover, square promo post, interactive story poll, and reel cover.</p>
+          <a class="sample-link" href="Eloisa_Jane_Zulita_Branded_Graphics_Visual_Showcase.pdf" target="_blank" rel="noopener">View Visual Showcase PDF →</a>
         </div>
       </div>
     </section>
 
-    <!-- ===== SERVICES ===== -->
-    <section class="section section-alt" id="services">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Services</p>
-          <h2>How I can <em>help you</em></h2>
+    <!-- Tab 3: Resume & Setup -->
+    <section id="tab-resume" class="drawer" aria-hidden="true">
+      <div class="drawer-header">
+        <h2 class="drawer-title">Credentials &amp; Workstation Reliability</h2>
+        <button class="close-btn" onclick="closeAll()">Close ✕</button>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Verified Credentials</h3>
+          <ul>
+            <li><strong>English Proficiency:</strong> EF SET C2 Proficient (76/100)</li>
+            <li><strong>Availability:</strong> Flexible across US, UK &amp; APAC time zones</li>
+            <li><strong>Hourly Rate:</strong> £8–£10/hr ($10–$12/hr USD)</li>
+          </ul>
+          <a class="sample-link" href="Eloisa_Jane_Zulita_VA_Resume.pdf" target="_blank" rel="noopener">Download Full Resume (PDF) →</a>
         </div>
-
-        <h3 class="group-title reveal">Customer Support VA</h3>
-        <div class="card-grid">
-          <article class="card reveal"><div class="icon">&#9993;</div><h4>Email &amp; Live Chat Support</h4><p>First-contact support with empathy, clear answers and fast follow-ups.</p></article>
-          <article class="card reveal"><div class="icon">&#128172;</div><h4>DM &amp; Comment Management</h4><p>Handling customer inquiries on social media with a friendly, on-brand voice.</p></article>
-          <article class="card reveal"><div class="icon">&#128153;</div><h4>Empathetic De-escalation</h4><p>Calming frustrated customers and moving them toward a clear resolution.</p></article>
-          <article class="card reveal"><div class="icon">&#128214;</div><h4>FAQ Templates &amp; SOPs</h4><p>Polite response templates and step-by-step SOPs for consistent answers.</p></article>
-          <article class="card reveal"><div class="icon">&#128194;</div><h4>CRM &amp; Tracker Updates</h4><p>Accurate status trackers and data entry in Google Sheets.</p></article>
-          <article class="card reveal"><div class="icon">&#129309;</div><h4>Client Onboarding &amp; Follow-Ups</h4><p>Guiding new clients and team members through onboarding and scheduling.</p></article>
-        </div>
-
-        <h3 class="group-title reveal">Social Media VA</h3>
-        <div class="card-grid">
-          <article class="card reveal"><div class="icon">&#128241;</div><h4>Instagram &amp; Facebook Management</h4><p>Day-to-day account management and community engagement.</p></article>
-          <article class="card reveal"><div class="icon">&#128197;</div><h4>Content Scheduling &amp; Calendars</h4><p>Organized calendars in Meta Business Suite and Google Drive.</p></article>
-          <article class="card reveal"><div class="icon">&#127912;</div><h4>Branded Graphics</h4><p>Eye-catching posts, stories and covers designed in Canva.</p></article>
-          <article class="card reveal"><div class="icon">&#127916;</div><h4>Short-Form Video Editing</h4><p>Reels and TikToks edited in CapCut Pro and Adobe Premiere Pro.</p></article>
-          <article class="card reveal"><div class="icon">&#9998;</div><h4>Copywriting</h4><p>Engaging captions and content hooks tailored to your brand voice.</p></article>
-          <article class="card reveal"><div class="icon">&#128450;</div><h4>Asset Organization</h4><p>Tidy asset libraries in Google Drive and Dropbox so nothing gets lost.</p></article>
+        <div class="card">
+          <h3>Zero-Downtime Remote Setup</h3>
+          <ul>
+            <li>Dedicated quiet home office workstation</li>
+            <li>Primary high-speed fiber internet connection</li>
+            <li>Secondary backup modem + backup power supply</li>
+            <li>Windows laptop optimized for video &amp; design tools</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- ===== EXPERIENCE ===== -->
-    <section class="section" id="experience">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Experience</p>
-          <h2>My <em>career path</em></h2>
-        </div>
-        <div class="timeline">
-          <div class="t-item reveal">
-            <div class="t-dot"></div>
-            <div class="t-card">
-              <span class="t-date">2026 - Present</span>
-              <h4>Operations Manager &amp; Support Coordinator</h4>
-              <p class="t-company">Star Club / Remote ESL Team</p>
-              <ul>
-                <li>Primary point of contact for daily email and live chat inquiries, guiding applicants and team members through onboarding, scheduling and troubleshooting.</li>
-                <li>Document recurring inquiries into Standard Operating Procedures (SOPs).</li>
-                <li>Maintain accurate status trackers in Google Sheets for fast, consistent resolution.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="t-item reveal">
-            <div class="t-dot"></div>
-            <div class="t-card">
-              <span class="t-date">2025 - Present</span>
-              <h4>Freelance Social Media Manager &amp; Client Inbox Specialist</h4>
-              <p class="t-company">Self-Employed (Remote)</p>
-              <ul>
-                <li>Managed the Instagram account of a private content creator, overseeing daily DM and comment inquiries, community engagement and content coordination.</li>
-                <li>Designed branded graphics in Canva and edited short-form videos in CapCut Pro and Adobe Premiere Pro.</li>
-                <li>Kept organized asset libraries and content calendars in Google Drive and Dropbox.</li>
-                <li>Used AI tools daily to draft captions, content hooks and polite FAQ response templates in the brand's voice.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="t-item reveal">
-            <div class="t-dot"></div>
-            <div class="t-card">
-              <span class="t-date">2025 - Present</span>
-              <h4>Online ESL Instructor &amp; Student Support Specialist</h4>
-              <p class="t-company">Star Club (Remote)</p>
-              <ul>
-                <li>Delivered patient, one-on-one live lessons to international learners.</li>
-                <li>Provided real-time technical and platform support to students.</li>
-                <li>Maintained detailed session logs and feedback reports.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="t-item reveal">
-            <div class="t-dot"></div>
-            <div class="t-card">
-              <span class="t-date">2025 - Present</span>
-              <h4>Editorial, Layout &amp; Digital Publication Staff</h4>
-              <p class="t-company">GGCAST Student Publications</p>
-              <ul>
-                <li>Created digital graphics, publication layouts and proofread copy under strict deadlines.</li>
-                <li>Ensured consistent visual branding and error-free delivery.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+    <!-- Tab 4: Contact -->
+    <section id="tab-contact" class="drawer" aria-hidden="true">
+      <div class="drawer-header">
+        <h2 class="drawer-title">Let’s Work Together</h2>
+        <button class="close-btn" onclick="closeAll()">Close ✕</button>
       </div>
-    </section>
-
-    <!-- ===== TRANSFERABLE SKILLS ===== -->
-    <section class="section section-alt" id="transferable">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Transferable skills</p>
-          <h2>How my background makes me a <em>better VA</em></h2>
-        </div>
-        <div class="card-grid">
-          <article class="card reveal"><div class="icon">&#127891;</div><h4>Teaching &rarr; Customer Care</h4><p>Explaining things simply, staying patient with every question and giving clear, kind guidance.</p></article>
-          <article class="card reveal"><div class="icon">&#128221;</div><h4>Operations &rarr; Reliable Support</h4><p>Being the first point of contact, documenting SOPs and keeping trackers accurate so issues get resolved fast.</p></article>
-          <article class="card reveal"><div class="icon">&#128240;</div><h4>Publications &rarr; Social Media</h4><p>Layout, graphics and proofreading under deadlines, which means consistent branding and error-free posts.</p></article>
-          <article class="card reveal"><div class="icon">&#127760;</div><h4>Global Readiness</h4><p>C2 Proficient English and the ability to cover US, UK or APAC shifts with international clients and teams.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== SKILLS ===== -->
-    <section class="section" id="skills">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Skills &amp; tools</p>
-          <h2>What I <em>work with</em></h2>
-        </div>
-        <div class="card-grid skill-cats">
-          <article class="card reveal"><h4>Social Media &amp; Content Creation</h4><p>Instagram &amp; Facebook account management, content scheduling and calendars, short-form video editing (Reels/TikTok), graphic design, copywriting.</p></article>
-          <article class="card reveal"><h4>Customer Support &amp; Community</h4><p>Live chat and email ticket support, social media DM and comment management, empathetic de-escalation, first-contact resolution, client onboarding and follow-ups.</p></article>
-          <article class="card reveal"><h4>AI, Operations &amp; Communication</h4><p>Daily Claude AI, Gemini and ChatGPT workflow (captions, support macros, SOP drafting), CRM and tracker data entry, asset organization, C2 Proficient English (71/100).</p></article>
-        </div>
-        <div class="badges reveal">
-          <span>Canva</span><span>CapCut Pro</span><span>Adobe Premiere Pro</span><span>Meta Business Suite</span>
-          <span>Google Workspace</span><span>Google Docs</span><span>Google Sheets</span><span>Google Drive</span>
-          <span>Gmail</span><span>Dropbox</span><span>Microsoft Office</span>
-          <span>Claude AI</span><span>Gemini</span><span>ChatGPT</span>
-        </div>
-        <div class="tools-block reveal">
-          <p class="eyebrow">Tools &amp; Systems</p>
-          <h3>I use as a <em>virtual assistant</em></h3>
-          <article class="card tool-card">
-            <img class="gw-logo gw-for-light" src="google-workspace.png" alt="Google Workspace" loading="lazy">
-            <img class="gw-logo gw-for-dark" src="google-workspace-dark.png" alt="Google Workspace" loading="lazy">
-            <div class="badges"><span>Gmail</span><span>Drive</span><span>Docs</span><span>Sheets</span><span>Slides</span><span>Calendar</span><span>Meet</span><span>Forms</span></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== WORK ===== -->
-    <section class="section section-alt" id="work">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Portfolio</p>
-          <h2>What I <em>create</em></h2>
-          <p class="lead">Samples are available on request. Message me and I'll share relevant work for your niche.</p>
-        </div>
-        <div class="card-grid three">
-          <article class="card work reveal"><div class="work-thumb">Branded Graphics</div><h4>Canva Designs</h4><p>Branded posts, stories and covers with a consistent look and feel.</p><a href="#contact" class="btn btn-small">Request samples</a></article>
-          <article class="card work reveal"><div class="work-thumb">Short-Form Video</div><h4>Reels &amp; TikTok Edits</h4><p>Short videos edited in CapCut Pro and Adobe Premiere Pro.</p><a href="#contact" class="btn btn-small">Request samples</a></article>
-          <article class="card work reveal"><div class="work-thumb">Content Calendar</div><h4>Organized Content Planning</h4><p>Content calendars and asset libraries kept in Google Drive and Dropbox.</p><a href="#contact" class="btn btn-small">Request samples</a></article>
-          <article class="card work reveal"><div class="work-thumb">Support Templates</div><h4>FAQ Response Templates</h4><p>Polite, on-brand reply templates for common customer questions.</p><a href="#contact" class="btn btn-small">Request samples</a></article>
-          <article class="card work reveal"><div class="work-thumb">SOPs &amp; Trackers</div><h4>Process Documentation</h4><p>Clear SOPs and Google Sheets status trackers for consistent resolution.</p><a href="#contact" class="btn btn-small">Request samples</a></article>
-          <article class="card work reveal"><div class="work-thumb">Publication Layout</div><h4>Digital Publications</h4><p>Layouts and graphics created for GGCAST Student Publications.</p><a href="#contact" class="btn btn-small">Request samples</a></article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== EDUCATION ===== -->
-    <section class="section" id="education">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Education &amp; certifications</p>
-          <h2>Training &amp; <em>credentials</em></h2>
-        </div>
-        <div class="card-grid">
-          <article class="card reveal"><div class="icon">&#127891;</div><h4>BSED - Major in English</h4><p>4th year, expected 2027. Governor Generoso College of Arts, Sciences and Technology (GGCAST).</p></article>
-          <article class="card reveal"><div class="icon">&#128188;</div><h4>TESDA NC II - Tourism Promotion Services</h4><p>National Certificate II in customer service excellence, front-line inquiry handling and client relations.</p></article>
-          <article class="card reveal"><div class="icon">&#128187;</div><h4>Web Development Certification</h4><p>Foundation in building and editing websites.</p></article>
-          <article class="card reveal"><div class="icon">&#127969;</div><h4>Remote Workstation &amp; Availability</h4><p>ASUS Windows laptop, noise-canceling headset, high-speed fiber internet, backup modem and backup power for uninterrupted shifts across US, UK or APAC time zones.</p></article>
-        </div>
-        <div class="section-cta reveal"><a href="#certificates" class="btn">View all certificates &rarr;</a></div>
-      </div>
-    </section>
-
-    <!-- ===== LINKS TO THE OTHER PAGES ===== -->
-    <section class="section section-alt explore">
-      <div class="container">
-        <div class="section-head reveal"><p class="eyebrow">Keep exploring</p><h2>More about <em>my work</em></h2></div>
-        <div class="explore-grid">
-          <a href="#photos" class="explore-card reveal"><span class="num">02</span><h3>Photos &amp; <em>projects</em></h3><p>Freelance hosting, online teaching and voice-over work.</p><span class="arrow">&rarr;</span></a>
-          <a href="#certificates" class="explore-card reveal"><span class="num">03</span><h3><em>Certificates</em></h3><p>TEFL, EF SET C2 English and Coursera certificates to view or verify.</p><span class="arrow">&rarr;</span></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== TESTIMONIALS ===== -->
-    <section class="section" id="testimonials">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Testimonials</p>
-          <h2>Kind words from <em>clients</em></h2>
-        </div>
-        <div class="carousel reveal" id="carousel">
-          <div class="slides">
-            <blockquote class="slide active">
-              <p>"[Replace with a real client testimonial about your customer support work.]"</p>
-              <cite>- [Client Name], [Company]</cite>
-            </blockquote>
-            <blockquote class="slide">
-              <p>"[Replace with a real client testimonial about your social media management.]"</p>
-              <cite>- [Client Name], [Company]</cite>
-            </blockquote>
-            <blockquote class="slide">
-              <p>"[Replace with a testimonial from a team lead, student or colleague.]"</p>
-              <cite>- [Name], [Role]</cite>
-            </blockquote>
-          </div>
-          <div class="carousel-controls">
-            <button id="prev" aria-label="Previous testimonial">&larr;</button>
-            <div class="dots" id="dots"></div>
-            <button id="next" aria-label="Next testimonial">&rarr;</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== CONTACT ===== -->
-    <section class="section section-alt" id="contact">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Contact</p>
-          <h2>Let's work <em>together</em></h2>
-          <p class="lead">Based in Governor Generoso, Davao Oriental, Philippines. Send me a message about your project and I'll get back to you.</p>
-        </div>
-        <div class="contact-grid">
-          <!-- To receive messages directly, replace the action with your Formspree URL: https://formspree.io/f/yourid -->
-          <form class="form reveal" id="contactForm" action="mailto:eloisajanezulita13@gmail.com" method="post" enctype="text/plain">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name" required />
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="you@example.com" required />
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
-            <button type="submit" class="btn">Send message</button>
-          </form>
-          <div class="contact-links reveal">
-            <a href="mailto:eloisajanezulita13@gmail.com" class="link-btn">&#9993; eloisajanezulita13@gmail.com</a>
-            <!-- Add your real profile links below (replace the # in each href) -->
-            <a href="#" class="link-btn" target="_blank" rel="noopener">in LinkedIn</a>
-            <a href="#" class="link-btn" target="_blank" rel="noopener">f Facebook</a>
-            <a href="#" class="link-btn" target="_blank" rel="noopener">&#9711; Instagram</a>
-            <a href="#" class="link-btn" target="_blank" rel="noopener">&#9733; Upwork / OnlineJobs.ph</a>
-            <a href="resume.pdf" class="btn btn-outline" download>Download resume</a>
-          </div>
+      <div class="cta-box">
+        <p>Ready to reclaim 10+ hours every week with reliable social media management and responsive customer support?</p>
+        <div class="cta-actions">
+          <a class="primary-link" href="https://www.peopleperhour.com/" target="_blank" rel="noopener">Hire on PeoplePerHour</a>
+          <a class="secondary-link" href="mailto:eloisajanezulita@gmail.com">Send an Email</a>
         </div>
       </div>
     </section>
   </main>
-
-  <!-- ================= PAGE 2: PHOTOS ================= -->
-  <main class="view" data-view="photos" id="page-photos" tabindex="-1">
-    <section class="page-hero" id="photos-top">
-      <div class="glow glow-1"></div>
-      <div class="glow glow-2"></div>
-      <div class="container">
-        <p class="eyebrow reveal">Photos &amp; projects</p>
-        <h1 class="reveal">Moments from <em>stage, class &amp; studio</em></h1>
-        <p class="lead reveal">Freelance hosting, online teaching and voice-over work.</p>
-        <nav class="subnav reveal" aria-label="Jump to a gallery">
-          <a href="#hosting">Hosting</a><a href="#teaching">Teaching</a><a href="#voiceover">Voice-over</a>
-        </nav>
-      </div>
-    </section>
-
-    <!-- ===== FREELANCE HOST PHOTOS (host-1, host-2, ...) ===== -->
-    <section class="section tight" id="hosting" hidden>
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Freelance host</p>
-          <h2>On camera &amp; <em>on the mic</em></h2>
-          <p class="lead">Photos from my freelance hosting work. Tap any photo to view it larger.</p>
-        </div>
-        <div class="gallery cover" data-prefix="host" data-max="8" data-label="Freelance host photo"></div>
-      </div>
-    </section>
-
-    <!-- ===== ONLINE TEACHING (teaching-1, teaching-2, ...) ===== -->
-    <section class="section section-alt" id="teaching">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Online ESL instructor</p>
-          <h2>In the <em>virtual classroom</em></h2>
-          <p class="lead">Live English lessons with young learners. Tap any photo to view it larger.</p>
-        </div>
-        <div class="gallery" data-prefix="teaching" data-max="8" data-label="Online teaching screenshot"></div>
-      </div>
-    </section>
-
-    <!-- ===== VOICE-OVER VIDEOS ===== -->
-    <section class="section" id="voiceover">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Voice-over</p>
-          <h2>Give your brand a <em>voice</em></h2>
-          <p class="lead">Selected voice-over projects. Press play to listen.</p>
-        </div>
-        <div class="card-grid three">
-          <article class="card video-card reveal"><div class="vwrap"><video controls playsinline preload="none" poster="vo-education-day-teaser.jpg" src="vo-education-day-teaser.mp4"></video></div><h4>Education Day Pageant Teaser 2026</h4><p class="cert-meta">3:20</p></article>
-          <article class="card video-card reveal"><div class="vwrap"><video controls playsinline preload="none" poster="vo-pageant-teaser.jpg" src="vo-pageant-teaser.mp4"></video></div><h4>Pageant Teaser</h4><p class="cert-meta">1:43</p></article>
-          <article class="card video-card reveal"><div class="vwrap"><video controls playsinline preload="none" poster="vo-ched-visit.jpg" src="vo-ched-visit.mp4"></video></div><h4>CHED Visit</h4><p class="cert-meta">2:21</p></article>
-          <article class="card video-card reveal"><div class="vwrap"><video controls playsinline preload="none" poster="vo-mis-2.jpg" src="vo-mis-2.mp4"></video></div><h4>MIS 2.0</h4><p class="cert-meta">3:58</p></article>
-          <article class="card video-card reveal"><div class="vwrap"><video controls playsinline preload="none" poster="vo-jai-ford-wedding.jpg" src="vo-jai-ford-wedding.mp4"></video></div><h4>Jai x Ford Wedding</h4><p class="cert-meta">3:19</p></article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== RECRUITMENT PROOF (recruitment-1, recruitment-2, ...) ===== -->
-    <section class="section" id="recruitment" hidden>
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Recruitment</p>
-          <h2>Proof of <em>successful hiring</em></h2>
-          <p class="lead">Posts and results from my work as a Recruitment Manager. Tap an image to view it larger.</p>
-        </div>
-        <div class="gallery" data-prefix="recruitment" data-max="8" data-label="Recruitment post"></div>
-      </div>
-    </section>
-
-    <section class="section section-alt explore">
-      <div class="container">
-        <div class="section-head reveal"><p class="eyebrow">Keep exploring</p><h2>More about <em>my work</em></h2></div>
-        <div class="explore-grid">
-          <a href="#info" class="explore-card reveal"><span class="num">01</span><h3>Main <em>info</em></h3><p>About me, services, experience, skills and how to reach me.</p><span class="arrow">&rarr;</span></a>
-          <a href="#certificates" class="explore-card reveal"><span class="num">03</span><h3><em>Certificates</em></h3><p>TEFL, EF SET C2 English and Coursera certificates to view or verify.</p><span class="arrow">&rarr;</span></a>
-          <a href="#contact" class="explore-card reveal"><span class="num">04</span><h3>Get in <em>touch</em></h3><p>Have a project in mind? Send me a message.</p><span class="arrow">&rarr;</span></a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ================= PAGE 3: CERTIFICATES ================= -->
-  <main class="view" data-view="certificates" id="page-certificates" tabindex="-1">
-    <section class="page-hero" id="certs-top">
-      <div class="glow glow-1"></div>
-      <div class="glow glow-2"></div>
-      <div class="container">
-        <p class="eyebrow reveal">Certificates</p>
-        <h1 class="reveal">Proof of my <em>training</em></h1>
-        <p class="lead reveal">Tap a preview to enlarge it, open the PDF, or verify it with the issuer.</p>
-      </div>
-    </section>
-
-    <section class="section tight" id="certs">
-      <div class="container">
-        <div class="card-grid">
-          <article class="card cert reveal"><img class="cert-thumb" src="certimg-tefl.jpg" alt="Certificate preview" loading="lazy" tabindex="0"><h4>TEFL Course (120 Hours) - Distinction</h4><p class="cert-meta">TEFL Professional Institute - Teacher Record<br>June 2026 &middot; Certificate No. TR2069005284</p><div class="cert-btns"><a href="tefl.pdf" class="btn btn-small" target="_blank" rel="noopener">View PDF</a></div></article>
-          <article class="card cert reveal"><img class="cert-thumb" src="certimg-efset-c2.jpg" alt="Certificate preview" loading="lazy" tabindex="0"><h4>EF SET English Certificate - C2 Proficient</h4><p class="cert-meta">Score 71/100 &middot; Awarded 2 Jul 2026<br>Reading C2 &middot; Writing C2 &middot; Speaking B2 &middot; Listening B1</p><div class="cert-btns"><a href="efset-c2.pdf" class="btn btn-small" target="_blank" rel="noopener">View PDF</a><a href="https://cert.efset.org/hzNKGT" class="btn btn-outline btn-small" target="_blank" rel="noopener">Verify</a></div></article>
-          <article class="card cert reveal"><img class="cert-thumb" src="certimg-wordpress.jpg" alt="Certificate preview" loading="lazy" tabindex="0"><h4>Build a Free Website with WordPress</h4><p class="cert-meta">Coursera Project Certificate<br>3 Jul 2026</p><div class="cert-btns"><a href="wordpress.pdf" class="btn btn-small" target="_blank" rel="noopener">View PDF</a><a href="https://coursera.org/verify/6J430LDN7VSU" class="btn btn-outline btn-small" target="_blank" rel="noopener">Verify</a></div></article>
-          <article class="card cert reveal"><img class="cert-thumb" src="certimg-remind.jpg" alt="Certificate preview" loading="lazy" tabindex="0"><h4>Enhancing Communication with Remind</h4><p class="cert-meta">Coursera Project Certificate<br>3 Jul 2026</p><div class="cert-btns"><a href="remind.pdf" class="btn btn-small" target="_blank" rel="noopener">View PDF</a><a href="https://coursera.org/verify/4CI58THKO63O" class="btn btn-outline btn-small" target="_blank" rel="noopener">Verify</a></div></article>
-          <article class="card cert reveal"><img class="cert-thumb" src="certimg-canva.jpg" alt="Certificate preview" loading="lazy" tabindex="0"><h4>Use Canva to Design Digital Course Collateral</h4><p class="cert-meta">Coursera Project Certificate<br>2 Jul 2026</p><div class="cert-btns"><a href="canva.pdf" class="btn btn-small" target="_blank" rel="noopener">View PDF</a><a href="https://coursera.org/verify/BI7LQBKPUUXS" class="btn btn-outline btn-small" target="_blank" rel="noopener">Verify</a></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-alt explore">
-      <div class="container">
-        <div class="section-head reveal"><p class="eyebrow">Keep exploring</p><h2>More about <em>my work</em></h2></div>
-        <div class="explore-grid">
-          <a href="#info" class="explore-card reveal"><span class="num">01</span><h3>Main <em>info</em></h3><p>About me, services, experience, skills and how to reach me.</p><span class="arrow">&rarr;</span></a>
-          <a href="#photos" class="explore-card reveal"><span class="num">02</span><h3>Photos &amp; <em>projects</em></h3><p>Freelance hosting, online teaching and voice-over work.</p><span class="arrow">&rarr;</span></a>
-          <a href="#contact" class="explore-card reveal"><span class="num">04</span><h3>Get in <em>touch</em></h3><p>Have a project in mind? Send me a message.</p><span class="arrow">&rarr;</span></a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p>&copy; <span id="year"></span> Eloisa Jane L. Zulita. All rights reserved.</p>
-      <nav class="footer-links">
-        <a href="#about">About</a><a href="#photos">Photos</a><a href="#certificates">Certificates</a><a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </footer>
-
-  <button class="to-top" id="toTop" aria-label="Back to top">&uarr;</button>
-
-  <!-- Image viewer -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-label="Image preview">
-    <button class="lb-close" aria-label="Close">&times;</button>
-    <img alt="" />
-  </div>
 
   <script>
-    // ===== Portfolio interactions + page router =====
-    document.addEventListener('DOMContentLoaded', function () {
-      var reduce = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
-      document.getElementById('year').textContent = new Date().getFullYear();
+    function toggleTab(tabName, btn) {
+      const target = document.getElementById('tab-' + tabName);
+      const isAlreadyOpen = target.classList.contains('open');
 
-      // ----- Mobile menu -----
-      var hamburger = document.getElementById('hamburger');
-      var navLinks = document.getElementById('navLinks');
-      function closeMenu() { navLinks.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false'); }
-      hamburger.addEventListener('click', function () {
-        var open = navLinks.classList.toggle('open');
-        hamburger.setAttribute('aria-expanded', open);
-      });
+      closeAll();
 
-      // ----- Navbar style + back-to-top -----
-      var navbar = document.getElementById('navbar');
-      var toTop = document.getElementById('toTop');
-      window.addEventListener('scroll', function () {
-        navbar.classList.toggle('scrolled', window.scrollY > 40);
-        toTop.classList.toggle('show', window.scrollY > 500);
-      });
-      toTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
-
-      // ----- Fade-in on scroll (re-armed every time a page opens) -----
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        });
-      }, { threshold: 0.15 });
-      document.querySelectorAll('.reveal').forEach(function (el) { observer.observe(el); });
-
-      // ----- Testimonial carousel -----
-      var slides = document.querySelectorAll('.slide');
-      var dotsWrap = document.getElementById('dots');
-      var current = 0, timer;
-      slides.forEach(function (_, i) {
-        var dot = document.createElement('button');
-        dot.className = 'dot' + (i === 0 ? ' active' : '');
-        dot.setAttribute('aria-label', 'Go to testimonial ' + (i + 1));
-        dot.addEventListener('click', function () { show(i); restart(); });
-        dotsWrap.appendChild(dot);
-      });
-      var dots = dotsWrap.querySelectorAll('.dot');
-      function show(index) {
-        current = (index + slides.length) % slides.length;
-        slides.forEach(function (s, i) { s.classList.toggle('active', i === current); });
-        dots.forEach(function (d, i) { d.classList.toggle('active', i === current); });
+      if (!isAlreadyOpen) {
+        target.classList.add('open');
+        target.setAttribute('aria-hidden', 'false');
+        btn.classList.add('active');
       }
-      function restart() { clearInterval(timer); timer = setInterval(function () { show(current + 1); }, 6000); }
-      document.getElementById('next').addEventListener('click', function () { show(current + 1); restart(); });
-      document.getElementById('prev').addEventListener('click', function () { show(current - 1); restart(); });
-      restart();
-
-      // ===== Automatic image loading =====
-      // Upload photos next to index.html using these names (.jpg .jpeg .png .webp):
-      //   profile            -> hero photo
-      //   host-1, host-2 ... -> Freelance host photos
-      //   teaching-1 ...     -> Online teaching screenshots
-      //   recruitment-1 ...  -> Recruitment proof (section stays hidden until the first one exists)
-      var EXTENSIONS = ['jpg', 'jpeg', 'png', 'webp'];
-      function probe(base, exts) {
-        exts = exts || EXTENSIONS;
-        return new Promise(function (resolve) {
-          var i = 0;
-          (function tryNext() {
-            if (i >= exts.length) return resolve(null);
-            var url = base + '.' + exts[i++];
-            var img = new Image();
-            img.onload = function () { resolve(url); };
-            img.onerror = tryNext;
-            img.src = url;
-          })();
-        });
-      }
-
-      var heroPhoto = document.getElementById('heroPhoto');
-      var photoFrame = document.getElementById('photoFrame');
-      probe('profile', ['jpeg', 'jpg', 'png', 'webp']).then(function (url) {
-        if (url) { heroPhoto.src = url; heroPhoto.classList.add('loaded'); }
-        else { photoFrame.classList.add('no-photo'); }
-      });
-
-      // Image viewer
-      var lightbox = document.getElementById('lightbox');
-      var lightboxImg = lightbox.querySelector('img');
-      function openViewer(src, alt) {
-        lightboxImg.src = src; lightboxImg.alt = alt;
-        lightbox.classList.add('open'); document.body.style.overflow = 'hidden';
-      }
-      function closeViewer() { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
-      lightbox.addEventListener('click', closeViewer);
-      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeViewer(); });
-
-      // Galleries
-      document.querySelectorAll('.gallery').forEach(async function (gallery) {
-        var prefix = gallery.dataset.prefix;
-        var max = parseInt(gallery.dataset.max, 10) || 8;
-        var label = gallery.dataset.label || 'Photo';
-        var sec = gallery.closest('section');
-        var found = 0;
-        for (var n = 1; n <= max; n++) {
-          var url = await probe(prefix + '-' + n);
-          if (!url) break;
-          found++;
-          (function (url, n) {
-            var fig = document.createElement('figure');
-            fig.className = 'shot'; fig.tabIndex = 0; fig.setAttribute('role', 'button');
-            var img = document.createElement('img');
-            img.src = url; img.alt = label + ' ' + n; img.loading = 'lazy';
-            fig.appendChild(img);
-            var open = function () { openViewer(url, img.alt); };
-            fig.addEventListener('click', open);
-            fig.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
-            gallery.appendChild(fig);
-          })(url, n);
-        }
-        if (found > 0) sec.hidden = false;
-      });
-
-      // =====================================================
-      //  PAGE ROUTER: Main Info / Photos / Certificates
-      // =====================================================
-      var ROUTES = ['info', 'photos', 'certificates'];
-      var TITLES = { info: 'Main Info', photos: 'Photos', certificates: 'Certificates' };
-      var BASE_TITLE = document.title;
-      var views = {};
-      ROUTES.forEach(function (r) { views[r] = document.querySelector('[data-view="' + r + '"]'); });
-      var tabs = [].slice.call(document.querySelectorAll('.tab'));
-      var pill = document.getElementById('navPill');
-      var bar = document.getElementById('routeBar');
-      var currentRoute = null, busy = false, pending = null;
-
-      // "#photos" -> a page.  "#contact" / "#teaching" -> the page that holds that element, then scroll to it.
-      function resolve(hash) {
-        var h = (hash || '').replace(/^#\/?/, '');
-        if (!h) return { route: 'info' };
-        if (ROUTES.indexOf(h) > -1) return { route: h };
-        var el = document.getElementById(h);
-        if (el) { var v = el.closest('[data-view]'); if (v) return { route: v.getAttribute('data-view'), scroll: h }; }
-        return null;
-      }
-
-      function scrollToId(id) {
-        var el = document.getElementById(id);
-        if (el) el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
-      }
-      function jumpTop() {
-        var root = document.documentElement;
-        root.style.scrollBehavior = 'auto';
-        window.scrollTo(0, 0);
-        root.style.scrollBehavior = '';
-      }
-
-      function placePill(snap) {
-        var active = tabs.filter(function (t) { return t.classList.contains('active'); })[0];
-        if (!active || getComputedStyle(pill).display === 'none') return;
-        if (snap) pill.classList.add('snap');
-        pill.style.left = active.offsetLeft + 'px';
-        pill.style.width = active.offsetWidth + 'px';
-        pill.classList.add('ready');
-        if (snap) { void pill.offsetWidth; pill.classList.remove('snap'); }
-      }
-      function setTabs(route, snap) {
-        tabs.forEach(function (t) {
-          var on = t.getAttribute('data-tab') === route;
-          t.classList.toggle('active', on);
-          if (on) t.setAttribute('aria-current', 'page'); else t.removeAttribute('aria-current');
-        });
-        placePill(snap);
-      }
-
-      // restart the staggered entrance for everything in the page that just opened
-      function resetReveals(view) {
-        var els = [].slice.call(view.querySelectorAll('.reveal')).filter(function (el) { return !el.closest('.cx-track'); });
-        var n = 0;
-        els.forEach(function (el) {
-          observer.unobserve(el);
-          el.classList.remove('visible');
-          if (el.getBoundingClientRect().top < window.innerHeight) {
-            el.style.transitionDelay = (Math.min(n++, 8) * 70) + 'ms';
-            (function (e) { setTimeout(function () { e.style.transitionDelay = ''; }, 1700); })(el);
-          }
-        });
-        void view.offsetWidth;
-        els.forEach(function (el) { observer.observe(el); });
-      }
-
-      function go(route, scrollId) {
-        var next = views[route];
-        if (!next) return;
-        if (busy) { pending = [route, scrollId]; return; }
-        if (route === currentRoute) {
-          if (scrollId) scrollToId(scrollId); else window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
-          return;
-        }
-        var prev = currentRoute ? views[currentRoute] : null;
-        var animate = !!prev && !reduce;
-
-        function swap() {
-          ROUTES.forEach(function (r) { if (r !== route) views[r].classList.remove('is-active', 'is-leaving'); });
-          next.classList.add('is-active');
-          document.documentElement.removeAttribute('data-start');
-          currentRoute = route;
-          setTabs(route, !prev);
-          document.title = TITLES[route] + ' | Eloisa Jane L. Zulita';
-          jumpTop();
-          resetReveals(next);
-          if (animate) {
-            var cls = scrollId ? 'is-entering-soft' : 'is-entering';
-            next.classList.add(cls);
-            var done = function () { next.classList.remove(cls); };
-            next.addEventListener('animationend', function f(e) { if (e.target === next) { next.removeEventListener('animationend', f); done(); } });
-            setTimeout(done, 1000);
-            next.focus({ preventScroll: true });
-          }
-          if (scrollId) requestAnimationFrame(function () { scrollToId(scrollId); });
-          busy = false;
-          if (pending) { var p = pending; pending = null; go(p[0], p[1]); }
-        }
-
-        if (!animate) { swap(); return; }
-        busy = true;
-        bar.classList.remove('run'); void bar.offsetWidth; bar.classList.add('run');
-        prev.classList.add('is-leaving');
-        setTimeout(swap, 260);
-      }
-
-      // every in-page link (#photos, #certificates, #contact, #hosting ...) goes through the router
-      document.addEventListener('click', function (e) {
-        var a = e.target.closest && e.target.closest('a[href^="#"]');
-        if (!a) return;
-        var href = a.getAttribute('href');
-        if (!href || href.length < 2) return;
-        var r = resolve(href);
-        if (!r) return;
-        e.preventDefault();
-        closeMenu();
-        var target = r.scroll || r.route;
-        if (location.hash !== '#' + target) history.pushState(null, '', '#' + target);
-        go(r.route, r.scroll);
-      });
-      window.addEventListener('popstate', function () {
-        var r = resolve(location.hash) || { route: 'info' };
-        go(r.route, r.scroll);
-      });
-
-      window.addEventListener('resize', function () { placePill(true); });
-      window.addEventListener('load', function () { placePill(true); });
-      if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { placePill(true); });
-
-      var first = resolve(location.hash) || { route: 'info' };
-      go(first.route, first.scroll);
-    });
-  </script>
-<script>
-  (function(){
-    var root=document.documentElement,btn=document.getElementById('themeToggle');
-    function paint(){var l=root.getAttribute('data-theme')==='light';btn.innerHTML=l?'&#9790;':'&#9728;';btn.setAttribute('aria-label',l?'Switch to dark mode':'Switch to light mode');}
-    btn.addEventListener('click',function(){var l=root.getAttribute('data-theme')==='light';
-      if(l)root.removeAttribute('data-theme');else root.setAttribute('data-theme','light');
-      try{localStorage.setItem('theme',l?'dark':'light');}catch(e){} paint();});
-    paint();
-  })();
-</script>
-<script>
-  (function(){
-    var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var SPEED=60, runners=[];
-    function carousel(track,opt){
-      if(!track)return; opt=opt||{};
-      var stage=document.createElement('div');stage.className='cx-stage';
-      track.parentNode.insertBefore(stage,track);stage.appendChild(track);track.classList.add('cx-track','cx-run');
-      if(opt.cls)track.classList.add(opt.cls);
-      var prev=document.createElement('button'),next=document.createElement('button'),dots=document.createElement('div');
-      prev.className='cx-btn cx-prev';prev.innerHTML='&larr;';prev.setAttribute('aria-label','Previous');prev.type='button';
-      next.className='cx-btn cx-next';next.innerHTML='&rarr;';next.setAttribute('aria-label','Next');next.type='button';
-      dots.className='cx-dots';stage.appendChild(prev);stage.appendChild(next);stage.parentNode.insertBefore(dots,stage.nextSibling);
-      var r={track:track,pos:1,expected:0,hold:0,hover:false,touch:false,inView:true,half:0};
-      var originals=[],filling=false,timer=null;
-      function gap(){return parseFloat(getComputedStyle(track).columnGap||getComputedStyle(track).gap)||22;}
-      function step(){return originals.length?originals[0].offsetWidth+gap():300;}
-      function fill(){
-        filling=true;
-        [].slice.call(track.querySelectorAll('[data-clone]')).forEach(function(c){c.remove();});
-        originals=[].slice.call(track.children);
-        originals.forEach(function(k){k.classList.add('visible');});
-        for(var s=0;s<2;s++){originals.forEach(function(k,i){var c=k.cloneNode(true);c.setAttribute('data-clone',i);c.setAttribute('aria-hidden','true');c.classList.add('visible');track.appendChild(c);});}
-        dots.innerHTML='';
-        originals.forEach(function(k,j){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Slide '+(j+1));
-          b.addEventListener('click',function(){track.scrollTo({left:j*step()+0.5,behavior:'smooth'});r.hold=Date.now()+700;});dots.appendChild(b);});
-        if(mo)mo.takeRecords();
-        filling=false;r.pos=track.scrollLeft||1;paint();
-      }
-      function half(){var c=track.querySelector('[data-clone]');return(c&&originals[0])?c.offsetLeft-originals[0].offsetLeft:0;}
-      function paint(){var hf=half();if(!hf||!originals.length)return;var x=((track.scrollLeft%hf)+hf)%hf,i=Math.round(x/step())%originals.length;
-        [].forEach.call(dots.children,function(d,j){d.className=j===i?'on':'';});}
-      r.wrap=function(){var hf=half();if(!hf)return;
-        if(track.scrollLeft>=hf){track.scrollLeft-=hf;r.pos-=hf;}
-        else if(track.scrollLeft<=0){track.scrollLeft+=hf;r.pos+=hf;}
-        r.expected=track.scrollLeft;};
-      var playing=0;stage.addEventListener('play',function(){playing++;},true);stage.addEventListener('pause',function(){playing=Math.max(0,playing-1);},true);r.paused=function(){return r.touch||document.hidden||Date.now()<r.hold||playing>0;};
-      track.addEventListener('scroll',function(){
-        if(Math.abs(track.scrollLeft-r.expected)>2.5){r.pos=track.scrollLeft;r.expected=track.scrollLeft;}
-        r.wrap();paint();},{passive:true});
-      prev.addEventListener('click',function(){r.hold=Date.now()+700;track.scrollBy({left:-step(),behavior:'smooth'});});
-      next.addEventListener('click',function(){r.hold=Date.now()+700;track.scrollBy({left:step(),behavior:'smooth'});});
-            stage.addEventListener('touchstart',function(){r.touch=true;},{passive:true});
-      ['touchend','touchcancel'].forEach(function(e){stage.addEventListener(e,function(){r.touch=false;r.hold=Date.now()+900;},{passive:true});});
-      stage.addEventListener('wheel',function(ev){if(Math.abs(ev.deltaX)>Math.abs(ev.deltaY))r.hold=Date.now()+900;},{passive:true});
-      if(opt.forward){track.addEventListener('click',function(e){var s=e.target.closest('[data-clone]');if(!s)return;
-        var o=originals[+s.getAttribute('data-clone')];if(o){e.preventDefault();e.stopPropagation();(o.querySelector('.cert-thumb')||o).click();}},true);}
-      if('IntersectionObserver' in window){new IntersectionObserver(function(es){r.inView=es[0].isIntersecting;}).observe(stage);}
-      var mo=null;
-      if(opt.dynamic){mo=new MutationObserver(function(){if(filling)return;clearTimeout(timer);timer=setTimeout(fill,450);});mo.observe(track,{childList:true});}
-      else fill();
-      runners.push(r);
-      return r;
     }
-    var last=performance.now();
-    (function frame(t){
-      var dt=Math.min(64,t-last)/1000;last=t;
-      runners.forEach(function(r){
-        if(!r.inView||r.paused())return;
-        var hf=r.half;r.pos+=SPEED*dt;r.track.scrollLeft=r.pos;r.expected=r.track.scrollLeft;r.wrap();
-      });
-      requestAnimationFrame(frame);
-    })(last);
-    carousel(document.querySelector('#certs .card-grid'),{cls:'cx-cert'});
-    carousel(document.querySelector('#hosting .gallery'),{dynamic:true,forward:true});
-    carousel(document.querySelector('#voiceover .card-grid'),{cls:'cx-wide'});
-  })();
-</script>
-<script>
-  (function(){
-    // certificate previews open in the image viewer
-    var lb=document.getElementById('lightbox'),li=lb.querySelector('img');
-    document.querySelectorAll('.cert-thumb').forEach(function(t){
-      function open(){li.src=t.src;li.alt=t.alt;lb.classList.add('open');document.body.style.overflow='hidden';}
-      t.addEventListener('click',open);t.addEventListener('keydown',function(e){if(e.key==='Enter'){open();}});
-    });
-    // voice-over: tap play (with sound); only one plays at a time
-    var vids=[].slice.call(document.querySelectorAll('.vwrap video'));
-    vids.forEach(function(v){
-      v.muted=false;v.removeAttribute('muted');
-      var b=v.parentNode.querySelector('.snd');if(b)b.hidden=true;
-      v.addEventListener('play',function(){vids.forEach(function(o){if(o!==v)o.pause();});});
-    });
-  })();
-</script>
 
+    function closeAll() {
+      document.querySelectorAll('.drawer').forEach((el) => {
+        el.classList.remove('open');
+        el.setAttribute('aria-hidden', 'true');
+      });
+      document.querySelectorAll('.nav-btn').forEach((btn) => {
+        btn.classList.remove('active');
+      });
+    }
+  </script>
 </body>
 </html>
