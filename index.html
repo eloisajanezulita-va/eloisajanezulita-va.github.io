@@ -1,425 +1,1221 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Eloisa Jane L. Zulita | Social Media & Customer Support VA</title>
-<meta name="description" content="Eloisa Jane L. Zulita, Social Media & Customer Support Virtual Assistant. EF SET C2 Proficient English (76/100).">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<style>
-:root{
-  --indigo:#4C1D95; --purple:#9333EA; --ink:#F8FAFC;
-  --bg:#0c0618; --bg2:#150a2b; --card:rgba(255,255,255,.055); --line:rgba(255,255,255,.12);
-  --muted:rgba(248,250,252,.72); --glow:0 0 36px rgba(147,51,234,.45);
-  --grad:linear-gradient(135deg,#4C1D95 0%,#9333EA 100%);
-  --serif:'Instrument Serif',Georgia,serif; --sans:'DM Sans',system-ui,sans-serif;
-}
-html[data-theme="light"]{
-  --bg:#faf7ff; --bg2:#f1eaff; --card:#fff; --line:rgba(76,29,149,.15);
-  --ink:#1b0b3a; --muted:rgba(27,11,58,.72); --glow:0 8px 30px rgba(147,51,234,.22);
-}
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;min-height:100dvh;overflow-x:hidden}
-body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
-  background:radial-gradient(60vw 50vw at 85% -10%,rgba(147,51,234,.35),transparent 60%),
-             radial-gradient(50vw 45vw at -10% 100%,rgba(76,29,149,.55),transparent 60%)}
-a{color:inherit}
-h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.1}
-h2{font-size:clamp(2rem,5vw,3.2rem)} h3{font-size:1.45rem}
-.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
-.grad-text{background:linear-gradient(90deg,#c4a1ff,#9333EA 60%,#d8b4fe);-webkit-background-clip:text;background-clip:text;color:transparent}
-html[data-theme="light"] .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eloisa Jane L. Zulita | Social Media & Customer Support VA</title>
+  <meta name="description" content="Portfolio of Eloisa Jane L. Zulita - Social Media and Customer Support Virtual Assistant, Online ESL Instructor and Operations Support Coordinator. EF SET C2 Proficient English." />
+  <meta name="keywords" content="Customer Support VA, Social Media VA, Virtual Assistant, Philippines, ESL Instructor, Canva, CapCut, Meta Business Suite" />
 
-/* NAV */
-header{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);background:color-mix(in srgb,var(--bg) 78%,transparent);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
-.brand{font-family:var(--serif);font-size:1.4rem;text-decoration:none;white-space:nowrap}
-.links{display:flex;gap:2px;align-items:center}
-.links a{font-size:.88rem;text-decoration:none;padding:8px 11px;border-radius:99px;color:var(--muted);transition:.2s}
-.links a:hover{color:var(--ink);background:var(--card)}
-.links a.active{color:#fff;background:var(--grad);box-shadow:var(--glow)}
-.tools{display:flex;gap:8px}
-.icon-btn{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;font-size:1.05rem}
-#burger{display:none}
-@media(max-width:1020px){
-  #burger{display:block}
-  .links{position:fixed;inset:64px 0 auto 0;flex-direction:column;align-items:stretch;padding:12px 16px 20px;background:var(--bg2);border-bottom:1px solid var(--line);transform:translateY(-130%);transition:transform .3s;max-height:calc(100dvh - 64px);overflow:auto}
-  .links.open{transform:none}
-  .links a{padding:13px 16px;font-size:1rem}
-}
+  <!-- Open Graph -->
+  <meta property="og:title" content="Eloisa Jane L. Zulita | Social Media & Customer Support VA" />
+  <meta property="og:description" content="Supporting customers with warmth. Giving brands a voice." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="profile.jpeg" />
 
-/* BUTTONS */
-.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:600 .95rem var(--sans);text-decoration:none;cursor:pointer;transition:.25s}
-.btn:hover{transform:translateY(-2px);box-shadow:var(--glow)}
-.btn.primary{background:var(--grad);color:#fff;border-color:transparent;box-shadow:var(--glow)}
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%237c3aed'/%3E%3Ctext x='50' y='66' font-size='52' text-anchor='middle' fill='white' font-family='Georgia' font-style='italic'%3EE%3C/text%3E%3C/svg%3E" />
 
-/* VIEWS */
-.view{display:none}
-.view.show{display:block;animation:in .55s cubic-bezier(.2,.7,.2,1) both}
-@keyframes in{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-section.page{padding:56px 0 24px}
-.lead{color:var(--muted);max-width:62ch;margin-top:12px}
-.eyebrow{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:#c4a1ff;font-weight:600;margin-bottom:10px}
-html[data-theme="light"] .eyebrow{color:var(--purple)}
+  <!-- Fonts: Instrument Serif (headings) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
 
-/* HERO: fits one screen */
-.hero{min-height:calc(100dvh - 64px);display:flex;align-items:center;padding:24px 0}
-.hero-grid{display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,5vw,64px);align-items:center}
-.photo{width:clamp(170px,26vw,320px);aspect-ratio:1;border-radius:50%;padding:5px;background:var(--grad);box-shadow:var(--glow),0 0 90px rgba(147,51,234,.35)}
-.photo img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;border:4px solid var(--bg)}
-.badge{display:inline-block;font-size:.8rem;padding:6px 14px;border-radius:99px;border:1px solid var(--line);background:var(--card);margin-bottom:16px}
-.hero h1{font-size:clamp(2.5rem,7vw,5rem)}
-.role{font-size:clamp(1rem,2.2vw,1.35rem);margin:10px 0 14px;font-weight:600}
-.hero p.bio{color:var(--muted);max-width:56ch}
-.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-@media(max-width:760px){
-  .hero{align-items:flex-start;padding-top:20px}
-  .hero-grid{grid-template-columns:1fr;text-align:center;justify-items:center;gap:18px}
-  .photo{width:150px}
-  .hero p.bio{font-size:.95rem}
-  .cta{justify-content:center;gap:10px}.cta .btn{padding:12px 20px;font-size:.9rem}
-}
+  <style>
+    /* =========================================================
+       EASY EDIT: change the colors and fonts below
+       ========================================================= */
+    :root {
+      --black: #0a0a0f;
+      --dark-purple: #1a0b2e;
+      --deep-purple: #2a1250;
+      --violet: #7c3aed;
+      --purple: #a855f7;
+      --lavender: #c4b5fd;
+      --white: #ffffff;
+      --text: #ffffff;
+      --text-soft: #e4dcfb;
+      --card-bg: rgba(255, 255, 255, 0.06);
+      --card-border: rgba(196, 181, 253, 0.22);
+      --radius: 18px;
+      --shadow-glow: 0 0 40px rgba(124, 58, 237, 0.35);
+      --font-heading: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+      --font-body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    }
 
-/* CARDS */
-.grid{display:grid;gap:18px;margin-top:30px}
-.g3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px;transition:.3s;display:block;text-decoration:none}
-a.card:hover,.card.lift:hover{transform:translateY(-4px);box-shadow:var(--glow);border-color:rgba(147,51,234,.6)}
-.card p,.card li{color:var(--muted);font-size:.95rem}
-.card h3{margin-bottom:8px}
-.card ul{padding-left:18px;margin-top:10px;display:grid;gap:6px}
-.ico{font-size:1.7rem;margin-bottom:10px}
-.tag{display:inline-block;font-size:.72rem;padding:4px 11px;border-radius:99px;background:rgba(147,51,234,.2);border:1px solid rgba(147,51,234,.4);margin:0 6px 6px 0}
-.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
-.chip{padding:9px 16px;border-radius:99px;border:1px solid var(--line);background:var(--card);font-size:.9rem;transition:.2s}
-.chip:hover{border-color:var(--purple);box-shadow:var(--glow)}
-.segment{display:inline-flex;gap:4px;padding:5px;border:1px solid var(--line);border-radius:99px;background:var(--card);margin-top:24px;flex-wrap:wrap}
-.segment button{border:0;background:none;color:var(--muted);padding:9px 18px;border-radius:99px;font:600 .88rem var(--sans);cursor:pointer}
-.segment button.on{background:var(--grad);color:#fff}
-.timeline{border-left:2px solid var(--line);margin-top:28px;padding-left:24px;display:grid;gap:22px}
-.tl{position:relative}
-.tl::before{content:"";position:absolute;left:-31px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--purple);box-shadow:var(--glow)}
-.tl small{color:#c4a1ff;font-weight:600}
-html[data-theme="light"] .tl small{color:var(--purple)}
-.back{margin-bottom:18px}
-.stars{color:#fbbf24;letter-spacing:3px}
-.ph{opacity:.8;font-style:italic}
+    /* ---------- Reset & base ---------- */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    [hidden] { display: none !important; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body { font-family: var(--font-body); background: var(--black); color: var(--text); line-height: 1.7; overflow-x: hidden; font-size: 1.02rem; }
+    h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height: 1.1; color: var(--white); letter-spacing: -0.01em; }
+    h1 em, h2 em, h3 em { font-style: italic; color: var(--purple); }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    ul { list-style: none; }
+    .container { width: min(1120px, 92%); margin: 0 auto; }
 
-/* KEEP EXPLORING */
-.explore{margin:56px 0 64px;padding:30px;border-radius:26px;border:1px solid var(--line);background:linear-gradient(135deg,rgba(76,29,149,.45),rgba(147,51,234,.15))}
-.explore h3{margin-bottom:16px}
-.explore .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-.explore a{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:18px 20px;border-radius:16px;background:var(--card);border:1px solid var(--line);text-decoration:none;font-weight:600;transition:.25s}
-.explore a:hover{transform:translateY(-3px);box-shadow:var(--glow);border-color:var(--purple)}
-.explore a small{display:block;font-weight:400;color:var(--muted)}
+    /* ---------- Buttons ---------- */
+    .btn {
+      display: inline-block; padding: 14px 32px; border-radius: 999px;
+      background: linear-gradient(135deg, var(--violet), var(--purple));
+      color: var(--white); font-weight: 600; border: 2px solid transparent; cursor: pointer;
+      font-size: 1rem; font-family: var(--font-body);
+      transition: transform .25s, box-shadow .25s; box-shadow: 0 6px 24px rgba(124, 58, 237, 0.45);
+    }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 34px rgba(168, 85, 247, 0.6); }
+    .btn-outline { background: transparent; border-color: var(--lavender); box-shadow: none; }
+    .btn-outline:hover { background: rgba(196, 181, 253, 0.15); }
+    .btn-small { padding: 10px 24px; font-size: .95rem; }
 
-/* FORM */
-form{display:grid;gap:14px}
-label{font-size:.85rem;font-weight:600;display:grid;gap:6px}
-input,select,textarea{font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;width:100%}
-input:focus,select:focus,textarea:focus{outline:2px solid var(--purple);outline-offset:1px}
-select option{color:#111}
-footer{text-align:center;color:var(--muted);font-size:.85rem;padding:24px 0 40px;border-top:1px solid var(--line)}
-.sr{position:absolute;left:-9999px}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}}
-</style>
+    /* ---------- Navbar ---------- */
+    .navbar { position: fixed; top: 0; left: 0; width: 100%; z-index: 100; background: rgba(10, 10, 15, 0.75); backdrop-filter: blur(14px); border-bottom: 1px solid var(--card-border); transition: background .3s; }
+    .navbar.scrolled { background: rgba(10, 10, 15, 0.95); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 76px; gap: 20px; }
+    .logo { font-family: var(--font-heading); font-size: 1.5rem; color: var(--white); line-height: 1.1; white-space: nowrap; }
+    .logo span { color: var(--purple); font-style: italic; }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a:not(.btn) { color: var(--text-soft); font-weight: 500; transition: color .2s; font-size: .98rem; }
+    .nav-links a:not(.btn):hover, .nav-links a.active { color: var(--white); }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .hamburger span { display: block; width: 26px; height: 3px; background: var(--white); margin: 5px 0; border-radius: 2px; transition: .3s; }
+
+    /* ---------- Hero ---------- */
+    .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding: 130px 0 80px; background: linear-gradient(160deg, var(--black) 0%, var(--dark-purple) 55%, var(--deep-purple) 100%); overflow: hidden; }
+    .glow { position: absolute; border-radius: 50%; filter: blur(110px); opacity: .5; pointer-events: none; }
+    .glow-1 { width: 420px; height: 420px; background: var(--violet); top: -80px; right: -60px; }
+    .glow-2 { width: 360px; height: 360px; background: var(--purple); bottom: -100px; left: -80px; opacity: .3; }
+    .hero-inner { position: relative; display: grid; grid-template-columns: 1.3fr 1fr; gap: 50px; align-items: center; }
+    .eyebrow { color: var(--lavender); font-size: 1.05rem; font-weight: 500; margin-bottom: 14px; }
+    .hero h1 { font-size: clamp(2.9rem, 6.2vw, 5rem); line-height: 1.04; }
+    .tagline { color: var(--text-soft); margin: 24px 0 32px; max-width: 560px; font-size: 1.15rem; }
+    .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-photo { display: flex; justify-content: center; }
+    .photo-frame { width: min(380px, 80vw); aspect-ratio: 4/5; border-radius: 28px; overflow: hidden; border: 3px solid var(--purple); box-shadow: var(--shadow-glow), 0 0 80px rgba(168, 85, 247, 0.3); background: linear-gradient(145deg, var(--deep-purple), var(--violet)); position: relative; }
+    .photo-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top center; opacity: 0; transition: opacity .6s; }
+    .photo-frame img.loaded { opacity: 1; }
+    .photo-fallback { display: none; position: absolute; inset: 0; align-items: center; justify-content: center; font-family: var(--font-heading); font-style: italic; font-size: 6rem; color: var(--white); }
+    .photo-frame.no-photo .photo-fallback { display: flex; }
+
+    /* ---------- Sections ---------- */
+    .section { padding: 100px 0; background: var(--black); }
+    .section-alt { background: linear-gradient(180deg, var(--dark-purple), var(--black)); }
+    .section-head { text-align: center; margin-bottom: 55px; }
+    .section-head h2 { font-size: clamp(2.3rem, 5vw, 3.5rem); }
+    .lead { color: var(--text-soft); max-width: 580px; margin: 16px auto 0; }
+
+    /* ---------- About ---------- */
+    .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 50px; align-items: center; }
+    .about-text p { color: var(--text-soft); margin-bottom: 18px; }
+    .about-text strong { color: var(--white); }
+    .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .stat { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 24px 16px; text-align: center; }
+    .stat .num { display: block; font-family: var(--font-heading); font-size: 2.6rem; line-height: 1.1; color: var(--purple); }
+    .stat .label { font-size: .9rem; color: var(--text-soft); }
+
+    /* ---------- Cards ---------- */
+    .group-title { font-size: 2rem; margin: 10px 0 24px; color: var(--lavender); }
+    .group-title:not(:first-of-type) { margin-top: 60px; }
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
+    .card-grid.three { grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); }
+    .card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 30px 26px; backdrop-filter: blur(8px); transition: transform .3s, border-color .3s, box-shadow .3s; }
+    .card:hover { transform: translateY(-8px); border-color: var(--purple); box-shadow: var(--shadow-glow); }
+    .card .icon { width: 54px; height: 54px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 18px; background: linear-gradient(135deg, var(--violet), var(--purple)); color: var(--white); }
+    .card h4 { font-size: 1.5rem; margin-bottom: 8px; }
+    .card p { color: var(--text-soft); font-size: .96rem; }
+
+    /* ---------- Timeline ---------- */
+    .timeline { position: relative; max-width: 800px; margin: 0 auto; padding-left: 40px; }
+    .timeline::before { content: ''; position: absolute; left: 11px; top: 0; bottom: 0; width: 3px; background: linear-gradient(var(--purple), var(--violet), transparent); border-radius: 3px; }
+    .t-item { position: relative; margin-bottom: 36px; }
+    .t-dot { position: absolute; left: -40px; top: 26px; width: 24px; height: 24px; border-radius: 50%; background: var(--black); border: 4px solid var(--purple); box-shadow: 0 0 18px var(--purple); }
+    .t-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 26px; }
+    .t-date { display: inline-block; background: rgba(124, 58, 237, 0.35); color: var(--white); padding: 4px 14px; border-radius: 999px; font-size: .82rem; font-weight: 600; margin-bottom: 10px; }
+    .t-card h4 { font-size: 1.7rem; }
+    .t-company { color: var(--lavender); margin-bottom: 12px; font-weight: 500; }
+    .t-card li { color: var(--text-soft); position: relative; padding-left: 20px; margin-bottom: 6px; font-size: .96rem; }
+    .t-card li::before { content: '\2726'; position: absolute; left: 0; color: var(--purple); }
+
+    /* ---------- Skills ---------- */
+    .skill-cats { margin-bottom: 40px; }
+    .skill-cats .card h4 { color: var(--lavender); }
+    .badges { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .badges span { padding: 9px 18px; border-radius: 999px; background: rgba(124, 58, 237, 0.2); border: 1px solid var(--violet); color: var(--white); font-size: .92rem; font-weight: 500; transition: .25s; }
+    .badges span:hover { background: var(--violet); transform: translateY(-3px); }
+
+    /* ---------- Work ---------- */
+    .work-thumb { height: 150px; border-radius: 12px; margin-bottom: 18px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--deep-purple), var(--violet)); color: var(--white); font-family: var(--font-heading); font-size: 1.6rem; }
+    .work p { margin-bottom: 18px; }
+
+    /* ---------- Image galleries (certificates, recruitment, hosting) ---------- */
+    .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 22px; }
+    .shot { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--card-border); background: #000; cursor: zoom-in; transition: transform .3s, border-color .3s, box-shadow .3s; }
+    .shot:hover, .shot:focus-visible { transform: translateY(-6px); border-color: var(--purple); box-shadow: var(--shadow-glow); outline: none; }
+    .shot img { width: 100%; height: 100%; aspect-ratio: 4/3; object-fit: contain; background: #0d0716; }
+    .gallery.cover .shot img { aspect-ratio: 4/5; object-fit: cover; }
+    .hint { text-align: center; color: var(--text-soft); font-size: .9rem; margin-top: 22px; }
+
+
+    /* ---------- Certificate cards & voice-over ---------- */
+    .cert-meta { color: var(--text-soft); font-size: .92rem; margin-bottom: 16px; }
+    .cert-btns { display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto; }
+    .card.cert { display: flex; flex-direction: column; }
+    .video-card video { width: 100%; border-radius: 12px; background: #000; display: block; aspect-ratio: 16/9; }
+    .video-card h4 { margin-top: 14px; }
+
+    .lightbox { position: fixed; inset: 0; z-index: 200; background: rgba(5, 3, 10, 0.94); display: none; align-items: center; justify-content: center; padding: 24px; cursor: zoom-out; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 100%; max-height: 90vh; border-radius: 12px; box-shadow: var(--shadow-glow); }
+    .lb-close { position: absolute; top: 18px; right: 22px; font-size: 2.4rem; line-height: 1; background: none; border: none; color: var(--white); cursor: pointer; }
+
+    /* ---------- Carousel ---------- */
+    .carousel { max-width: 760px; margin: 0 auto; text-align: center; }
+    .slides { position: relative; min-height: 210px; }
+    .slide { position: absolute; inset: 0; opacity: 0; transition: opacity .6s; pointer-events: none; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 36px 30px; }
+    .slide.active { opacity: 1; pointer-events: auto; position: relative; }
+    .slide p { font-family: var(--font-heading); font-size: 1.6rem; line-height: 1.3; color: var(--white); font-style: italic; margin-bottom: 18px; }
+    .slide cite { color: var(--lavender); font-style: normal; font-weight: 600; }
+    .carousel-controls { display: flex; align-items: center; justify-content: center; gap: 20px; margin-top: 24px; }
+    .carousel-controls button { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--purple); background: transparent; color: var(--white); font-size: 1.1rem; cursor: pointer; transition: .25s; }
+    .carousel-controls button:hover { background: var(--violet); }
+    .dots { display: flex; gap: 10px; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255, 255, 255, 0.3); border: none; cursor: pointer; padding: 0; }
+    .dot.active { background: var(--purple); transform: scale(1.3); }
+
+    /* ---------- Contact ---------- */
+    .contact-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: start; }
+    .form { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 32px; }
+    .form label { display: block; font-weight: 600; margin: 14px 0 6px; color: var(--white); }
+    .form label:first-child { margin-top: 0; }
+    .form input, .form textarea { width: 100%; padding: 13px 16px; border-radius: 12px; background: rgba(0, 0, 0, 0.45); border: 1px solid var(--card-border); color: var(--white); font-family: var(--font-body); font-size: 1rem; }
+    .form input::placeholder, .form textarea::placeholder { color: #b9acd9; }
+    .form input:focus, .form textarea:focus { outline: none; border-color: var(--purple); box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.3); }
+    .form .btn { margin-top: 22px; width: 100%; }
+    .contact-links { display: flex; flex-direction: column; gap: 14px; }
+    .link-btn { display: block; padding: 14px 20px; border-radius: 14px; background: var(--card-bg); border: 1px solid var(--card-border); color: var(--white); font-weight: 500; transition: .25s; word-break: break-word; }
+    .link-btn:hover { border-color: var(--purple); background: rgba(124, 58, 237, 0.25); transform: translateX(6px); }
+    .contact-links .btn-outline { text-align: center; margin-top: 8px; }
+
+    /* ---------- Footer ---------- */
+    .footer { background: #050508; border-top: 1px solid var(--card-border); padding: 30px 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
+    .footer p { color: var(--text-soft); font-size: .9rem; }
+    .footer-links { display: flex; gap: 22px; }
+    .footer-links a { color: var(--lavender); font-size: .9rem; }
+    .footer-links a:hover { color: var(--white); }
+    .to-top { position: fixed; right: 22px; bottom: 22px; width: 46px; height: 46px; border-radius: 50%; border: none; cursor: pointer; background: linear-gradient(135deg, var(--violet), var(--purple)); color: var(--white); font-size: 1.2rem; box-shadow: var(--shadow-glow); opacity: 0; pointer-events: none; transition: .3s; z-index: 90; }
+    .to-top.show { opacity: 1; pointer-events: auto; }
+
+
+    /* ---------- Nav polish, theme toggle, tools ---------- */
+    .nav-links a, .btn, .logo { white-space: nowrap; }
+    .btn { color: #fff; } .btn-outline { color: var(--white); }
+    .theme-toggle { width: 42px; height: 42px; flex: none; border-radius: 50%; border: 1px solid var(--card-border); background: transparent; color: var(--white); font-size: 1.1rem; cursor: pointer; transition: .25s; }
+    .theme-toggle:hover { border-color: var(--purple); background: var(--card-bg); }
+    .lb-close { color: #fff; }
+    .tools-block { margin-top: 60px; text-align: center; }
+    .tools-block h3 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+    .tool-card { max-width: 620px; margin: 28px auto 0; }
+    .tool-card .gw { font-family: var(--font-body); font-weight: 600; font-size: 1.7rem; color: var(--white); margin-bottom: 16px; }
+    .gw .b{color:#4285f4}.gw .r{color:#ea4335}.gw .y{color:#fbbc05}.gw .g{color:#34a853}
+    html[data-theme="light"] {
+      --black: #faf7ff; --dark-purple: #f1e9ff; --deep-purple: #e4d6ff; --white: #1a0b2e; --text: #2a1f3d;
+      --text-soft: #5b4d78; --lavender: #6d28d9; --card-bg: rgba(124, 58, 237, 0.06); --card-border: rgba(124, 58, 237, 0.22);
+      --shadow-glow: 0 0 30px rgba(124, 58, 237, 0.18);
+    }
+    html[data-theme="light"] .navbar { background: rgba(250, 247, 255, 0.82); }
+    html[data-theme="light"] .navbar.scrolled { background: rgba(250, 247, 255, 0.97); }
+    html[data-theme="light"] .footer { background: #efe6ff; }
+    html[data-theme="light"] .card .icon, html[data-theme="light"] .work-thumb, html[data-theme="light"] .to-top, html[data-theme="light"] .photo-fallback, html[data-theme="light"] .badges span:hover, html[data-theme="light"] .carousel-controls button:hover { color: #fff; }
+    html[data-theme="light"] .shot { background: #ece4fb; }
+    html[data-theme="light"] .shot img { background: #ece4fb; }
+    html[data-theme="light"] .form input, html[data-theme="light"] .form textarea { background: rgba(255, 255, 255, 0.85); }
+    html[data-theme="light"] .link-btn:hover { background: rgba(124, 58, 237, 0.12); }
+    @media (max-width: 1040px) { html[data-theme="light"] .nav-links { background: rgba(250, 247, 255, 0.98); } .theme-toggle { margin: 8px auto 0; } }
+
+
+    /* ---------- Effects & animation ---------- */
+    .gw-logo { display: block; margin: 0 auto 22px; width: min(420px, 85%); height: auto; animation: gwFloat 5s ease-in-out infinite, gwGlow 5s ease-in-out infinite; transition: transform .4s; }
+    .gw-logo:hover { transform: scale(1.06) rotate(-1deg); }
+    .gw-for-light { display: none; } html[data-theme="light"] .gw-for-light { display: block; } html[data-theme="light"] .gw-for-dark { display: none; }
+    @keyframes gwFloat { 0%, 100% { translate: 0 0; } 50% { translate: 0 -9px; } }
+    @keyframes gwGlow { 0%, 100% { filter: drop-shadow(0 4px 10px rgba(124, 58, 237, .15)); } 50% { filter: drop-shadow(0 12px 24px rgba(168, 85, 247, .5)); } }
+    .tool-card .badges span { animation: chipPop .6s cubic-bezier(.2, 1.4, .4, 1) backwards; }
+    .tool-card .badges span:nth-child(1) { animation-delay: .1s; } .tool-card .badges span:nth-child(2) { animation-delay: .2s; } .tool-card .badges span:nth-child(3) { animation-delay: .3s; } .tool-card .badges span:nth-child(4) { animation-delay: .4s; }
+    .tool-card .badges span:nth-child(5) { animation-delay: .5s; } .tool-card .badges span:nth-child(6) { animation-delay: .6s; } .tool-card .badges span:nth-child(7) { animation-delay: .7s; } .tool-card .badges span:nth-child(8) { animation-delay: .8s; }
+    @keyframes chipPop { from { opacity: 0; transform: scale(.4) translateY(14px); } to { opacity: 1; transform: none; } }
+    .shot { position: relative; animation: shotIn .8s ease backwards; }
+    .shot:nth-child(2) { animation-delay: .12s; } .shot:nth-child(3) { animation-delay: .24s; } .shot:nth-child(4) { animation-delay: .36s; } .shot:nth-child(5) { animation-delay: .48s; } .shot:nth-child(n+6) { animation-delay: .6s; }
+    @keyframes shotIn { from { opacity: 0; transform: translateY(34px) scale(.94); } to { opacity: 1; transform: none; } }
+    .shot img { transition: transform .6s ease; }
+    .shot:hover img { transform: scale(1.07); }
+    .shot::after { content: ""; position: absolute; inset: 0; background: linear-gradient(115deg, transparent 35%, rgba(255, 255, 255, .28) 50%, transparent 65%); transform: translateX(-120%); transition: transform .8s ease; pointer-events: none; }
+    .shot:hover::after { transform: translateX(120%); }
+    .video-card { transition: transform .35s, box-shadow .35s; } .video-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-glow); }
+    .card.cert .icon { transition: transform .4s; } .card.cert:hover .icon { transform: rotate(-8deg) scale(1.12); }
+    @media (prefers-reduced-motion: reduce) { .gw-logo, .tool-card .badges span, .shot { animation: none; } .shot::after { display: none; } }
+
+
+    /* ---------- AI tools, certificate previews, autoplay video ---------- */
+    .ai-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; max-width: 900px; margin: 24px auto 0; }
+    .ai-card { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center; transition: transform .35s, box-shadow .35s; }
+    .ai-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-glow); }
+    .ai-card p { color: var(--text-soft); font-size: .92rem; }
+    .ai-logo { height: 54px; width: auto; max-width: 100%; animation: gwFloat 5s ease-in-out infinite; }
+    .ai-icon { height: 62px; filter: drop-shadow(0 6px 12px rgba(124, 58, 237, .35)); }
+    .ai-name { font-weight: 600; font-size: 1.25rem; color: var(--white); margin-top: -4px; }
+    .ai-card:nth-child(2) .ai-logo { animation-delay: .6s; } .ai-card:nth-child(3) .ai-logo { animation-delay: 1.2s; }
+    .cert-thumb { width: 100%; aspect-ratio: 4/3; object-fit: contain; background: #f4f0fa; border-radius: 12px; margin-bottom: 16px; cursor: zoom-in; transition: transform .4s, box-shadow .4s; }
+    .cert-thumb:hover, .cert-thumb:focus-visible { transform: scale(1.03); box-shadow: var(--shadow-glow); outline: none; }
+    .vwrap { position: relative; }
+    .snd { position: absolute; right: 12px; top: 12px; background: rgba(10, 10, 15, .78); color: #fff; border: 1px solid var(--purple); border-radius: 999px; padding: 7px 14px; font: 600 .85rem var(--font-body); cursor: pointer; animation: chipPop .6s backwards; }
+    .snd[hidden] { display: none; }
+
+
+    /* ---------- Moving carousels ---------- */
+    .cx-stage { position: relative; }
+    .cx-track { display: flex !important; grid-template-columns: none !important; gap: 22px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; padding: 10px 4px 18px; }
+    .cx-track::-webkit-scrollbar { display: none; }
+    .cx-track > * { flex: 0 0 min(300px, 78%); scroll-snap-align: start; }
+    .cx-track.cx-wide > * { flex-basis: min(380px, 86%); }
+    .cx-track.cx-cert > * { flex-basis: min(330px, 84%); }
+    .cx-track.cx-link { scroll-snap-type: none; }
+    .cx-run { scroll-snap-type: none !important; }
+    .cx-track { -webkit-mask-image: linear-gradient(90deg, transparent, #000 3%, #000 97%, transparent); mask-image: linear-gradient(90deg, transparent, #000 3%, #000 97%, transparent); }
+    .cx-btn { position: absolute; top: calc(50% - 22px); width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--purple); background: rgba(10, 10, 15, .82); color: #fff; font-size: 1.2rem; cursor: pointer; z-index: 5; transition: .25s; }
+    .cx-btn:hover { background: var(--violet); transform: scale(1.08); }
+    .cx-prev { left: -10px; } .cx-next { right: -10px; }
+    .cx-dots { display: flex; gap: 10px; justify-content: center; margin-top: 4px; flex-wrap: wrap; }
+    .cx-dots button { width: 10px; height: 10px; border-radius: 50%; border: none; padding: 0; background: rgba(255, 255, 255, .3); cursor: pointer; transition: .3s; }
+    html[data-theme="light"] .cx-dots button { background: rgba(124, 58, 237, .25); }
+    .cx-dots button.on { background: var(--purple); transform: scale(1.4); }
+    @media (max-width: 700px) { .cx-prev { left: 2px; } .cx-next { right: 2px; } .cx-btn { width: 40px; height: 40px; } }
+
+    /* ---------- Scroll reveal ---------- */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform .8s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 1040px) {
+      .hamburger { display: block; }
+      .nav-links { position: absolute; top: 76px; left: 0; width: 100%; flex-direction: column; gap: 0; padding: 10px 0 20px; background: rgba(10, 10, 15, 0.98); border-bottom: 1px solid var(--card-border); max-height: 0; overflow: hidden; opacity: 0; transition: .35s; }
+      .nav-links.open { max-height: 560px; opacity: 1; }
+      .nav-links a { padding: 14px 0; width: 100%; text-align: center; }
+      .nav-links .btn { width: auto; margin-top: 8px; }
+    }
+    @media (max-width: 880px) {
+      .hero-inner, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .hero-inner { text-align: center; }
+      .hero-text { order: 2; }
+      .hero-photo { order: 1; }
+      .tagline { margin-left: auto; margin-right: auto; }
+      .hero-buttons { justify-content: center; }
+      .section { padding: 75px 0; }
+      .footer-inner { justify-content: center; text-align: center; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; scroll-behavior: auto !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  
+    /* =========================================================
+       FRAMELESS HALF-BODY CUTOUT HERO PORTRAIT
+       (transparent profile.png / profile.webp sits directly on the gradient)
+       ========================================================= */
+    .hero-photo { position: relative; align-items: flex-end; }
+    .hero-photo::before { content: ""; position: absolute; left: 50%; top: 50%; width: min(470px, 92vw); height: min(560px, 92vw); transform: translate(-50%, -50%); z-index: 0; pointer-events: none;
+      background: radial-gradient(closest-side, rgba(168, 85, 247, .65), rgba(124, 58, 237, .34) 52%, transparent 78%); filter: blur(28px); animation: auraPulse 5.5s ease-in-out infinite; }
+    @keyframes auraPulse { 0%, 100% { opacity: .7; transform: translate(-50%, -50%) scale(.96); } 50% { opacity: 1; transform: translate(-50%, -50%) scale(1.07); } }
+    .photo-cutout { position: relative; z-index: 1; width: auto; max-width: min(100%, 460px); line-height: 0;
+      filter: drop-shadow(0 0 14px rgba(168, 85, 247, .55)) drop-shadow(0 0 34px rgba(124, 58, 237, .45)); transition: filter .5s; }
+    .photo-cutout:hover { filter: drop-shadow(0 0 18px rgba(168, 85, 247, .8)) drop-shadow(0 0 46px rgba(124, 58, 237, .65)); }
+    .photo-cutout img { display: block; width: auto; max-width: 100%; height: auto; max-height: 540px; object-fit: contain; object-position: bottom center;
+      -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%); mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+      opacity: 0; transition: opacity .6s; }
+    .photo-cutout img.loaded { opacity: 1; }
+    .photo-cutout.no-photo .photo-fallback { display: flex; }
+    html[data-theme="light"] .photo-cutout { filter: drop-shadow(0 0 14px rgba(124, 58, 237, .5)) drop-shadow(0 0 30px rgba(168, 85, 247, .4)); }
+    @media (max-width: 880px) { .photo-cutout img { max-height: 400px; } }
+    @media (prefers-reduced-motion: reduce) { .hero-photo::before { animation: none; } }
+
+    /* =========================================================
+       MULTI-VIEW (SPA) ADDITIONS
+       ========================================================= */
+    .page-view { display: none; }
+    .page-view.is-active { display: block; animation: viewIn .6s cubic-bezier(.2, .8, .2, 1) backwards; }
+    @keyframes viewIn { from { opacity: 0; transform: translateY(22px); } }
+    .page-view > .section:first-child:not(.hero) { padding-top: 150px; }
+    .back-wrap { margin-bottom: 26px; }
+    .hub-card { display: block; }
+    .hub-card .more, .explore-card .more { display: inline-block; margin-top: 14px; color: var(--lavender); font-weight: 600; font-size: .95rem; }
+    .card.hub-card:hover .more, .explore-card:hover .more { color: var(--white); }
+    html[data-theme="light"] .hub-card .more, html[data-theme="light"] .explore-card .more { color: var(--violet); }
+    .explore-card .icon { margin-bottom: 14px; }
+    .explore-wrap .section-head { margin-bottom: 40px; }
+    .explore-wrap { padding: 80px 0; }
+    .dir .card { display: block; }
+
+    /* ---------- Dropdown menus ---------- */
+    .dropdown { position: relative; }
+    .dd-btn { background: none; border: none; cursor: pointer; font: inherit; font-weight: 500; font-size: .98rem; color: var(--text-soft); display: inline-flex; align-items: center; gap: 6px; padding: 0; transition: color .2s; white-space: nowrap; }
+    .dd-btn:hover, .dropdown.open .dd-btn, .dropdown.active .dd-btn { color: var(--white); }
+    .caret { font-size: .7rem; transition: transform .25s; }
+    .dropdown.open .caret { transform: rotate(180deg); }
+    .dd-menu { position: absolute; top: calc(100% + 18px); left: 50%; min-width: 230px; transform: translate(-50%, 8px); opacity: 0; visibility: hidden; padding: 8px; border-radius: 14px;
+      background: rgba(18, 8, 34, .97); border: 1px solid var(--card-border); box-shadow: var(--shadow-glow); transition: .22s; }
+    .dropdown.open .dd-menu { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+    .nav-links .dd-menu a { display: block; padding: 10px 14px; border-radius: 10px; white-space: nowrap; }
+    .nav-links .dd-menu a:hover, .nav-links .dd-menu a.active { background: rgba(124, 58, 237, .28); }
+    html[data-theme="light"] .dd-menu { background: rgba(255, 255, 255, .98); }
+    html[data-theme="light"] .dd-btn { color: var(--text-soft); }
+    .nav-links { gap: 20px; }
+    .nav-links a:not(.btn), .dd-btn { font-size: .92rem; }
+    .nav-links .btn.btn-small { padding: 9px 22px; }
+
+    /* hamburger earlier than before because the menu has more items */
+    @media (max-width: 1240px) {
+      .hamburger { display: block; }
+      .nav-links { position: absolute; top: 76px; left: 0; width: 100%; flex-direction: column; align-items: stretch; gap: 0; padding: 10px 0 20px; background: rgba(10, 10, 15, 0.98); border-bottom: 1px solid var(--card-border); max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; transition: .35s; }
+      .nav-links.open { max-height: calc(100vh - 76px); overflow-y: auto; opacity: 1; visibility: visible; }
+      .nav-links a { padding: 14px 0; width: 100%; text-align: center; }
+      .nav-links .btn.btn-small { padding: 12px 32px; width: auto; align-self: center; margin-top: 8px; }
+      .dropdown { width: 100%; text-align: center; }
+      .dd-btn { padding: 14px 0; width: 100%; justify-content: center; }
+      .dd-menu { position: static; transform: none; min-width: 0; max-height: 0; overflow: hidden; opacity: 1; visibility: visible; padding: 0 12px; border: 0; box-shadow: none; background: transparent; transition: max-height .3s; }
+      .dropdown.open .dd-menu { transform: none; max-height: 260px; }
+      .nav-links .dd-menu a { padding: 11px 0; color: var(--lavender); }
+      .theme-toggle { margin: 8px auto 0; }
+      html[data-theme="light"] .nav-links { background: rgba(250, 247, 255, 0.98); }
+      html[data-theme="light"] .nav-links .dd-menu a { color: var(--violet); }
+    }
+  </style>
+<script>try{var t=localStorage.getItem('theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}</script>
 </head>
 <body>
 
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="#about">Eloisa <span class="grad-text">Zulita</span></a>
-    <nav class="links" id="links" aria-label="Main">
-      <a href="#about">About</a><a href="#services">Services</a><a href="#experience">Experience</a>
-      <a href="#tools">Tools</a><a href="#portfolio">Portfolio</a><a href="#education">Education</a>
-      <a href="#testimonials">Testimonials</a><a href="#contact">Contact</a>
-    </nav>
-    <div class="tools">
-      <button class="icon-btn" id="theme" aria-label="Toggle light or dark theme">☾</button>
-      <button class="icon-btn" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#about" class="logo">Eloisa Jane <span>Zulita</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about" data-nav="about">About Me</a>
+        <div class="dropdown" data-group="services">
+          <button type="button" class="dd-btn" aria-haspopup="true" aria-expanded="false">Services <span class="caret">&#9662;</span></button>
+          <div class="dd-menu">
+            <a href="#services" data-nav="services">All Services Overview</a>
+            <a href="#customer-support-va" data-nav="customer-support-va">Customer Support VA</a>
+            <a href="#social-media-va" data-nav="social-media-va">Social Media VA</a>
+          </div>
+        </div>
+        <div class="dropdown" data-group="skills">
+          <button type="button" class="dd-btn" aria-haspopup="true" aria-expanded="false">Experience &amp; Skills <span class="caret">&#9662;</span></button>
+          <div class="dd-menu">
+            <a href="#experience" data-nav="experience">Experience</a>
+            <a href="#transferable-skills" data-nav="transferable-skills">Transferable Skills</a>
+            <a href="#skills-tools" data-nav="skills-tools">Skills &amp; Tools</a>
+            <a href="#tools-systems" data-nav="tools-systems">Tools &amp; Systems</a>
+          </div>
+        </div>
+        <a href="#portfolio" data-nav="portfolio">Portfolio</a>
+        <a href="#education-certification" data-nav="education-certification">Education &amp; Certification</a>
+        <a href="#testimonials" data-nav="testimonials">Testimonials</a>
+        <a href="#keep-exploring" data-nav="keep-exploring">Keep Exploring</a>
+        <a href="#contact" class="btn btn-small" data-nav="contact">Contact</a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode">&#9728;</button>
+      </nav>
     </div>
+  </header>
+
+  <main>
+    <!-- ===== VIEW: about ===== -->
+    <div class="page-view" data-route="about" role="region" aria-label="about">
+<section class="hero" id="home">
+      <div class="glow glow-1"></div>
+      <div class="glow glow-2"></div>
+      <div class="container hero-inner">
+        <div class="hero-text reveal">
+          <p class="eyebrow">Social Media VA, Customer Support VA, online ESL instructor</p>
+          <h1>Supporting customers with warmth. <em>Giving brands a voice.</em></h1>
+          <p class="tagline">I'm Eloisa Jane L. Zulita. I manage social media accounts, create branded content and resolve customer inquiries across email, live chat and DMs, with EF SET C2 Proficient English.</p>
+          <div class="hero-buttons">
+            <a href="#contact" class="btn">Get in touch</a>
+            <a href="#portfolio" class="btn btn-outline">View my work</a>
+          </div>
+        </div>
+        <div class="hero-photo reveal">
+          <div class="photo-cutout" id="photoFrame">
+            <img id="heroPhoto" alt="Portrait of Eloisa Jane L. Zulita" />
+            <span class="photo-fallback">EJ</span>
+          </div>
+        </div>
+      </div>
+    </section>
+<section class="section" id="sec-about">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">About me</p>
+          <h2>Support that <em>feels human</em></h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>I'm a <strong>Social Media &amp; Customer Support Virtual Assistant</strong> based in Governor Generoso, Davao Oriental, Philippines. I have hands-on experience managing social media accounts, creating branded graphics and short-form videos, and resolving high-volume customer inquiries across email, live chat and DMs.</p>
+            <p>Working as an <strong>Online ESL Instructor</strong> and <strong>Operations Manager &amp; Support Coordinator</strong> taught me to communicate patiently, guide people step by step and keep everything organized with clear SOPs and trackers. I use AI tools like Claude, Gemini and ChatGPT every day to draft captions, support macros and documentation, so work stays fast and consistent.</p>
+            <p>I'm also a 4th-year BSED English major, certified at <strong>C2 Proficient</strong> English (EF SET 71/100), and ready to cover shifts across US, UK or APAC time zones.</p>
+          </div>
+          <div class="stats reveal">
+            <div class="stat"><span class="num">C2</span><span class="label">EF SET English (71/100)</span></div>
+            <div class="stat"><span class="num">2025</span><span class="label">Working remotely since</span></div>
+            <div class="stat"><span class="num">3</span><span class="label">Time zones covered: US, UK, APAC</span></div>
+            <div class="stat"><span class="num">4</span><span class="label">Remote &amp; digital roles</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+      <div class="explore-slot" data-next=""></div>
+    </div>
+
+    <!-- ===== VIEW: services ===== -->
+    <div class="page-view" data-route="services" role="region" aria-label="services">
+<section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Services</p>
+          <h2>How I can <em>help you</em></h2>
+          <p class="lead">Choose a specialty to see exactly what I do.</p>
+        </div>
+        <div class="card-grid three hub">
+          <a href="#customer-support-va" class="card hub-card reveal"><div class="icon">&#9993;</div><h4>Customer Support VA</h4><p>Email and live chat support, DM management, empathetic de-escalation, FAQ templates, SOPs and client onboarding.</p><span class="more">View Customer Support services &rarr;</span></a>
+          <a href="#social-media-va" class="card hub-card reveal"><div class="icon">&#128241;</div><h4>Social Media VA</h4><p>Instagram and Facebook management, content calendars, branded graphics, short-form video and copywriting.</p><span class="more">View Social Media services &rarr;</span></a>
+        </div>
+      </div>
+    </section>
+      <div class="explore-slot" data-next=""></div>
+    </div>
+
+    <!-- ===== VIEW: customer-support-va ===== -->
+    <div class="page-view" data-route="customer-support-va" role="region" aria-label="customer-support-va">
+<section class="section">
+      <div class="container">
+        <div class="reveal back-wrap"><a href="#services" class="btn btn-outline btn-small back-btn">&larr; Back to All Services</a></div>
+        <div class="section-head reveal">
+          <p class="eyebrow">Services</p>
+          <h2>Customer Support <em>VA</em></h2>
+        </div>
+        <div class="card-grid">
+          <article class="card reveal"><div class="icon">&#9993;</div><h4>Email &amp; Live Chat Support</h4><p>First-contact support with empathy, clear answers and fast follow-ups.</p></article>
+          <article class="card reveal"><div class="icon">&#128172;</div><h4>DM &amp; Comment Management</h4><p>Handling customer inquiries on social media with a friendly, on-brand voice.</p></article>
+          <article class="card reveal"><div class="icon">&#128153;</div><h4>Empathetic De-escalation</h4><p>Calming frustrated customers and moving them toward a clear resolution.</p></article>
+          <article class="card reveal"><div class="icon">&#128214;</div><h4>FAQ Templates &amp; SOPs</h4><p>Polite response templates and step-by-step SOPs for consistent answers.</p></article>
+          <article class="card reveal"><div class="icon">&#128194;</div><h4>CRM &amp; Tracker Updates</h4><p>Accurate status trackers and data entry in Google Sheets.</p></article>
+          <article class="card reveal"><div class="icon">&#129309;</div><h4>Client Onboarding &amp; Follow-Ups</h4><p>Guiding new clients and team members through onboarding and scheduling.</p></article>
+        </div>
+      </div>
+    </section>
+      <div class="explore-slot" data-next=""></div>
+    </div>
+
+    <!-- ===== VIEW: social-media-va ===== -->
+    <div class="page-view" data-route="social-media-va" role="region" aria-label="social-media-va">
+<section class="section">
+      <div class="container">
+        <div class="reveal back-wrap"><a href="#services" class="btn btn-outline btn-small back-btn">&larr; Back to All Services</a></div>
+        <div class="section-head reveal">
+          <p class="eyebrow">Services</p>
+          <h2>Social Media <em>VA</em></h2>
+        </div>
+        <div class="card-grid">
+          <article class="card reveal"><div class="icon">&#128241;</div><h4>Instagram &amp; Facebook Management</h4><p>Day-to-day account management and community engagement.</p></article>
+          <article class="card reveal"><div class="icon">&#128197;</div><h4>Content Scheduling &amp; Calendars</h4><p>Organized calendars in Meta Business Suite and Google Drive.</p></article>
+          <article class="card reveal"><div class="icon">&#127912;</div><h4>Branded Graphics</h4><p>Eye-catching posts, stories and covers designed in Canva.</p></article>
+          <article class="card reveal"><div class="icon">&#127916;</div><h4>Short-Form Video Editing</h4><p>Reels and TikToks edited in CapCut Pro and Adobe Premiere Pro.</p></article>
+          <article class="card reveal"><div class="icon">&#9998;</div><h4>Copywriting</h4><p>Engaging captions and content hooks tailored to your brand voice.</p></article>
+          <article class="card reveal"><div class="icon">&#128450;</div><h4>Asset Organization</h4><p>Tidy asset libraries in Google Drive and Dropbox so nothing gets lost.</p></article>
+        </div>
+      </div>
+    </section>
+      <div class="explore-slot" data-next=""></div>
+    </div>
+
+    <!-- ===== VIEW: experience ===== -->
+    <div class="page-view" data-route="experience" role="region" aria-label="experience">
+<section class="section" id="sec-experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Experience</p>
+          <h2>My <em>career path</em></h2>
+        </div>
+        <div class="timeline">
+          <div class="t-item reveal">
+            <div class="t-dot"></div>
+            <div class="t-card">
+              <span class="t-date">2026 - Present</span>
+              <h4>Operations Manager &amp; Support Coordinator</h4>
+              <p class="t-company">Star Club / Remote ESL Team</p>
+              <ul>
+                <li>Primary point of contact for daily email and live chat inquiries, guiding applicants and team members through onboarding, scheduling and troubleshooting.</li>
+                <li>Document recurring inquiries into Standard Operating Procedures (SOPs).</li>
+                <li>Maintain accurate status trackers in Google Sheets for fast, consistent resolution.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="t-item reveal">
+            <div class="t-dot"></div>
+            <div class="t-card">
+              <span class="t-date">2025 - Present</span>
+              <h4>Freelance Social Media Manager &amp; Client Inbox Specialist</h4>
+              <p class="t-company">Self-Employed (Remote)</p>
+              <ul>
+                <li>Managed the Instagram account of a private content creator, overseeing daily DM and comment inquiries, community engagement and content coordination.</li>
+                <li>Designed branded graphics in Canva and edited short-form videos in CapCut Pro and Adobe Premiere Pro.</li>
+                <li>Kept organized asset libraries and content calendars in Google Drive and Dropbox.</li>
+                <li>Used AI tools daily to draft captions, content hooks and polite FAQ response templates in the brand's voice.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="t-item reveal">
+            <div class="t-dot"></div>
+            <div class="t-card">
+              <span class="t-date">2025 - Present</span>
+              <h4>Online ESL Instructor &amp; Student Support Specialist</h4>
+              <p class="t-company">Star Club (Remote)</p>
+              <ul>
+                <li>Delivered patient, one-on-one live lessons to international learners.</li>
+                <li>Provided real-time technical and platform support to students.</li>
+                <li>Maintained detailed session logs and feedback reports.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="t-item reveal">
+            <div class="t-dot"></div>
+            <div class="t-card">
+              <span class="t-date">2025 - Present</span>
+              <h4>Editorial, Layout &amp; Digital Publication Staff</h4>
+              <p class="t-company">GGCAST Student Publications</p>
+              <ul>
+                <li>Created digital graphics, publication layouts and proofread copy under strict deadlines.</li>
+                <li>Ensured consistent visual branding and error-free delivery.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+      <div class="explore-slot" data-next=""></div>
+    </div>
+
+    <!-- ===== VIEW: transferable-skills ===== -->
+    <div class="page-view" data-route="transferable-skills" role="region" aria-label="transferable-skills">
+<section class="section section-alt" id="transferable">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Transferable skills</p>
+          <h2>How my background makes me a <em>better VA</em></h2>
+        </div>
+        <div class="card-grid">
+          <article class="card reveal"><div class="icon">&#127891;</div><h4>Teaching &rarr; Customer Care</h4><p>Explaining things simply, staying patient with every question and giving clear, kind guidance.</p></article>
+          <article class="card reveal"><div class="icon">&#128221;</div><h4>Operations &rarr; Reliable Support</h4><p>Being the first point of contact, documenting SOPs and keeping trackers accurate so issues get resolved fast.</p></article>
+          <article class="card reveal"><div class="icon">&#128240;</div><h4>Publications &rarr; Social Media</h4><p>Layout, graphics and proofreading under deadlines, which means consistent branding and error-free posts.</p></article>
+          <article class="card reveal"><div class="icon">&#127760;</div><h4>Global Readiness</h4><p>C2 Proficient English and the ability to cover US, UK or APAC shifts with international clients and teams.</p></article>
+        </div>
+      </div>
+    </section>
+      <div class="explore-slot" data-next=""></div>
+    </div>
+
+    <!-- ===== VIEW: skills-tools ===== -->
+    <div class="page-view" data-route="skills-tools" role="region" aria-label="skills-tools">
+<section class="section" id="sec-skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Skills &amp; tools</p>
+          <h2>What I <em>work with</em></h2>
+        </div>
+        <div class="card-grid skill-cats">
+          <article class="card reveal"><h4>Social Media &amp; Content Creation</h4><p>Instagram &amp; Facebook account management, content scheduling and calendars, short-form video editing (Reels/TikTok), graphic design, copywriting.</p></article>
+          <article class="card reveal"><h4>Customer Support &amp; Community</h4><p>Live chat and email ticket support, social media DM and comment management, empathetic de-escalation, first-contact resolution, client onboarding and follow-ups.</p></article>
+          <article class="card reveal"><h4>AI, Operations &amp; Communication</h4><p>Daily Claude AI, Gemini and ChatGPT workflow (captions, support macros, SOP drafting), CRM and tracker data entry, asset organization, C2 Proficient English (71/100).</p></article>
+        </div>
+        <div class="badges reveal">
+          <span>Canva</span><span>CapCut Pro</span><span>Adobe Premiere Pro</span><span>Meta Business Suite</span>
+          <span>Google Workspace</span><span>Google Docs</span><span>Google Sheets</span><span>Google Drive</span>
+          <span>Gmail</span><span>Dropbox</span><span>Microsoft Office</span>
+          <span>Claude AI</span><span>Gemini</span><span>ChatGPT</span>
+        </div>
+      </div>
+    </section>
+      <div class="explore-slot" data-next=""></div>
+    </div>
+
+    <!-- ===== VIEW: tools-systems ===== -->
+    <div class="page-view" data-route="tools-systems" role="region" aria-label="tools-systems">
+<section class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Tools &amp; systems</p>
+          <h2>The suite I <em>work in</em></h2>
+        </div>
+        <div class="tools-block reveal">
+          <p class="eyebrow">Tools &amp; Systems</p>
+          <h3>I use as a <em>virtual assistant</em></h3>
+          <article class="card tool-card">
+            <img class="gw-logo gw-for-light" src="google-workspace.png" alt="Google Workspace" loading="lazy">
+            <img class="gw-logo gw-for-dark" src="google-workspace-dark.png" alt="Google Workspace" loading="lazy">
+            <div class="badges"><span>Gmail</span><span>Drive</span><span>Docs</span><span>Sheets</span><span>Slides</span><span>Calendar</span><span>Meet</span><span>Forms</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+      <div class="explore-slot" data-next=""></div>
+    </div>
+
+    <!-- ===== VIEW: portfolio ===== -->
+    <div class="page-view" data-route="portfolio" role="region" aria-label="portfolio">
+<section class="section section-alt" id="work">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Portfolio</p>
+          <h2>What I <em>create</em></h2>
+          <p class="lead">Samples are available on request. Message me and I'll share relevant work for your niche.</p>
+        </div>
+        <div class="card-grid three">
+          <article class="card work reveal"><div class="work-thumb">Branded Graphics</div><h4>Canva Designs</h4><p>Branded posts, stories and covers with a consistent look and feel.</p><a href="#contact" class="btn btn-small">Request samples</a></article>
+          <article class="card work reveal"><div class="work-thumb">Short-Form Video</div><h4>Reels &amp; TikTok Edits</h4><p>Short videos edited in CapCut Pro and Adobe Premiere Pro.</p><a href="#contact" class="btn btn-small">Request samples</a></article>
+          <article class="card work reveal"><div class="work-thumb">Content Calendar</div><h4>Organized Content Planning</h4><p>Content calendars and asset libraries kept in Google Drive and Dropbox.</p><a href="#contact" class="btn btn-small">Request samples</a></article>
+          <article class="card work reveal"><div class="work-thumb">Support Templates</div><h4>FAQ Response Templates</h4><p>Polite, on-brand reply templates for common customer questions.</p><a href="#contact" class="btn btn-small">Request samples</a></article>
+          <article class="card work reveal"><div class="work-thumb">SOPs &amp; Trackers</div><h4>Process Documentation</h4><p>Clear SOPs and Google Sheets status trackers for consistent resolution.</p><a href="#contact" class="btn btn-small">Request samples</a></article>
+          <article class="card work reveal"><div class="work-thumb">Publication Layout</div><h4>Digital Publications</h4><p>Layouts and graphics created for GGCAST Student Publications.</p><a href="#contact" class="btn btn-small">Request samples</a></article>
+        </div>
+      </div>
+    </section>
+<section class="section" id="teaching">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Online ESL instructor</p>
+          <h2>In the <em>virtual classroom</em></h2>
+          <p class="lead">Live English lessons with young learners. Tap any photo to view it larger.</p>
+        </div>
+        <div class="gallery" data-prefix="teaching" data-max="8" data-label="Online teaching screenshot"></div>
+      </div>
+    </section>
+<section class="section section-alt" id="voiceover">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Voice-over</p>
+          <h2>Give your brand a <em>voice</em></h2>
+          <p class="lead">Selected voice-over projects. Press play to listen.</p>
+        </div>
+        <div class="card-grid three">
+          <article class="card video-card reveal"><div class="vwrap"><video controls muted playsinline preload="none" poster="vo-education-day-teaser.jpg" src="vo-education-day-teaser.mp4"></video><button type="button" class="snd">&#128266; Tap for sound</button></div><h4>Education Day Pageant Teaser</h4><p class="cert-meta">3:20</p></article>
+          <article class="card video-card reveal"><div class="vwrap"><video controls muted playsinline preload="none" poster="vo-pageant-teaser.jpg" src="vo-pageant-teaser.mp4"></video><button type="button" class="snd">&#128266; Tap for sound</button></div><h4>Pageant Teaser</h4><p class="cert-meta">1:43</p></article>
+          <article class="card video-card reveal"><div class="vwrap"><video controls muted playsinline preload="none" poster="vo-ched-visit.jpg" src="vo-ched-visit.mp4"></video><button type="button" class="snd">&#128266; Tap for sound</button></div><h4>CHED Visit</h4><p class="cert-meta">2:21</p></article>
+          <article class="card video-card reveal"><div class="vwrap"><video controls muted playsinline preload="none" poster="vo-mis-2.jpg" src="vo-mis-2.mp4"></video><button type="button" class="snd">&#128266; Tap for sound</button></div><h4>MIS 2.0</h4><p class="cert-meta">3:58</p></article>
+          <article class="card video-card reveal"><div class="vwrap"><video controls muted playsinline preload="none" poster="vo-jai-ford-wedding.jpg" src="vo-jai-ford-wedding.mp4"></video><button type="button" class="snd">&#128266; Tap for sound</button></div><h4>Jai &amp; Ford Wedding</h4><p class="cert-meta">3:19</p></article>
+        </div>
+      </div>
+    </section>
+<section class="section section-alt" id="hosting" hidden>
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Freelance host</p>
+          <h2>On camera &amp; <em>on the mic</em></h2>
+          <p class="lead">Photos from my freelance hosting work. Tap any photo to view it larger.</p>
+        </div>
+        <div class="gallery cover" data-prefix="host" data-max="8" data-label="Freelance host photo"></div>
+      </div>
+    </section>
+<section class="section" id="recruitment" hidden>
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Recruitment</p>
+          <h2>Proof of <em>successful hiring</em></h2>
+          <p class="lead">Posts and results from my work as a Recruitment Manager. Tap an image to view it larger.</p>
+        </div>
+        <div class="gallery" data-prefix="recruitment" data-max="8" data-label="Recruitment post"></div>
+      </div>
+    </section>
+      <div class="explore-slot" data-next=""></div>
+    </div>
+
+    <!-- ===== VIEW: education-certification ===== -->
+    <div class="page-view" data-route="education-certification" role="region" aria-label="education-certification">
+<section class="section" id="education">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Education &amp; certifications</p>
+          <h2>Training &amp; <em>credentials</em></h2>
+        </div>
+        <div class="card-grid">
+          <article class="card reveal"><div class="icon">&#127942;</div><h4>EF SET English Certificate - C2 Proficient (71/100)</h4><p>2026. Certified native-level written and spoken English clarity, tone and comprehension.</p></article>
+          <article class="card reveal"><div class="icon">&#127891;</div><h4>BSED - Major in English</h4><p>4th year, expected 2027. Governor Generoso College of Arts, Sciences and Technology (GGCAST).</p></article>
+          <article class="card reveal"><div class="icon">&#128188;</div><h4>TESDA NC II - Tourism Promotion Services</h4><p>National Certificate II in customer service excellence, front-line inquiry handling and client relations.</p></article>
+          <article class="card reveal"><div class="icon">&#128218;</div><h4>TEFL Certification (120 Hours) - Distinction</h4><p>TEFL Professional Institute, Teacher Record. June 2026.</p></article>
+          <article class="card reveal"><div class="icon">&#128187;</div><h4>Web Development Certification</h4><p>Foundation in building and editing websites.</p></article>
+          <article class="card reveal"><div class="icon">&#127969;</div><h4>Remote Workstation &amp; Availability</h4><p>ASUS Windows laptop, noise-canceling headset, high-speed fiber internet, backup modem and backup power for uninterrupted shifts across US, UK or APAC time zones.</p></article>
+        </div>
+      </div>
+    </section>
+<section class="section section-alt" id="certificates">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Certificates</p>
+          <h2>Proof of my <em>training</em></h2>
+          <p class="lead">Open any certificate as a PDF, or verify it with the issuer.</p>
+        </div>
+        <div class="card-grid">
+          <article class="card cert reveal"><img class="cert-thumb" src="certimg-tefl.jpg" alt="Certificate preview" loading="lazy" tabindex="0"><h4>TEFL Course (120 Hours) - Distinction</h4><p class="cert-meta">TEFL Professional Institute - Teacher Record<br>June 2026 &middot; Certificate No. TR2069005284</p><div class="cert-btns"><a href="tefl.pdf" class="btn btn-small" target="_blank" rel="noopener">View PDF</a></div></article>
+          <article class="card cert reveal"><img class="cert-thumb" src="certimg-efset-c2.jpg" alt="Certificate preview" loading="lazy" tabindex="0"><h4>EF SET English Certificate - C2 Proficient</h4><p class="cert-meta">Score 71/100 &middot; Awarded 2 Jul 2026<br>Reading C2 &middot; Writing C2 &middot; Speaking B2 &middot; Listening B1</p><div class="cert-btns"><a href="efset-c2.pdf" class="btn btn-small" target="_blank" rel="noopener">View PDF</a><a href="https://cert.efset.org/hzNKGT" class="btn btn-outline btn-small" target="_blank" rel="noopener">Verify</a></div></article>
+          <article class="card cert reveal"><img class="cert-thumb" src="certimg-wordpress.jpg" alt="Certificate preview" loading="lazy" tabindex="0"><h4>Build a Free Website with WordPress</h4><p class="cert-meta">Coursera Project Certificate<br>3 Jul 2026</p><div class="cert-btns"><a href="wordpress.pdf" class="btn btn-small" target="_blank" rel="noopener">View PDF</a><a href="https://coursera.org/verify/6J430LDN7VSU" class="btn btn-outline btn-small" target="_blank" rel="noopener">Verify</a></div></article>
+          <article class="card cert reveal"><img class="cert-thumb" src="certimg-remind.jpg" alt="Certificate preview" loading="lazy" tabindex="0"><h4>Enhancing Communication with Remind</h4><p class="cert-meta">Coursera Project Certificate<br>3 Jul 2026</p><div class="cert-btns"><a href="remind.pdf" class="btn btn-small" target="_blank" rel="noopener">View PDF</a><a href="https://coursera.org/verify/4CI58THKO63O" class="btn btn-outline btn-small" target="_blank" rel="noopener">Verify</a></div></article>
+          <article class="card cert reveal"><img class="cert-thumb" src="certimg-canva.jpg" alt="Certificate preview" loading="lazy" tabindex="0"><h4>Use Canva to Design Digital Course Collateral</h4><p class="cert-meta">Coursera Project Certificate<br>2 Jul 2026</p><div class="cert-btns"><a href="canva.pdf" class="btn btn-small" target="_blank" rel="noopener">View PDF</a><a href="https://coursera.org/verify/BI7LQBKPUUXS" class="btn btn-outline btn-small" target="_blank" rel="noopener">Verify</a></div></article>
+        </div>
+      </div>
+    </section>
+      <div class="explore-slot" data-next=""></div>
+    </div>
+
+    <!-- ===== VIEW: keep-exploring ===== -->
+    <div class="page-view" data-route="keep-exploring" role="region" aria-label="keep-exploring">
+<section class="section"><div class="container"><div class="section-head reveal">
+          <p class="eyebrow">Keep exploring</p>
+          <h2>Explore the <em>whole site</em></h2>
+          <p class="lead">Jump to any section of my portfolio.</p>
+        </div><div class="card-grid dir" id="directory"></div></div></section>
+    </div>
+
+    <!-- ===== VIEW: testimonials ===== -->
+    <div class="page-view" data-route="testimonials" role="region" aria-label="testimonials">
+<section class="section" id="sec-testimonials">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Testimonials</p>
+          <h2>Kind words from <em>clients</em></h2>
+        </div>
+        <div class="carousel reveal" id="carousel">
+          <div class="slides">
+            <blockquote class="slide active">
+              <p>"[Replace with a real client testimonial about your customer support work.]"</p>
+              <cite>- [Client Name], [Company]</cite>
+            </blockquote>
+            <blockquote class="slide">
+              <p>"[Replace with a real client testimonial about your social media management.]"</p>
+              <cite>- [Client Name], [Company]</cite>
+            </blockquote>
+            <blockquote class="slide">
+              <p>"[Replace with a testimonial from a team lead, student or colleague.]"</p>
+              <cite>- [Name], [Role]</cite>
+            </blockquote>
+          </div>
+          <div class="carousel-controls">
+            <button id="prev" aria-label="Previous testimonial">&larr;</button>
+            <div class="dots" id="dots"></div>
+            <button id="next" aria-label="Next testimonial">&rarr;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+      <div class="explore-slot" data-next=""></div>
+    </div>
+
+    <!-- ===== VIEW: contact ===== -->
+    <div class="page-view" data-route="contact" role="region" aria-label="contact">
+<section class="section section-alt" id="sec-contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Contact</p>
+          <h2>Let's work <em>together</em></h2>
+          <p class="lead">Based in Governor Generoso, Davao Oriental, Philippines. Send me a message about your project and I'll get back to you.</p>
+        </div>
+        <div class="contact-grid">
+          <!-- To receive messages directly, replace the action with your Formspree URL: https://formspree.io/f/yourid -->
+          <form class="form reveal" id="contactForm" action="mailto:eloisajanezulita13@gmail.com" method="post" enctype="text/plain">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required />
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required />
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+            <button type="submit" class="btn">Send message</button>
+          </form>
+          <div class="contact-links reveal">
+            <a href="mailto:eloisajanezulita13@gmail.com" class="link-btn">&#9993; eloisajanezulita13@gmail.com</a>
+            <!-- Add your real profile links below (replace the # in each href) -->
+            <a href="#" class="link-btn" target="_blank" rel="noopener">in LinkedIn</a>
+            <a href="#" class="link-btn" target="_blank" rel="noopener">f Facebook</a>
+            <a href="#" class="link-btn" target="_blank" rel="noopener">&#9711; Instagram</a>
+            <a href="#" class="link-btn" target="_blank" rel="noopener">&#9733; Upwork / OnlineJobs.ph</a>
+            <a href="resume.pdf" class="btn btn-outline" download>Download resume</a>
+          </div>
+        </div>
+      </div>
+    </section>
+      <div class="explore-slot" data-next=""></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Eloisa Jane L. Zulita. All rights reserved.</p>
+      <nav class="footer-links">
+        <a href="#about">About</a><a href="#services">Services</a><a href="#portfolio">Portfolio</a><a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top">&uarr;</button>
+
+  <!-- Image viewer -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-label="Image preview">
+    <button class="lb-close" aria-label="Close">&times;</button>
+    <img alt="" />
   </div>
-</header>
 
-<main class="wrap">
+  <script>
+    // ===== Portfolio interactions =====
+    document.addEventListener('DOMContentLoaded', () => {
 
-<!-- ABOUT / HERO -->
-<div class="view" id="about" data-title="Home">
-  <section class="hero">
-    <div class="hero-grid">
-      <div class="photo"><img src="profile.jpeg" alt="Portrait of Eloisa Jane L. Zulita"></div>
-      <div>
-        <span class="badge">✦ EF SET C2 Proficient English · 76/100</span>
-        <h1>Eloisa Jane <span class="grad-text">L. Zulita</span></h1>
-        <p class="role">Social Media &amp; Customer Support Virtual Assistant</p>
-        <p class="bio">I keep inboxes answered, feeds consistent and clients happy. Friendly first-contact support, on-brand Canva and CapCut content, and SOPs that make the work run smoothly. Reliable, organized and ready to cover US, UK or APAC shifts.</p>
-        <div class="cta">
-          <a class="btn primary" href="#services">Services →</a>
-          <a class="btn" href="#portfolio">Work Samples &amp; SOPs</a>
-          <a class="btn" href="#experience">More Details / Resume</a>
-          <a class="btn" href="#contact">Contact</a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <div class="explore" data-next="services,experience"></div>
-</div>
+      document.getElementById('year').textContent = new Date().getFullYear();
 
-<!-- SERVICES -->
-<div class="view" id="services" data-title="Services">
-  <section class="page">
-    <p class="eyebrow">What I do</p><h2>Services</h2>
-    <p class="lead">Pick a specialty to see exactly what's included.</p>
-    <div class="grid g3">
-      <a class="card" href="#customer-support-va"><div class="ico">💬</div><h3>Customer Support VA</h3><p>Inbox, DM and live chat handling with empathy, FAQ templates and SOPs.</p><p style="margin-top:12px;color:#c4a1ff">View details →</p></a>
-      <a class="card" href="#social-media-va"><div class="ico">📱</div><h3>Social Media VA</h3><p>Canva graphics, CapCut/Premiere edits, captions and scheduling.</p><p style="margin-top:12px;color:#c4a1ff">View details →</p></a>
-      <div class="card lift"><div class="ico">🗂️</div><h3>General Admin &amp; Executive Assistance</h3>
-        <ul><li>Google Workspace, Dropbox and Microsoft Office</li><li>CRM and tracker data entry in Google Sheets</li><li>Asset and file organization</li><li>Scheduling, onboarding and follow-ups</li></ul></div>
-    </div>
-  </section>
-  <div class="explore" data-next="portfolio,tools"></div>
-</div>
+      // ----- Mobile menu -----
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('navLinks');
+      hamburger.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', open);
+      });
+      navLinks.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+          navLinks.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', false);
+        }
+      });
 
-<!-- CUSTOMER SUPPORT -->
-<div class="view" id="customer-support-va" data-title="Customer Support VA">
-  <section class="page">
-    <a class="btn back" href="#services">← Back to Services</a>
-    <p class="eyebrow">Specialty</p><h2>Customer Support VA</h2>
-    <p class="lead">Fast, warm and consistent support that turns questions into loyal customers.</p>
-    <div class="grid g2">
-      <div class="card"><h3>Inbox, DM &amp; Live Chat</h3><ul><li>Email, live chat and social DM/comment handling</li><li>First-contact resolution with empathetic tone</li><li>De-escalation of upset customers</li></ul></div>
-      <div class="card"><h3>Systems &amp; Documentation</h3><ul><li>SOPs written from recurring questions</li><li>FAQ and reply templates (macros)</li><li>Status trackers and ticket logs in Google Sheets</li></ul></div>
-      <div class="card"><h3>AI-Assisted Workflows</h3><ul><li>ChatGPT, Claude and Gemini to draft replies and macros</li><li>Always edited to match your brand voice</li></ul></div>
-      <div class="card"><h3>Onboarding &amp; Follow-ups</h3><ul><li>Guiding new clients or team members step by step</li><li>Scheduling, reminders and troubleshooting</li></ul></div>
-    </div>
-  </section>
-  <div class="explore" data-next="portfolio,contact"></div>
-</div>
+      // ----- Navbar style + back-to-top -----
+      const navbar = document.getElementById('navbar');
+      const toTop = document.getElementById('toTop');
+      window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 40);
+        toTop.classList.toggle('show', window.scrollY > 500);
+      });
+      toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-<!-- SOCIAL MEDIA -->
-<div class="view" id="social-media-va" data-title="Social Media VA">
-  <section class="page">
-    <a class="btn back" href="#services">← Back to Services</a>
-    <p class="eyebrow">Specialty</p><h2>Social Media VA</h2>
-    <p class="lead">Consistent, on-brand content and a community that feels looked after.</p>
-    <div class="grid g2">
-      <div class="card"><h3>Content Planning</h3><ul><li>Content calendars in Google Sheets or Drive</li><li>Hooks, captions and copywriting</li><li>Scheduling with Meta Business Suite</li></ul></div>
-      <div class="card"><h3>Design &amp; Video</h3><ul><li>Branded graphics in Canva</li><li>Reels/TikTok edits in CapCut Pro</li><li>Longer edits in Adobe Premiere Pro</li></ul></div>
-      <div class="card"><h3>Community Management</h3><ul><li>Replying to DMs and comments</li><li>Engagement that matches brand voice</li></ul></div>
-      <div class="card"><h3>Organization</h3><ul><li>Asset libraries in Google Drive and Dropbox</li><li>Clear naming and folder systems</li></ul></div>
-    </div>
-  </section>
-  <div class="explore" data-next="portfolio,contact"></div>
-</div>
+      // (current tab is now set by the view router below)
 
-<!-- EXPERIENCE -->
-<div class="view" id="experience" data-title="Experience">
-  <section class="page">
-    <p class="eyebrow">Resume</p><h2>Experience &amp; Transferable Skills</h2>
-    <div class="segment" role="tablist">
-      <button class="on" data-pane="exp">Work Experience</button><button data-pane="skills">Transferable Skills</button>
-    </div>
-    <div id="exp">
-      <div class="timeline">
-        <div class="tl"><small>2025 – Present</small><h3>Freelance Social Media Manager &amp; Client Inbox Specialist</h3><p class="lead" style="margin-top:4px">Self-Employed (Remote)</p>
-          <ul class="card" style="margin-top:10px"><li>Managed an Instagram account for a private content creator, including daily DM/comment inquiries and community engagement.</li><li>Designed branded graphics in Canva and edited short-form video in CapCut Pro and Premiere Pro.</li><li>Used AI tools daily to draft captions, hooks and polite FAQ templates in the brand's voice.</li></ul></div>
-        <div class="tl"><small>2026 – Present</small><h3>Operations Manager &amp; Support Coordinator</h3><p class="lead" style="margin-top:4px">Star Club / Remote ESL Team</p>
-          <ul class="card" style="margin-top:10px"><li>Primary contact for daily email and live chat inquiries, guiding applicants and team members through onboarding and scheduling.</li><li>Turned recurring questions into SOPs and kept status trackers in Google Sheets.</li></ul></div>
-        <div class="tl"><small>2025 – Present</small><h3>Online ESL Instructor &amp; Student Support Specialist</h3><p class="lead" style="margin-top:4px">Star Club (Remote)</p>
-          <ul class="card" style="margin-top:10px"><li>Patient one-on-one live teaching and real-time platform support for international learners.</li><li>Kept detailed session logs and feedback reports.</li></ul></div>
-        <div class="tl"><small>2025 – Present</small><h3>Editorial, Layout &amp; Digital Publication Staff</h3><p class="lead" style="margin-top:4px">GGCAST Student Publications</p>
-          <ul class="card" style="margin-top:10px"><li>Created digital graphics and layouts and proofread copy under strict deadlines.</li></ul></div>
-      </div>
-      <div class="cta"><a class="btn primary" href="resume.pdf" target="_blank" rel="noopener">⬇ View / Download Resume</a></div>
-    </div>
-    <div id="skills" hidden>
-      <div class="grid g3">
-        <div class="card"><div class="ico">⏱️</div><h3>Time Management</h3><p>Shift coverage, deadlines and multitasking across inbox, content and admin.</p></div>
-        <div class="card"><div class="ico">🤝</div><h3>Empathy &amp; De-escalation</h3><p>Calm, kind replies that resolve problems on first contact.</p></div>
-        <div class="card"><div class="ico">🔄</div><h3>Adaptability</h3><p>Comfortable with new tools, platforms and time zones.</p></div>
-        <div class="card"><div class="ico">🔍</div><h3>Attention to Detail</h3><p>Proofreading, accurate trackers and clean asset libraries.</p></div>
-        <div class="card"><div class="ico">💡</div><h3>Proactive Communication</h3><p>Clear updates and follow-ups so clients are never guessing.</p></div>
-        <div class="card"><div class="ico">🎙️</div><h3>Teaching &amp; Presenting</h3><p>ESL instruction, hosting and voice-over give me a clear, confident voice.</p></div>
-      </div>
-    </div>
-  </section>
-  <div class="explore" data-next="tools,education"></div>
-</div>
+      // ----- Fade-in on scroll -----
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.15 });
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-<!-- TOOLS -->
-<div class="view" id="tools" data-title="Skills & Tools">
-  <section class="page">
-    <p class="eyebrow">Toolkit</p><h2>Skills, Tools &amp; Systems</h2>
-    <div class="grid g2">
-      <div class="card"><h3>Core Skills</h3><div class="chips">
-        <span class="chip">Inbox Management</span><span class="chip">DM &amp; Comment Handling</span><span class="chip">Data Entry</span><span class="chip">Client Onboarding</span><span class="chip">Content Scheduling</span><span class="chip">Copywriting</span><span class="chip">SOP Writing</span><span class="chip">FAQ Templates</span></div></div>
-      <div class="card"><h3>Tools &amp; Systems</h3><div class="chips">
-        <span class="chip">Canva</span><span class="chip">CapCut Pro</span><span class="chip">Adobe Premiere Pro</span><span class="chip">Meta Business Suite</span><span class="chip">Google Workspace</span><span class="chip">Dropbox</span><span class="chip">Microsoft Office</span><span class="chip">WordPress</span></div></div>
-      <div class="card"><h3>AI Workflows</h3><div class="chips"><span class="chip">ChatGPT</span><span class="chip">Claude</span><span class="chip">Gemini</span></div>
-        <p style="margin-top:12px">Used daily for captions, support macros and SOP drafts, then edited by hand for brand voice.</p></div>
-      <div class="card"><h3>Remote Workstation</h3><p>ASUS Windows laptop, noise-canceling headset, fiber internet with a backup modem and backup power for uninterrupted shifts.</p></div>
-    </div>
-  </section>
-  <div class="explore" data-next="portfolio,contact"></div>
-</div>
+      // ----- Testimonial carousel -----
+      const slides = document.querySelectorAll('.slide');
+      const dotsWrap = document.getElementById('dots');
+      let current = 0;
+      let timer;
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to testimonial ' + (i + 1));
+        dot.addEventListener('click', () => { show(i); restart(); });
+        dotsWrap.appendChild(dot);
+      });
+      const dots = dotsWrap.querySelectorAll('.dot');
+      function show(index) {
+        current = (index + slides.length) % slides.length;
+        slides.forEach((s, i) => s.classList.toggle('active', i === current));
+        dots.forEach((d, i) => d.classList.toggle('active', i === current));
+      }
+      function restart() { clearInterval(timer); timer = setInterval(() => show(current + 1), 6000); }
+      document.getElementById('next').addEventListener('click', () => { show(current + 1); restart(); });
+      document.getElementById('prev').addEventListener('click', () => { show(current - 1); restart(); });
+      restart();
 
-<!-- PORTFOLIO -->
-<div class="view" id="portfolio" data-title="Portfolio">
-  <section class="page">
-    <p class="eyebrow">Work Samples &amp; SOPs</p><h2>Portfolio</h2>
-    <p class="lead">Sample projects showing how I work. Replace the bracketed notes with your own files and results.</p>
-    <div class="segment" id="filters">
-      <button class="on" data-f="all">All</button><button data-f="support">Customer Support</button><button data-f="social">Social Media</button><button data-f="admin">Admin</button>
-    </div>
-    <div class="grid g3" id="projects">
-      <article class="card lift" data-c="social"><span class="tag">Social Media</span><h3>Branded Post Set</h3>
-        <p><b>Problem:</b> Feed looked inconsistent.</p><p><b>Action:</b> Built a Canva template set with brand colors and fonts.</p><p class="ph"><b>Result:</b> [INSERT result, e.g. posting time saved]</p></article>
-      <article class="card lift" data-c="social"><span class="tag">Social Media</span><h3>Content Calendar Sample</h3>
-        <p><b>Problem:</b> No plan for what to post.</p><p><b>Action:</b> Monthly calendar with hooks, captions and schedule.</p><p class="ph"><b>Result:</b> [INSERT result]</p></article>
-      <article class="card lift" data-c="social"><span class="tag">Social Media</span><h3>Short-Form Video Edit</h3>
-        <p><b>Problem:</b> Raw clips needed polish.</p><p><b>Action:</b> Edited Reels in CapCut Pro with captions and music.</p><p class="ph"><b>Result:</b> [INSERT result]</p></article>
-      <article class="card lift" data-c="support"><span class="tag">Customer Support</span><h3>FAQ &amp; Reply Templates</h3>
-        <p><b>Problem:</b> Same questions answered from scratch.</p><p><b>Action:</b> Wrote a library of polite, on-brand macros.</p><p class="ph"><b>Result:</b> [INSERT result, e.g. faster replies]</p></article>
-      <article class="card lift" data-c="support"><span class="tag">Customer Support</span><h3>Inbox Handling Case Study</h3>
-        <p><b>Problem:</b> Messages piling up.</p><p><b>Action:</b> Sorted by priority, replied, logged in a tracker.</p><p class="ph"><b>Result:</b> [INSERT result]</p></article>
-      <article class="card lift" data-c="admin"><span class="tag">Admin</span><h3>Sample SOP</h3>
-        <p><b>Problem:</b> Process lived in one person's head.</p><p><b>Action:</b> Documented it step by step with a status tracker.</p><p class="ph"><b>Result:</b> [INSERT result]</p></article>
-    </div>
-    <p class="lead" style="margin-top:22px">Teaching, hosting and voice-over work is on my <a href="https://eloisajanezulita-va.github.io/" style="color:#c4a1ff">main portfolio page</a>.</p>
-  </section>
-  <div class="explore" data-next="testimonials,contact"></div>
-</div>
+      // ===== Automatic image loading =====
+      // Upload photos next to index.html using these names (any of .jpg .jpeg .png .webp):
+      //   profile            -> hero photo
+      //   cert-1, cert-2 ... -> Certificates
+      //   recruitment-1 ...  -> Recruitment proof
+      //   host-1, host-2 ... -> Freelance host photos
+      // A section and its menu tab appear only after at least one of its images is found.
+      const EXTENSIONS = ['png', 'webp', 'jpg', 'jpeg'];
 
-<!-- EDUCATION -->
-<div class="view" id="education" data-title="Education">
-  <section class="page">
-    <p class="eyebrow">Credentials</p><h2>Education &amp; Certifications</h2>
-    <div class="grid g3">
-      <a class="card" href="efset-c2.pdf" target="_blank" rel="noopener"><div class="ico">🏅</div><h3>EF SET C2 Proficient</h3><p>English certificate, 76/100 (2026). View certificate →</p></a>
-      <a class="card" href="tefl.pdf" target="_blank" rel="noopener"><div class="ico">🎓</div><h3>TEFL Certification</h3><p>Teacher record (2026). View certificate →</p></a>
-      <a class="card" href="canva.pdf" target="_blank" rel="noopener"><div class="ico">🎨</div><h3>Canva Certificate</h3><p>Design fundamentals. View certificate →</p></a>
-      <a class="card" href="wordpress.pdf" target="_blank" rel="noopener"><div class="ico">🌐</div><h3>WordPress / Web Development</h3><p>Web development certificate. View certificate →</p></a>
-      <a class="card" href="remind.pdf" target="_blank" rel="noopener"><div class="ico">📋</div><h3>Remind Certificate</h3><p>Communication platform training. View certificate →</p></a>
-      <div class="card lift"><div class="ico">🧭</div><h3>TESDA NC II</h3><p>Tourism Promotion Services: customer service excellence, front-line inquiry handling and client relations.</p></div>
-      <div class="card lift"><div class="ico">📚</div><h3>BSED, Major in English</h3><p>Governor Generoso College of Arts, Sciences and Technology. 4th year, expected 2027.</p></div>
-    </div>
-  </section>
-  <div class="explore" data-next="testimonials,contact"></div>
-</div>
+      function probe(base) {
+        return new Promise(resolve => {
+          let i = 0;
+          const tryNext = () => {
+            if (i >= EXTENSIONS.length) return resolve(null);
+            const url = base + '.' + EXTENSIONS[i++];
+            const img = new Image();
+            img.onload = () => resolve(url);
+            img.onerror = tryNext;
+            img.src = url;
+          };
+          tryNext();
+        });
+      }
 
-<!-- TESTIMONIALS -->
-<div class="view" id="testimonials" data-title="Testimonials">
-  <section class="page">
-    <p class="eyebrow">Kind words</p><h2>Testimonials</h2>
-    <div class="grid g3">
-      <div class="card"><div class="stars">★★★★★</div><p class="ph" style="margin:10px 0">"[INSERT a real client testimonial about your customer support work.]"</p><b>[INSERT name]</b><p>[INSERT role]</p></div>
-      <div class="card"><div class="stars">★★★★★</div><p class="ph" style="margin:10px 0">"[INSERT a real testimonial about your social media management.]"</p><b>[INSERT name]</b><p>[INSERT role]</p></div>
-      <div class="card"><div class="stars">★★★★★</div><p class="ph" style="margin:10px 0">"[INSERT a testimonial from a team lead, student or colleague.]"</p><b>[INSERT name]</b><p>[INSERT role]</p></div>
-    </div>
-  </section>
-  <div class="explore" data-next="contact,about"></div>
-</div>
+      // Hero photo
+      const heroPhoto = document.getElementById('heroPhoto');
+      const photoFrame = document.getElementById('photoFrame');
+      probe('profile').then(url => {
+        if (url) {
+          heroPhoto.src = url;
+          heroPhoto.classList.add('loaded');
+        } else {
+          photoFrame.classList.add('no-photo');
+        }
+      });
 
-<!-- CONTACT -->
-<div class="view" id="contact" data-title="Contact">
-  <section class="page">
-    <p class="eyebrow">Let's work together</p><h2>Contact</h2>
-    <p class="lead">Tell me what you need and I'll reply by email.</p>
-    <div class="grid g2">
-      <div class="card">
-        <form id="cform">
-          <label>Name<input name="n" required autocomplete="name"></label>
-          <label>Email<input type="email" name="e" required autocomplete="email"></label>
-          <label>Service needed<select name="s"><option>Customer Support VA</option><option>Social Media VA</option><option>General Admin &amp; Executive Assistance</option><option>Other</option></select></label>
-          <label>Message<textarea name="m" rows="5" required></textarea></label>
-          <button class="btn primary" type="submit">Send message</button>
-        </form>
-      </div>
-      <div class="card">
-        <h3>Reach me directly</h3>
-        <p style="margin:10px 0"><a href="mailto:eloisajanezulita13@gmail.com" style="color:#c4a1ff">eloisajanezulita13@gmail.com</a></p>
-        <p>Based in Governor Generoso, Davao Oriental, Philippines. Available for US, UK or APAC time zones.</p>
-        <div class="cta">
-          <a class="btn" href="#" aria-disabled="true">LinkedIn [INSERT link]</a>
-          <a class="btn" href="#" aria-disabled="true">Facebook [INSERT link]</a>
-          <a class="btn primary" href="#" aria-disabled="true">Book a Discovery Call [INSERT link]</a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <div class="explore" data-next="about,services"></div>
-</div>
+      // Image viewer
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = lightbox.querySelector('img');
+      function openViewer(src, alt) {
+        lightboxImg.src = src;
+        lightboxImg.alt = alt;
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeViewer() {
+        lightbox.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+      lightbox.addEventListener('click', closeViewer);
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeViewer(); });
 
-</main>
-<footer>© <span id="yr"></span> Eloisa Jane L. Zulita · Social Media &amp; Customer Support VA</footer>
+      // Galleries
+      document.querySelectorAll('.gallery').forEach(async (gallery) => {
+        const prefix = gallery.dataset.prefix;
+        const max = parseInt(gallery.dataset.max, 10) || 8;
+        const label = gallery.dataset.label || 'Photo';
+        const section = gallery.closest('section');
+        let found = 0;
+
+        for (let n = 1; n <= max; n++) {
+          const url = await probe(prefix + '-' + n);
+          if (!url) break;
+          found++;
+          const fig = document.createElement('figure');
+          fig.className = 'shot';
+          fig.tabIndex = 0;
+          fig.setAttribute('role', 'button');
+          const img = document.createElement('img');
+          img.src = url;
+          img.alt = label + ' ' + n;
+          img.loading = 'lazy';
+          fig.appendChild(img);
+          const open = () => openViewer(url, img.alt);
+          fig.addEventListener('click', open);
+          fig.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+          gallery.appendChild(fig);
+        }
+
+        if (found > 0) {
+          section.hidden = false;
+          document.querySelectorAll('[data-section="' + section.id + '"]').forEach(a => { a.hidden = false; });
+        }
+      });
+    });
+  </script>
+<script>
+  (function(){
+    var root=document.documentElement,btn=document.getElementById('themeToggle');
+    function paint(){var l=root.getAttribute('data-theme')==='light';btn.innerHTML=l?'&#9790;':'&#9728;';btn.setAttribute('aria-label',l?'Switch to dark mode':'Switch to light mode');}
+    btn.addEventListener('click',function(){var l=root.getAttribute('data-theme')==='light';
+      if(l)root.removeAttribute('data-theme');else root.setAttribute('data-theme','light');
+      try{localStorage.setItem('theme',l?'dark':'light');}catch(e){} paint();});
+    paint();
+  })();
+</script>
+<script>
+  (function(){
+    var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var SPEED=60, runners=[];
+    function carousel(track,opt){
+      if(!track)return; opt=opt||{};
+      var stage=document.createElement('div');stage.className='cx-stage';
+      track.parentNode.insertBefore(stage,track);stage.appendChild(track);track.classList.add('cx-track','cx-run');
+      if(opt.cls)track.classList.add(opt.cls);
+      var prev=document.createElement('button'),next=document.createElement('button'),dots=document.createElement('div');
+      prev.className='cx-btn cx-prev';prev.innerHTML='&larr;';prev.setAttribute('aria-label','Previous');prev.type='button';
+      next.className='cx-btn cx-next';next.innerHTML='&rarr;';next.setAttribute('aria-label','Next');next.type='button';
+      dots.className='cx-dots';stage.appendChild(prev);stage.appendChild(next);stage.parentNode.insertBefore(dots,stage.nextSibling);
+      var r={track:track,pos:1,expected:0,hold:0,hover:false,touch:false,inView:true,half:0};
+      var originals=[],filling=false,timer=null;
+      function gap(){return parseFloat(getComputedStyle(track).columnGap||getComputedStyle(track).gap)||22;}
+      function step(){return originals.length?originals[0].offsetWidth+gap():300;}
+      function fill(){
+        filling=true;
+        [].slice.call(track.querySelectorAll('[data-clone]')).forEach(function(c){c.remove();});
+        originals=[].slice.call(track.children);
+        originals.forEach(function(k){k.classList.add('visible');});
+        for(var s=0;s<2;s++){originals.forEach(function(k,i){var c=k.cloneNode(true);c.setAttribute('data-clone',i);c.setAttribute('aria-hidden','true');c.classList.add('visible');track.appendChild(c);});}
+        dots.innerHTML='';
+        originals.forEach(function(k,j){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Slide '+(j+1));
+          b.addEventListener('click',function(){track.scrollTo({left:j*step()+0.5,behavior:'smooth'});r.hold=Date.now()+700;});dots.appendChild(b);});
+        if(mo)mo.takeRecords();
+        filling=false;r.pos=track.scrollLeft||1;paint();
+      }
+      function half(){var c=track.querySelector('[data-clone]');return(c&&originals[0])?c.offsetLeft-originals[0].offsetLeft:0;}
+      function paint(){var hf=half();if(!hf||!originals.length)return;var x=((track.scrollLeft%hf)+hf)%hf,i=Math.round(x/step())%originals.length;
+        [].forEach.call(dots.children,function(d,j){d.className=j===i?'on':'';});}
+      r.wrap=function(){var hf=half();if(!hf)return;
+        if(track.scrollLeft>=hf){track.scrollLeft-=hf;r.pos-=hf;}
+        else if(track.scrollLeft<=0){track.scrollLeft+=hf;r.pos+=hf;}
+        r.expected=track.scrollLeft;};
+      var playing=0;stage.addEventListener('play',function(){playing++;},true);stage.addEventListener('pause',function(){playing=Math.max(0,playing-1);},true);
+      r.paused=function(){var v=stage.closest('.page-view');return r.touch||document.hidden||Date.now()<r.hold||playing>0||(v&&!v.classList.contains('is-active'));};
+      track.addEventListener('scroll',function(){
+        if(Math.abs(track.scrollLeft-r.expected)>2.5){r.pos=track.scrollLeft;r.expected=track.scrollLeft;}
+        r.wrap();paint();},{passive:true});
+      prev.addEventListener('click',function(){r.hold=Date.now()+700;track.scrollBy({left:-step(),behavior:'smooth'});});
+      next.addEventListener('click',function(){r.hold=Date.now()+700;track.scrollBy({left:step(),behavior:'smooth'});});
+            stage.addEventListener('touchstart',function(){r.touch=true;},{passive:true});
+      ['touchend','touchcancel'].forEach(function(e){stage.addEventListener(e,function(){r.touch=false;r.hold=Date.now()+900;},{passive:true});});
+      stage.addEventListener('wheel',function(ev){if(Math.abs(ev.deltaX)>Math.abs(ev.deltaY))r.hold=Date.now()+900;},{passive:true});
+      if(opt.forward){track.addEventListener('click',function(e){var s=e.target.closest('[data-clone]');if(!s)return;
+        var o=originals[+s.getAttribute('data-clone')];if(o){e.preventDefault();e.stopPropagation();(o.querySelector('.cert-thumb')||o).click();}},true);}
+      if('IntersectionObserver' in window){new IntersectionObserver(function(es){r.inView=es[0].isIntersecting;}).observe(stage);}
+      var mo=null;
+      if(opt.dynamic){mo=new MutationObserver(function(){if(filling)return;clearTimeout(timer);timer=setTimeout(fill,450);});mo.observe(track,{childList:true});}
+      else fill();
+      runners.push(r);
+      return r;
+    }
+    var last=performance.now();
+    (function frame(t){
+      var dt=Math.min(64,t-last)/1000;last=t;
+      runners.forEach(function(r){
+        if(!r.inView||r.paused())return;
+        var hf=r.half;r.pos+=SPEED*dt;r.track.scrollLeft=r.pos;r.expected=r.track.scrollLeft;r.wrap();
+      });
+      requestAnimationFrame(frame);
+    })(last);
+    carousel(document.querySelector('#certificates .card-grid'),{cls:'cx-cert'});
+    carousel(document.querySelector('#hosting .gallery'),{dynamic:true,forward:true});
+    carousel(document.querySelector('#voiceover .card-grid'),{cls:'cx-wide'});
+  })();
+</script>
+<script>
+  (function(){
+    // certificate previews open in the image viewer
+    var lb=document.getElementById('lightbox'),li=lb.querySelector('img');
+    document.querySelectorAll('.cert-thumb').forEach(function(t){
+      function open(){li.src=t.src;li.alt=t.alt;lb.classList.add('open');document.body.style.overflow='hidden';}
+      t.addEventListener('click',open);t.addEventListener('keydown',function(e){if(e.key==='Enter'){open();}});
+    });
+    // voice-over: tap play (with sound); only one plays at a time
+    var vids=[].slice.call(document.querySelectorAll('.vwrap video'));
+    vids.forEach(function(v){
+      v.muted=false;v.removeAttribute('muted');
+      var b=v.parentNode.querySelector('.snd');if(b)b.hidden=true;
+      v.addEventListener('play',function(){vids.forEach(function(o){if(o!==v)o.pause();});});
+    });
+  })();
+</script>
+
 
 <script>
-(function(){
-  var views=[].slice.call(document.querySelectorAll('.view')),ids=views.map(function(v){return v.id});
-  var navLinks=[].slice.call(document.querySelectorAll('#links a'));
-  var meta={about:['Home','Meet Eloisa'],services:['Services','What I offer'],experience:['Experience','Resume & skills'],tools:['Skills & Tools','My toolkit'],portfolio:['Portfolio','Work samples & SOPs'],education:['Education','Certificates'],testimonials:['Testimonials','Kind words'],contact:['Contact','Get in touch']};
-  var parent={'customer-support-va':'services','social-media-va':'services'};
+  /* =========================================================
+     VIEW ROUTER: one view at a time, URL hash + Back/Forward
+     ========================================================= */
+  (function(){
+    var views=[].slice.call(document.querySelectorAll('.page-view'));
+    var routes=views.map(function(v){return v.dataset.route;});
+    var navLinks=document.getElementById('navLinks'),hamburger=document.getElementById('hamburger');
+    var dropdowns=[].slice.call(document.querySelectorAll('.dropdown'));
+    var TITLES={about:'Home','services':'Services','customer-support-va':'Customer Support VA','social-media-va':'Social Media VA',experience:'Experience','transferable-skills':'Transferable Skills','skills-tools':'Skills & Tools','tools-systems':'Tools & Systems',portfolio:'Portfolio','education-certification':'Education & Certification','keep-exploring':'Keep Exploring',testimonials:'Testimonials',contact:'Contact'};
+    var INFO={
+      about:['&#128075;','About Me','Who I am and how I work'],
+      services:['&#128188;','Services','Everything I can help with'],
+      'customer-support-va':['&#9993;','Customer Support VA','Email, chat, DMs and SOPs'],
+      'social-media-va':['&#128241;','Social Media VA','Content, graphics and video'],
+      experience:['&#128188;','Experience','My 4-role career path'],
+      'transferable-skills':['&#127891;','Transferable Skills','How my background helps clients'],
+      'skills-tools':['&#128736;','Skills & Tools','What I work with'],
+      'tools-systems':['&#9729;','Tools & Systems','My Google Workspace setup'],
+      portfolio:['&#127912;','Portfolio','Work, teaching, voice-over and hosting'],
+      'education-certification':['&#127942;','Education & Certification','Training and verified certificates'],
+      testimonials:['&#11088;','Testimonials','Kind words from clients'],
+      contact:['&#9993;','Contact','Send a message or download my resume']
+    };
+    var NEXT={
+      about:['services','portfolio','contact'],
+      services:['customer-support-va','social-media-va','portfolio'],
+      'customer-support-va':['social-media-va','skills-tools','contact'],
+      'social-media-va':['customer-support-va','portfolio','contact'],
+      experience:['transferable-skills','skills-tools','education-certification'],
+      'transferable-skills':['skills-tools','portfolio','testimonials'],
+      'skills-tools':['tools-systems','portfolio','education-certification'],
+      'tools-systems':['portfolio','experience','contact'],
+      portfolio:['education-certification','testimonials','contact'],
+      'education-certification':['testimonials','experience','contact'],
+      testimonials:['contact','portfolio','services'],
+      contact:['about','services','portfolio']
+    };
+    function card(id){var i=INFO[id];return '<a href="#'+id+'" class="card explore-card"><div class="icon">'+i[0]+'</div><h4>'+i[1]+'</h4><p>'+i[2]+'</p><span class="more">Open &rarr;</span></a>';}
 
-  // Build every "Keep Exploring" block from its data-next list
-  document.querySelectorAll('.explore').forEach(function(box){
-    var html='<h3>Keep exploring</h3><div class="row">';
-    box.dataset.next.split(',').forEach(function(id){
-      html+='<a href="#'+id+'"><span>'+meta[id][0]+'<small>'+meta[id][1]+'</small></span><span>→</span></a>';
+    // contextual "Keep exploring" block at the bottom of every view (not the directory itself)
+    views.forEach(function(v){
+      var n=NEXT[v.dataset.route]; if(!n)return;
+      var sec=document.createElement('section');sec.className='section section-alt explore-wrap';
+      sec.innerHTML='<div class="container"><div class="section-head reveal"><p class="eyebrow">Keep exploring</p><h2>Where to <em>next?</em></h2></div><div class="card-grid three">'+n.map(card).join('')+'</div></div>';
+      v.appendChild(sec);
     });
-    box.innerHTML=html+'</div>';
-  });
+    // full directory (12 cards)
+    var dir=document.getElementById('directory');
+    if(dir)dir.innerHTML=Object.keys(INFO).map(card).join('');
+    // new cards need the fade-in observer too
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:.15});
+      document.querySelectorAll('.explore-wrap .reveal').forEach(function(el){io.observe(el);});
+    } else document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible');});
 
-  function show(id){
-    if(ids.indexOf(id)<0)id='about';
-    views.forEach(function(v){v.classList.toggle('show',v.id===id)});
-    var active=parent[id]||id;
-    navLinks.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+active)});
-    var t=document.getElementById(id).dataset.title;
-    document.title=(id==='about'?'':t+' | ')+'Eloisa Jane L. Zulita';
-    window.scrollTo(0,0);
-    links.classList.remove('open');burger.setAttribute('aria-expanded','false');
-  }
-  var links=document.getElementById('links'),burger=document.getElementById('burger');
-  window.addEventListener('hashchange',function(){show(location.hash.slice(1))});
-  show(location.hash.slice(1));
+    function closeMenus(){
+      navLinks.classList.remove('open');hamburger.setAttribute('aria-expanded','false');
+      dropdowns.forEach(function(d){d.classList.remove('open');d.querySelector('.dd-btn').setAttribute('aria-expanded','false');});
+    }
+    function pauseVideos(){document.querySelectorAll('video').forEach(function(v){try{v.pause();}catch(e){}});}
 
-  burger.onclick=function(){var o=links.classList.toggle('open');burger.setAttribute('aria-expanded',o)};
-  document.addEventListener('click',function(e){
-    if(!e.target.closest('header'))links.classList.remove('open');
-    var a=e.target.closest('a[aria-disabled="true"]');if(a)e.preventDefault();
-  });
+    var current=null;
+    function show(route,push){
+      if(routes.indexOf(route)<0)route='about';
+      if(route!==current){
+        pauseVideos();                                  // never leave audio playing in a hidden view
+        views.forEach(function(v){v.classList.toggle('is-active',v.dataset.route===route);});
+        current=route;
+      }
+      // active states in the navbar (dropdown buttons light up when a child is active)
+      document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.dataset.nav===route&&!a.classList.contains('btn'));});
+      dropdowns.forEach(function(d){d.classList.toggle('active',!!d.querySelector('[data-nav="'+route+'"]'));});
+      document.title=(route==='about'?'':TITLES[route]+' | ')+'Eloisa Jane L. Zulita';
+      if(push&&location.hash!=='#'+route)history.pushState({r:route},'','#'+route);
+      window.scrollTo({top:0,left:0,behavior:'instant'});
+      closeMenus();
+    }
 
-  // Experience / skills toggle
-  document.querySelectorAll('[data-pane]').forEach(function(b){b.onclick=function(){
-    document.querySelectorAll('[data-pane]').forEach(function(x){x.classList.toggle('on',x===b)});
-    ['exp','skills'].forEach(function(p){document.getElementById(p).hidden=(p!==b.dataset.pane)});
-  }});
-
-  // Portfolio filter
-  document.querySelectorAll('#filters button').forEach(function(b){b.onclick=function(){
-    document.querySelectorAll('#filters button').forEach(function(x){x.classList.toggle('on',x===b)});
-    document.querySelectorAll('#projects article').forEach(function(c){c.hidden=!(b.dataset.f==='all'||c.dataset.c===b.dataset.f)});
-  }});
-
-  // Contact form -> opens visitor's email app with the message filled in
-  document.getElementById('cform').onsubmit=function(e){
-    e.preventDefault();var f=e.target;
-    var body='Name: '+f.n.value+'\nEmail: '+f.e.value+'\nService: '+f.s.value+'\n\n'+f.m.value;
-    location.href='mailto:eloisajanezulita13@gmail.com?subject='+encodeURIComponent('Portfolio inquiry: '+f.s.value)+'&body='+encodeURIComponent(body);
-  };
-
-  // Theme
-  var root=document.documentElement,tb=document.getElementById('theme');
-  function setTheme(t){root.dataset.theme=t;tb.textContent=t==='dark'?'☾':'☀';try{localStorage.setItem('theme',t)}catch(e){}}
-  var saved;try{saved=localStorage.getItem('theme')}catch(e){}
-  setTheme(saved||'dark');
-  tb.onclick=function(){setTheme(root.dataset.theme==='dark'?'light':'dark')};
-  document.getElementById('yr').textContent=new Date().getFullYear();
-})();
+    // every in-page link (nav, dropdown, hero, service cards, back buttons, explore cards, footer)
+    document.addEventListener('click',function(e){
+      var dd=e.target.closest('.dd-btn');
+      if(dd){var p=dd.parentNode,open=!p.classList.contains('open');
+        dropdowns.forEach(function(d){d.classList.remove('open');d.querySelector('.dd-btn').setAttribute('aria-expanded','false');});
+        p.classList.toggle('open',open);dd.setAttribute('aria-expanded',open);return;}
+      var a=e.target.closest('a[href^="#"]');
+      if(a){var r=a.getAttribute('href').slice(1);
+        if(routes.indexOf(r)>=0){e.preventDefault();show(r,true);return;}
+        if(a.getAttribute('href')==='#'){return;}}
+      if(!e.target.closest('.dropdown'))dropdowns.forEach(function(d){d.classList.remove('open');d.querySelector('.dd-btn').setAttribute('aria-expanded','false');});
+    });
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenus();});
+    window.addEventListener('popstate',function(){show(location.hash.slice(1),false);});
+    show(location.hash.slice(1),false);
+    if(location.hash.slice(1)&&routes.indexOf(location.hash.slice(1))<0)history.replaceState({r:'about'},'','#about');
+  })();
 </script>
+
 </body>
 </html>
