@@ -317,30 +317,111 @@
       * { transition: none !important; scroll-behavior: auto !important; }
       .reveal { opacity: 1; transform: none; }
     }
+  
+
+    /* =========================================================
+       3-PAGE LAYOUT: Main Info / Photos / Certificates
+       ========================================================= */
+    /* before JS runs, show the page the URL points to (prevents a flash of the wrong page) */
+    html[data-start="photos"] [data-view="info"], html[data-start="certificates"] [data-view="info"] { display: none; }
+    html[data-start="photos"] [data-view="photos"], html[data-start="certificates"] [data-view="certificates"] { display: block; }
+
+    .view { display: none; }
+    .view.is-active { display: block; }
+    .view:focus { outline: none; }
+
+    /* ---------- Page transition: leave = fade up, enter = rise in + stagger ---------- */
+    .view.is-leaving  { animation: viewOut .26s cubic-bezier(.4, 0, 1, 1) forwards; pointer-events: none; }
+    .view.is-entering { animation: viewIn .75s cubic-bezier(.2, .8, .2, 1) backwards; }
+    .view.is-entering-soft { animation: viewFade .5s ease backwards; }
+    @keyframes viewOut  { to { opacity: 0; transform: translateY(-16px) scale(.99); } }
+    @keyframes viewIn   { from { opacity: 0; transform: translateY(30px) scale(.985); } }
+    @keyframes viewFade { from { opacity: 0; } }
+
+    /* thin gradient progress line that sweeps across the top on every page change */
+    .route-bar { position: fixed; top: 0; left: 0; width: 100%; height: 3px; z-index: 130; pointer-events: none; opacity: 0;
+      background: linear-gradient(90deg, var(--violet), var(--purple), var(--lavender)); transform: scaleX(0); transform-origin: left; }
+    .route-bar.run { animation: routeBar .9s cubic-bezier(.3, .7, .2, 1) forwards; }
+    @keyframes routeBar { 0% { transform: scaleX(0); opacity: 1; } 70% { transform: scaleX(.92); opacity: 1; } 100% { transform: scaleX(1); opacity: 0; } }
+
+    /* ---------- Tabs with a sliding glass pill ---------- */
+    .nav-pill { position: absolute; top: 50%; left: 0; width: 0; height: 40px; margin-top: -20px; border-radius: 999px; pointer-events: none; opacity: 0;
+      background: var(--card-bg); border: 1px solid var(--card-border); box-shadow: 0 0 22px rgba(124, 58, 237, .35);
+      transition: left .5s cubic-bezier(.3, 1.15, .4, 1), width .5s cubic-bezier(.3, 1.15, .4, 1), opacity .3s; }
+    .nav-pill.ready { opacity: 1; }
+    .nav-pill.snap { transition: none; }
+    @media (min-width: 1041px) {
+      .nav-links { position: relative; gap: 6px; }
+      .nav-links a.tab { padding: 9px 20px; border-radius: 999px; position: relative; z-index: 1; }
+      .nav-links .btn { margin-left: 14px; }
+      .theme-toggle { margin-left: 6px; }
+    }
+    @media (max-width: 1040px) {
+      .nav-pill { display: none; }
+      .nav-links a.tab { padding: 14px 0; width: 100%; }
+      .nav-links a.tab.active { background: var(--card-bg); color: var(--white); }
+      .nav-links .btn.btn-small { padding: 12px 32px; width: auto; }
+    }
+
+    /* ---------- Page headers (Photos, Certificates) ---------- */
+    .page-hero { position: relative; padding: 150px 0 70px; text-align: center; overflow: hidden;
+      background: linear-gradient(160deg, var(--black) 0%, var(--dark-purple) 60%, var(--deep-purple) 100%); }
+    .page-hero .container { position: relative; }
+    .page-hero h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); line-height: 1.05; max-width: 820px; margin: 0 auto; }
+    .page-hero .lead { font-size: 1.12rem; }
+    .subnav { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 32px; }
+    .subnav a { padding: 9px 22px; border-radius: 999px; border: 1px solid var(--card-border); background: var(--card-bg); color: var(--white); font-weight: 500; font-size: .95rem; transition: .25s; }
+    .subnav a:hover { border-color: var(--purple); background: rgba(124, 58, 237, .25); transform: translateY(-2px); }
+    .section.tight { padding-top: 64px; }
+    .section-cta { text-align: center; margin-top: 44px; }
+
+    /* ---------- "Keep exploring" cards that link to the other pages ---------- */
+    .explore-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 24px; max-width: 1000px; margin: 0 auto; }
+    .explore-card { position: relative; display: block; padding: 34px 30px; border-radius: var(--radius); overflow: hidden;
+      border: 1px solid var(--card-border); background: var(--card-bg); transition: transform .35s, border-color .35s, box-shadow .35s; }
+    .explore-card::before { content: ""; position: absolute; inset: 0; opacity: 0; transition: opacity .4s;
+      background: linear-gradient(135deg, rgba(124, 58, 237, .35), rgba(168, 85, 247, .08)); }
+    .explore-card > * { position: relative; }
+    .explore-card:hover { transform: translateY(-8px); border-color: var(--purple); box-shadow: var(--shadow-glow); }
+    .explore-card:hover::before { opacity: 1; }
+    .explore-card .num { font-family: var(--font-heading); font-style: italic; color: var(--purple); font-size: 1.25rem; }
+    .explore-card h3 { font-size: 2.1rem; margin: 4px 0 8px; }
+    .explore-card p { color: var(--text-soft); font-size: .96rem; }
+    .explore-card .arrow { display: inline-block; margin-top: 16px; font-size: 1.6rem; color: var(--white); transition: transform .35s; }
+    .explore-card:hover .arrow { transform: translateX(10px); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .view.is-leaving, .view.is-entering, .view.is-entering-soft, .route-bar.run { animation: none !important; }
+      .nav-pill { transition: none; }
+    }
   </style>
+<script>(function(){try{var h=location.hash.replace("#","");if(h==="photos"||h==="certificates")document.documentElement.setAttribute("data-start",h);}catch(e){}})();</script>
 <script>try{var t=localStorage.getItem('theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}</script>
 </head>
 <body>
 
-  <!-- ===== NAVBAR (tabs scroll to each section) ===== -->
+  <div class="route-bar" id="routeBar" aria-hidden="true"></div>
+
+  <!-- ===== NAVBAR: 3 page tabs ===== -->
   <header class="navbar" id="navbar">
     <div class="container nav-inner">
-      <a href="#home" class="logo">Eloisa Jane <span>Zulita</span></a>
+      <a href="#info" class="logo">Eloisa Jane <span>Zulita</span></a>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <nav class="nav-links" id="navLinks">
-        <a href="#about">About</a>
-        <a href="#teaching">Teaching</a>
-        <a href="#voiceover">Voice</a>
-        <a href="#certificates">Awards</a>
+        <span class="nav-pill" id="navPill" aria-hidden="true"></span>
+        <a href="#info" class="tab" data-tab="info">Main Info</a>
+        <a href="#photos" class="tab" data-tab="photos">Photos</a>
+        <a href="#certificates" class="tab" data-tab="certificates">Certificates</a>
         <a href="#contact" class="btn btn-small">Get in touch</a>
         <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode">&#9728;</button>
       </nav>
     </div>
   </header>
 
-  <main>
+  <!-- ================= PAGE 1: MAIN INFO ================= -->
+  <main class="view is-active" data-view="info" id="page-info" tabindex="-1">
     <!-- ===== HERO ===== -->
     <section class="hero" id="home">
       <div class="glow glow-1"></div>
@@ -554,91 +635,25 @@
           <h2>Training &amp; <em>credentials</em></h2>
         </div>
         <div class="card-grid">
-          <article class="card reveal"><div class="icon">&#127942;</div><h4>EF SET English Certificate - C2 Proficient (71/100)</h4><p>2026. Certified native-level written and spoken English clarity, tone and comprehension.</p></article>
           <article class="card reveal"><div class="icon">&#127891;</div><h4>BSED - Major in English</h4><p>4th year, expected 2027. Governor Generoso College of Arts, Sciences and Technology (GGCAST).</p></article>
           <article class="card reveal"><div class="icon">&#128188;</div><h4>TESDA NC II - Tourism Promotion Services</h4><p>National Certificate II in customer service excellence, front-line inquiry handling and client relations.</p></article>
-          <article class="card reveal"><div class="icon">&#128218;</div><h4>TEFL Certification (120 Hours) - Distinction</h4><p>TEFL Professional Institute, Teacher Record. June 2026.</p></article>
           <article class="card reveal"><div class="icon">&#128187;</div><h4>Web Development Certification</h4><p>Foundation in building and editing websites.</p></article>
           <article class="card reveal"><div class="icon">&#127969;</div><h4>Remote Workstation &amp; Availability</h4><p>ASUS Windows laptop, noise-canceling headset, high-speed fiber internet, backup modem and backup power for uninterrupted shifts across US, UK or APAC time zones.</p></article>
         </div>
+        <div class="section-cta reveal"><a href="#certificates" class="btn">View all certificates &rarr;</a></div>
       </div>
     </section>
 
-    <!-- ===== ONLINE TEACHING (teaching-1, teaching-2, ...) ===== -->
-    <section class="section" id="teaching">
+    <!-- ===== LINKS TO THE OTHER PAGES ===== -->
+    <section class="section section-alt explore">
       <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Online ESL instructor</p>
-          <h2>In the <em>virtual classroom</em></h2>
-          <p class="lead">Live English lessons with young learners. Tap any photo to view it larger.</p>
-        </div>
-        <div class="gallery" data-prefix="teaching" data-max="8" data-label="Online teaching screenshot"></div>
-      </div>
-    </section>
-
-    <!-- ===== VOICE-OVER ===== -->
-    <section class="section section-alt" id="voiceover">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Voice-over</p>
-          <h2>Give your brand a <em>voice</em></h2>
-          <p class="lead">Selected voice-over projects. Press play to listen.</p>
-        </div>
-        <div class="card-grid three">
-          <article class="card video-card reveal"><div class="vwrap"><video controls muted playsinline preload="metadata" poster="voice-over-1.jpg" src="voice-over-1.mp4"></video><button type="button" class="snd">&#128266; Tap for sound</button></div><h4>Voice-Over Project 1</h4><p class="cert-meta">3:58</p></article>
-          <article class="card video-card reveal"><div class="vwrap"><video controls muted playsinline preload="metadata" poster="voice-over-2.jpg" src="voice-over-2.mp4"></video><button type="button" class="snd">&#128266; Tap for sound</button></div><h4>Voice-Over Project 2</h4><p class="cert-meta">3:19</p></article>
-          <article class="card video-card reveal"><div class="vwrap"><video controls muted playsinline preload="metadata" poster="voice-over-3.jpg" src="voice-over-3.mp4"></video><button type="button" class="snd">&#128266; Tap for sound</button></div><h4>Voice-Over Project 3</h4><p class="cert-meta">1:43</p></article>
+        <div class="section-head reveal"><p class="eyebrow">Keep exploring</p><h2>More about <em>my work</em></h2></div>
+        <div class="explore-grid">
+          <a href="#photos" class="explore-card reveal"><span class="num">02</span><h3>Photos &amp; <em>projects</em></h3><p>Freelance hosting, online teaching and voice-over work.</p><span class="arrow">&rarr;</span></a>
+          <a href="#certificates" class="explore-card reveal"><span class="num">03</span><h3><em>Certificates</em></h3><p>TEFL, EF SET C2 English and Coursera certificates to view or verify.</p><span class="arrow">&rarr;</span></a>
         </div>
       </div>
     </section>
-
-    <!-- ===== FREELANCE HOST PHOTOS (host-1, host-2, ...) ===== -->
-    <section class="section section-alt" id="hosting" hidden>
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Freelance host</p>
-          <h2>On camera &amp; <em>on the mic</em></h2>
-          <p class="lead">Photos from my freelance hosting work. Tap any photo to view it larger.</p>
-        </div>
-        <div class="gallery cover" data-prefix="host" data-max="8" data-label="Freelance host photo"></div>
-      </div>
-    </section>
-
-    <!-- ===== CERTIFICATES (images load automatically: cert-1, cert-2, ...) ===== -->
-    <section class="section section-alt" id="certificates">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Certificates</p>
-          <h2>Proof of my <em>training</em></h2>
-          <p class="lead">Open any certificate as a PDF, or verify it with the issuer.</p>
-        </div>
-        <div class="card-grid">
-          <article class="card cert reveal"><img class="cert-thumb" src="certimg-tefl.jpg" alt="Certificate preview" loading="lazy" tabindex="0"><h4>TEFL Course (120 Hours) - Distinction</h4><p class="cert-meta">TEFL Professional Institute - Teacher Record<br>June 2026 &middot; Certificate No. TR2069005284</p><div class="cert-btns"><a href="tefl.pdf" class="btn btn-small" target="_blank" rel="noopener">View PDF</a></div></article>
-          <article class="card cert reveal"><img class="cert-thumb" src="certimg-efset-c2.jpg" alt="Certificate preview" loading="lazy" tabindex="0"><h4>EF SET English Certificate - C2 Proficient</h4><p class="cert-meta">Score 71/100 &middot; Awarded 2 Jul 2026<br>Reading C2 &middot; Writing C2 &middot; Speaking B2 &middot; Listening B1</p><div class="cert-btns"><a href="efset-c2.pdf" class="btn btn-small" target="_blank" rel="noopener">View PDF</a><a href="https://cert.efset.org/hzNKGT" class="btn btn-outline btn-small" target="_blank" rel="noopener">Verify</a></div></article>
-          <article class="card cert reveal"><img class="cert-thumb" src="certimg-wordpress.jpg" alt="Certificate preview" loading="lazy" tabindex="0"><h4>Build a Free Website with WordPress</h4><p class="cert-meta">Coursera Project Certificate<br>3 Jul 2026</p><div class="cert-btns"><a href="wordpress.pdf" class="btn btn-small" target="_blank" rel="noopener">View PDF</a><a href="https://coursera.org/verify/6J430LDN7VSU" class="btn btn-outline btn-small" target="_blank" rel="noopener">Verify</a></div></article>
-          <article class="card cert reveal"><img class="cert-thumb" src="certimg-remind.jpg" alt="Certificate preview" loading="lazy" tabindex="0"><h4>Enhancing Communication with Remind</h4><p class="cert-meta">Coursera Project Certificate<br>3 Jul 2026</p><div class="cert-btns"><a href="remind.pdf" class="btn btn-small" target="_blank" rel="noopener">View PDF</a><a href="https://coursera.org/verify/4CI58THKO63O" class="btn btn-outline btn-small" target="_blank" rel="noopener">Verify</a></div></article>
-          <article class="card cert reveal"><img class="cert-thumb" src="certimg-canva.jpg" alt="Certificate preview" loading="lazy" tabindex="0"><h4>Use Canva to Design Digital Course Collateral</h4><p class="cert-meta">Coursera Project Certificate<br>2 Jul 2026</p><div class="cert-btns"><a href="canva.pdf" class="btn btn-small" target="_blank" rel="noopener">View PDF</a><a href="https://coursera.org/verify/BI7LQBKPUUXS" class="btn btn-outline btn-small" target="_blank" rel="noopener">Verify</a></div></article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== RECRUITMENT PROOF (recruitment-1, recruitment-2, ...) ===== -->
-    <section class="section" id="recruitment" hidden>
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Recruitment</p>
-          <h2>Proof of <em>successful hiring</em></h2>
-          <p class="lead">Posts and results from my work as a Recruitment Manager. Tap an image to view it larger.</p>
-        </div>
-        <div class="gallery" data-prefix="recruitment" data-max="8" data-label="Recruitment post"></div>
-      </div>
-    </section>
-
-    
-
-    
-
-    
 
     <!-- ===== TESTIMONIALS ===== -->
     <section class="section" id="testimonials">
@@ -704,12 +719,129 @@
     </section>
   </main>
 
+  <!-- ================= PAGE 2: PHOTOS ================= -->
+  <main class="view" data-view="photos" id="page-photos" tabindex="-1">
+    <section class="page-hero" id="photos-top">
+      <div class="glow glow-1"></div>
+      <div class="glow glow-2"></div>
+      <div class="container">
+        <p class="eyebrow reveal">Photos &amp; projects</p>
+        <h1 class="reveal">Moments from <em>stage, class &amp; studio</em></h1>
+        <p class="lead reveal">Freelance hosting, online teaching and voice-over work.</p>
+        <nav class="subnav reveal" aria-label="Jump to a gallery">
+          <a href="#hosting">Hosting</a><a href="#teaching">Teaching</a><a href="#voiceover">Voice-over</a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ===== FREELANCE HOST PHOTOS (host-1, host-2, ...) ===== -->
+    <section class="section tight" id="hosting" hidden>
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Freelance host</p>
+          <h2>On camera &amp; <em>on the mic</em></h2>
+          <p class="lead">Photos from my freelance hosting work. Tap any photo to view it larger.</p>
+        </div>
+        <div class="gallery cover" data-prefix="host" data-max="8" data-label="Freelance host photo"></div>
+      </div>
+    </section>
+
+    <!-- ===== ONLINE TEACHING (teaching-1, teaching-2, ...) ===== -->
+    <section class="section section-alt" id="teaching">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Online ESL instructor</p>
+          <h2>In the <em>virtual classroom</em></h2>
+          <p class="lead">Live English lessons with young learners. Tap any photo to view it larger.</p>
+        </div>
+        <div class="gallery" data-prefix="teaching" data-max="8" data-label="Online teaching screenshot"></div>
+      </div>
+    </section>
+
+    <!-- ===== VOICE-OVER VIDEOS ===== -->
+    <section class="section" id="voiceover">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Voice-over</p>
+          <h2>Give your brand a <em>voice</em></h2>
+          <p class="lead">Selected voice-over projects. Press play to listen.</p>
+        </div>
+        <div class="card-grid three">
+          <article class="card video-card reveal"><div class="vwrap"><video controls playsinline preload="none" poster="vo-education-day-teaser.jpg" src="vo-education-day-teaser.mp4"></video></div><h4>Education Day Pageant Teaser 2026</h4><p class="cert-meta">3:20</p></article>
+          <article class="card video-card reveal"><div class="vwrap"><video controls playsinline preload="none" poster="vo-pageant-teaser.jpg" src="vo-pageant-teaser.mp4"></video></div><h4>Pageant Teaser</h4><p class="cert-meta">1:43</p></article>
+          <article class="card video-card reveal"><div class="vwrap"><video controls playsinline preload="none" poster="vo-ched-visit.jpg" src="vo-ched-visit.mp4"></video></div><h4>CHED Visit</h4><p class="cert-meta">2:21</p></article>
+          <article class="card video-card reveal"><div class="vwrap"><video controls playsinline preload="none" poster="vo-mis-2.jpg" src="vo-mis-2.mp4"></video></div><h4>MIS 2.0</h4><p class="cert-meta">3:58</p></article>
+          <article class="card video-card reveal"><div class="vwrap"><video controls playsinline preload="none" poster="vo-jai-ford-wedding.jpg" src="vo-jai-ford-wedding.mp4"></video></div><h4>Jai x Ford Wedding</h4><p class="cert-meta">3:19</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== RECRUITMENT PROOF (recruitment-1, recruitment-2, ...) ===== -->
+    <section class="section" id="recruitment" hidden>
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Recruitment</p>
+          <h2>Proof of <em>successful hiring</em></h2>
+          <p class="lead">Posts and results from my work as a Recruitment Manager. Tap an image to view it larger.</p>
+        </div>
+        <div class="gallery" data-prefix="recruitment" data-max="8" data-label="Recruitment post"></div>
+      </div>
+    </section>
+
+    <section class="section section-alt explore">
+      <div class="container">
+        <div class="section-head reveal"><p class="eyebrow">Keep exploring</p><h2>More about <em>my work</em></h2></div>
+        <div class="explore-grid">
+          <a href="#info" class="explore-card reveal"><span class="num">01</span><h3>Main <em>info</em></h3><p>About me, services, experience, skills and how to reach me.</p><span class="arrow">&rarr;</span></a>
+          <a href="#certificates" class="explore-card reveal"><span class="num">03</span><h3><em>Certificates</em></h3><p>TEFL, EF SET C2 English and Coursera certificates to view or verify.</p><span class="arrow">&rarr;</span></a>
+          <a href="#contact" class="explore-card reveal"><span class="num">04</span><h3>Get in <em>touch</em></h3><p>Have a project in mind? Send me a message.</p><span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= PAGE 3: CERTIFICATES ================= -->
+  <main class="view" data-view="certificates" id="page-certificates" tabindex="-1">
+    <section class="page-hero" id="certs-top">
+      <div class="glow glow-1"></div>
+      <div class="glow glow-2"></div>
+      <div class="container">
+        <p class="eyebrow reveal">Certificates</p>
+        <h1 class="reveal">Proof of my <em>training</em></h1>
+        <p class="lead reveal">Tap a preview to enlarge it, open the PDF, or verify it with the issuer.</p>
+      </div>
+    </section>
+
+    <section class="section tight" id="certs">
+      <div class="container">
+        <div class="card-grid">
+          <article class="card cert reveal"><img class="cert-thumb" src="certimg-tefl.jpg" alt="Certificate preview" loading="lazy" tabindex="0"><h4>TEFL Course (120 Hours) - Distinction</h4><p class="cert-meta">TEFL Professional Institute - Teacher Record<br>June 2026 &middot; Certificate No. TR2069005284</p><div class="cert-btns"><a href="tefl.pdf" class="btn btn-small" target="_blank" rel="noopener">View PDF</a></div></article>
+          <article class="card cert reveal"><img class="cert-thumb" src="certimg-efset-c2.jpg" alt="Certificate preview" loading="lazy" tabindex="0"><h4>EF SET English Certificate - C2 Proficient</h4><p class="cert-meta">Score 71/100 &middot; Awarded 2 Jul 2026<br>Reading C2 &middot; Writing C2 &middot; Speaking B2 &middot; Listening B1</p><div class="cert-btns"><a href="efset-c2.pdf" class="btn btn-small" target="_blank" rel="noopener">View PDF</a><a href="https://cert.efset.org/hzNKGT" class="btn btn-outline btn-small" target="_blank" rel="noopener">Verify</a></div></article>
+          <article class="card cert reveal"><img class="cert-thumb" src="certimg-wordpress.jpg" alt="Certificate preview" loading="lazy" tabindex="0"><h4>Build a Free Website with WordPress</h4><p class="cert-meta">Coursera Project Certificate<br>3 Jul 2026</p><div class="cert-btns"><a href="wordpress.pdf" class="btn btn-small" target="_blank" rel="noopener">View PDF</a><a href="https://coursera.org/verify/6J430LDN7VSU" class="btn btn-outline btn-small" target="_blank" rel="noopener">Verify</a></div></article>
+          <article class="card cert reveal"><img class="cert-thumb" src="certimg-remind.jpg" alt="Certificate preview" loading="lazy" tabindex="0"><h4>Enhancing Communication with Remind</h4><p class="cert-meta">Coursera Project Certificate<br>3 Jul 2026</p><div class="cert-btns"><a href="remind.pdf" class="btn btn-small" target="_blank" rel="noopener">View PDF</a><a href="https://coursera.org/verify/4CI58THKO63O" class="btn btn-outline btn-small" target="_blank" rel="noopener">Verify</a></div></article>
+          <article class="card cert reveal"><img class="cert-thumb" src="certimg-canva.jpg" alt="Certificate preview" loading="lazy" tabindex="0"><h4>Use Canva to Design Digital Course Collateral</h4><p class="cert-meta">Coursera Project Certificate<br>2 Jul 2026</p><div class="cert-btns"><a href="canva.pdf" class="btn btn-small" target="_blank" rel="noopener">View PDF</a><a href="https://coursera.org/verify/BI7LQBKPUUXS" class="btn btn-outline btn-small" target="_blank" rel="noopener">Verify</a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt explore">
+      <div class="container">
+        <div class="section-head reveal"><p class="eyebrow">Keep exploring</p><h2>More about <em>my work</em></h2></div>
+        <div class="explore-grid">
+          <a href="#info" class="explore-card reveal"><span class="num">01</span><h3>Main <em>info</em></h3><p>About me, services, experience, skills and how to reach me.</p><span class="arrow">&rarr;</span></a>
+          <a href="#photos" class="explore-card reveal"><span class="num">02</span><h3>Photos &amp; <em>projects</em></h3><p>Freelance hosting, online teaching and voice-over work.</p><span class="arrow">&rarr;</span></a>
+          <a href="#contact" class="explore-card reveal"><span class="num">04</span><h3>Get in <em>touch</em></h3><p>Have a project in mind? Send me a message.</p><span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container footer-inner">
       <p>&copy; <span id="year"></span> Eloisa Jane L. Zulita. All rights reserved.</p>
       <nav class="footer-links">
-        <a href="#about">About</a><a href="#services">Services</a><a href="#work">Work</a><a href="#contact">Contact</a>
+        <a href="#about">About</a><a href="#photos">Photos</a><a href="#certificates">Certificates</a><a href="#contact">Contact</a>
       </nav>
     </div>
   </footer>
@@ -723,166 +855,260 @@
   </div>
 
   <script>
-    // ===== Portfolio interactions =====
-    document.addEventListener('DOMContentLoaded', () => {
-
+    // ===== Portfolio interactions + page router =====
+    document.addEventListener('DOMContentLoaded', function () {
+      var reduce = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
       document.getElementById('year').textContent = new Date().getFullYear();
 
       // ----- Mobile menu -----
-      const hamburger = document.getElementById('hamburger');
-      const navLinks = document.getElementById('navLinks');
-      hamburger.addEventListener('click', () => {
-        const open = navLinks.classList.toggle('open');
+      var hamburger = document.getElementById('hamburger');
+      var navLinks = document.getElementById('navLinks');
+      function closeMenu() { navLinks.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false'); }
+      hamburger.addEventListener('click', function () {
+        var open = navLinks.classList.toggle('open');
         hamburger.setAttribute('aria-expanded', open);
-      });
-      navLinks.addEventListener('click', (e) => {
-        if (e.target.tagName === 'A') {
-          navLinks.classList.remove('open');
-          hamburger.setAttribute('aria-expanded', false);
-        }
       });
 
       // ----- Navbar style + back-to-top -----
-      const navbar = document.getElementById('navbar');
-      const toTop = document.getElementById('toTop');
-      window.addEventListener('scroll', () => {
+      var navbar = document.getElementById('navbar');
+      var toTop = document.getElementById('toTop');
+      window.addEventListener('scroll', function () {
         navbar.classList.toggle('scrolled', window.scrollY > 40);
         toTop.classList.toggle('show', window.scrollY > 500);
       });
-      toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      toTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
-      // ----- Highlight the current tab while scrolling -----
-      const tabLinks = Array.from(navLinks.querySelectorAll('a[href^="#"]:not(.btn)'));
-      const spy = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
-          tabLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
-        });
-      }, { rootMargin: '-45% 0px -50% 0px' });
-      tabLinks.forEach(a => {
-        const target = document.querySelector(a.getAttribute('href'));
-        if (target) spy.observe(target);
-      });
-
-      // ----- Fade-in on scroll -----
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+      // ----- Fade-in on scroll (re-armed every time a page opens) -----
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;
           entry.target.classList.add('visible');
           observer.unobserve(entry.target);
         });
       }, { threshold: 0.15 });
-      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+      document.querySelectorAll('.reveal').forEach(function (el) { observer.observe(el); });
 
       // ----- Testimonial carousel -----
-      const slides = document.querySelectorAll('.slide');
-      const dotsWrap = document.getElementById('dots');
-      let current = 0;
-      let timer;
-      slides.forEach((_, i) => {
-        const dot = document.createElement('button');
+      var slides = document.querySelectorAll('.slide');
+      var dotsWrap = document.getElementById('dots');
+      var current = 0, timer;
+      slides.forEach(function (_, i) {
+        var dot = document.createElement('button');
         dot.className = 'dot' + (i === 0 ? ' active' : '');
         dot.setAttribute('aria-label', 'Go to testimonial ' + (i + 1));
-        dot.addEventListener('click', () => { show(i); restart(); });
+        dot.addEventListener('click', function () { show(i); restart(); });
         dotsWrap.appendChild(dot);
       });
-      const dots = dotsWrap.querySelectorAll('.dot');
+      var dots = dotsWrap.querySelectorAll('.dot');
       function show(index) {
         current = (index + slides.length) % slides.length;
-        slides.forEach((s, i) => s.classList.toggle('active', i === current));
-        dots.forEach((d, i) => d.classList.toggle('active', i === current));
+        slides.forEach(function (s, i) { s.classList.toggle('active', i === current); });
+        dots.forEach(function (d, i) { d.classList.toggle('active', i === current); });
       }
-      function restart() { clearInterval(timer); timer = setInterval(() => show(current + 1), 6000); }
-      document.getElementById('next').addEventListener('click', () => { show(current + 1); restart(); });
-      document.getElementById('prev').addEventListener('click', () => { show(current - 1); restart(); });
+      function restart() { clearInterval(timer); timer = setInterval(function () { show(current + 1); }, 6000); }
+      document.getElementById('next').addEventListener('click', function () { show(current + 1); restart(); });
+      document.getElementById('prev').addEventListener('click', function () { show(current - 1); restart(); });
       restart();
 
       // ===== Automatic image loading =====
-      // Upload photos next to index.html using these names (any of .jpg .jpeg .png .webp):
+      // Upload photos next to index.html using these names (.jpg .jpeg .png .webp):
       //   profile            -> hero photo
-      //   cert-1, cert-2 ... -> Certificates
-      //   recruitment-1 ...  -> Recruitment proof
       //   host-1, host-2 ... -> Freelance host photos
-      // A section and its menu tab appear only after at least one of its images is found.
-      const EXTENSIONS = ['jpg', 'jpeg', 'png', 'webp'];
-
-      function probe(base) {
-        return new Promise(resolve => {
-          let i = 0;
-          const tryNext = () => {
-            if (i >= EXTENSIONS.length) return resolve(null);
-            const url = base + '.' + EXTENSIONS[i++];
-            const img = new Image();
-            img.onload = () => resolve(url);
+      //   teaching-1 ...     -> Online teaching screenshots
+      //   recruitment-1 ...  -> Recruitment proof (section stays hidden until the first one exists)
+      var EXTENSIONS = ['jpg', 'jpeg', 'png', 'webp'];
+      function probe(base, exts) {
+        exts = exts || EXTENSIONS;
+        return new Promise(function (resolve) {
+          var i = 0;
+          (function tryNext() {
+            if (i >= exts.length) return resolve(null);
+            var url = base + '.' + exts[i++];
+            var img = new Image();
+            img.onload = function () { resolve(url); };
             img.onerror = tryNext;
             img.src = url;
-          };
-          tryNext();
+          })();
         });
       }
 
-      // Hero photo
-      const heroPhoto = document.getElementById('heroPhoto');
-      const photoFrame = document.getElementById('photoFrame');
-      probe('profile').then(url => {
-        if (url) {
-          heroPhoto.src = url;
-          heroPhoto.classList.add('loaded');
-        } else {
-          photoFrame.classList.add('no-photo');
-        }
+      var heroPhoto = document.getElementById('heroPhoto');
+      var photoFrame = document.getElementById('photoFrame');
+      probe('profile', ['jpeg', 'jpg', 'png', 'webp']).then(function (url) {
+        if (url) { heroPhoto.src = url; heroPhoto.classList.add('loaded'); }
+        else { photoFrame.classList.add('no-photo'); }
       });
 
       // Image viewer
-      const lightbox = document.getElementById('lightbox');
-      const lightboxImg = lightbox.querySelector('img');
+      var lightbox = document.getElementById('lightbox');
+      var lightboxImg = lightbox.querySelector('img');
       function openViewer(src, alt) {
-        lightboxImg.src = src;
-        lightboxImg.alt = alt;
-        lightbox.classList.add('open');
-        document.body.style.overflow = 'hidden';
+        lightboxImg.src = src; lightboxImg.alt = alt;
+        lightbox.classList.add('open'); document.body.style.overflow = 'hidden';
       }
-      function closeViewer() {
-        lightbox.classList.remove('open');
-        document.body.style.overflow = '';
-      }
+      function closeViewer() { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
       lightbox.addEventListener('click', closeViewer);
-      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeViewer(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeViewer(); });
 
       // Galleries
-      document.querySelectorAll('.gallery').forEach(async (gallery) => {
-        const prefix = gallery.dataset.prefix;
-        const max = parseInt(gallery.dataset.max, 10) || 8;
-        const label = gallery.dataset.label || 'Photo';
-        const section = gallery.closest('section');
-        let found = 0;
-
-        for (let n = 1; n <= max; n++) {
-          const url = await probe(prefix + '-' + n);
+      document.querySelectorAll('.gallery').forEach(async function (gallery) {
+        var prefix = gallery.dataset.prefix;
+        var max = parseInt(gallery.dataset.max, 10) || 8;
+        var label = gallery.dataset.label || 'Photo';
+        var sec = gallery.closest('section');
+        var found = 0;
+        for (var n = 1; n <= max; n++) {
+          var url = await probe(prefix + '-' + n);
           if (!url) break;
           found++;
-          const fig = document.createElement('figure');
-          fig.className = 'shot';
-          fig.tabIndex = 0;
-          fig.setAttribute('role', 'button');
-          const img = document.createElement('img');
-          img.src = url;
-          img.alt = label + ' ' + n;
-          img.loading = 'lazy';
-          fig.appendChild(img);
-          const open = () => openViewer(url, img.alt);
-          fig.addEventListener('click', open);
-          fig.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
-          gallery.appendChild(fig);
+          (function (url, n) {
+            var fig = document.createElement('figure');
+            fig.className = 'shot'; fig.tabIndex = 0; fig.setAttribute('role', 'button');
+            var img = document.createElement('img');
+            img.src = url; img.alt = label + ' ' + n; img.loading = 'lazy';
+            fig.appendChild(img);
+            var open = function () { openViewer(url, img.alt); };
+            fig.addEventListener('click', open);
+            fig.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+            gallery.appendChild(fig);
+          })(url, n);
+        }
+        if (found > 0) sec.hidden = false;
+      });
+
+      // =====================================================
+      //  PAGE ROUTER: Main Info / Photos / Certificates
+      // =====================================================
+      var ROUTES = ['info', 'photos', 'certificates'];
+      var TITLES = { info: 'Main Info', photos: 'Photos', certificates: 'Certificates' };
+      var BASE_TITLE = document.title;
+      var views = {};
+      ROUTES.forEach(function (r) { views[r] = document.querySelector('[data-view="' + r + '"]'); });
+      var tabs = [].slice.call(document.querySelectorAll('.tab'));
+      var pill = document.getElementById('navPill');
+      var bar = document.getElementById('routeBar');
+      var currentRoute = null, busy = false, pending = null;
+
+      // "#photos" -> a page.  "#contact" / "#teaching" -> the page that holds that element, then scroll to it.
+      function resolve(hash) {
+        var h = (hash || '').replace(/^#\/?/, '');
+        if (!h) return { route: 'info' };
+        if (ROUTES.indexOf(h) > -1) return { route: h };
+        var el = document.getElementById(h);
+        if (el) { var v = el.closest('[data-view]'); if (v) return { route: v.getAttribute('data-view'), scroll: h }; }
+        return null;
+      }
+
+      function scrollToId(id) {
+        var el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      }
+      function jumpTop() {
+        var root = document.documentElement;
+        root.style.scrollBehavior = 'auto';
+        window.scrollTo(0, 0);
+        root.style.scrollBehavior = '';
+      }
+
+      function placePill(snap) {
+        var active = tabs.filter(function (t) { return t.classList.contains('active'); })[0];
+        if (!active || getComputedStyle(pill).display === 'none') return;
+        if (snap) pill.classList.add('snap');
+        pill.style.left = active.offsetLeft + 'px';
+        pill.style.width = active.offsetWidth + 'px';
+        pill.classList.add('ready');
+        if (snap) { void pill.offsetWidth; pill.classList.remove('snap'); }
+      }
+      function setTabs(route, snap) {
+        tabs.forEach(function (t) {
+          var on = t.getAttribute('data-tab') === route;
+          t.classList.toggle('active', on);
+          if (on) t.setAttribute('aria-current', 'page'); else t.removeAttribute('aria-current');
+        });
+        placePill(snap);
+      }
+
+      // restart the staggered entrance for everything in the page that just opened
+      function resetReveals(view) {
+        var els = [].slice.call(view.querySelectorAll('.reveal')).filter(function (el) { return !el.closest('.cx-track'); });
+        var n = 0;
+        els.forEach(function (el) {
+          observer.unobserve(el);
+          el.classList.remove('visible');
+          if (el.getBoundingClientRect().top < window.innerHeight) {
+            el.style.transitionDelay = (Math.min(n++, 8) * 70) + 'ms';
+            (function (e) { setTimeout(function () { e.style.transitionDelay = ''; }, 1700); })(el);
+          }
+        });
+        void view.offsetWidth;
+        els.forEach(function (el) { observer.observe(el); });
+      }
+
+      function go(route, scrollId) {
+        var next = views[route];
+        if (!next) return;
+        if (busy) { pending = [route, scrollId]; return; }
+        if (route === currentRoute) {
+          if (scrollId) scrollToId(scrollId); else window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+          return;
+        }
+        var prev = currentRoute ? views[currentRoute] : null;
+        var animate = !!prev && !reduce;
+
+        function swap() {
+          ROUTES.forEach(function (r) { if (r !== route) views[r].classList.remove('is-active', 'is-leaving'); });
+          next.classList.add('is-active');
+          document.documentElement.removeAttribute('data-start');
+          currentRoute = route;
+          setTabs(route, !prev);
+          document.title = TITLES[route] + ' | Eloisa Jane L. Zulita';
+          jumpTop();
+          resetReveals(next);
+          if (animate) {
+            var cls = scrollId ? 'is-entering-soft' : 'is-entering';
+            next.classList.add(cls);
+            var done = function () { next.classList.remove(cls); };
+            next.addEventListener('animationend', function f(e) { if (e.target === next) { next.removeEventListener('animationend', f); done(); } });
+            setTimeout(done, 1000);
+            next.focus({ preventScroll: true });
+          }
+          if (scrollId) requestAnimationFrame(function () { scrollToId(scrollId); });
+          busy = false;
+          if (pending) { var p = pending; pending = null; go(p[0], p[1]); }
         }
 
-        if (found > 0) {
-          section.hidden = false;
-          document.querySelectorAll('[data-section="' + section.id + '"]').forEach(a => { a.hidden = false; });
-          const target = document.getElementById(section.id);
-          if (target) spy.observe(target);
-        }
+        if (!animate) { swap(); return; }
+        busy = true;
+        bar.classList.remove('run'); void bar.offsetWidth; bar.classList.add('run');
+        prev.classList.add('is-leaving');
+        setTimeout(swap, 260);
+      }
+
+      // every in-page link (#photos, #certificates, #contact, #hosting ...) goes through the router
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href^="#"]');
+        if (!a) return;
+        var href = a.getAttribute('href');
+        if (!href || href.length < 2) return;
+        var r = resolve(href);
+        if (!r) return;
+        e.preventDefault();
+        closeMenu();
+        var target = r.scroll || r.route;
+        if (location.hash !== '#' + target) history.pushState(null, '', '#' + target);
+        go(r.route, r.scroll);
       });
+      window.addEventListener('popstate', function () {
+        var r = resolve(location.hash) || { route: 'info' };
+        go(r.route, r.scroll);
+      });
+
+      window.addEventListener('resize', function () { placePill(true); });
+      window.addEventListener('load', function () { placePill(true); });
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { placePill(true); });
+
+      var first = resolve(location.hash) || { route: 'info' };
+      go(first.route, first.scroll);
     });
   </script>
 <script>
@@ -931,7 +1157,7 @@
         if(track.scrollLeft>=hf){track.scrollLeft-=hf;r.pos-=hf;}
         else if(track.scrollLeft<=0){track.scrollLeft+=hf;r.pos+=hf;}
         r.expected=track.scrollLeft;};
-      r.paused=function(){return r.touch||document.hidden||Date.now()<r.hold;};
+      var playing=0;stage.addEventListener('play',function(){playing++;},true);stage.addEventListener('pause',function(){playing=Math.max(0,playing-1);},true);r.paused=function(){return r.touch||document.hidden||Date.now()<r.hold||playing>0;};
       track.addEventListener('scroll',function(){
         if(Math.abs(track.scrollLeft-r.expected)>2.5){r.pos=track.scrollLeft;r.expected=track.scrollLeft;}
         r.wrap();paint();},{passive:true});
@@ -958,7 +1184,7 @@
       });
       requestAnimationFrame(frame);
     })(last);
-    carousel(document.querySelector('#certificates .card-grid'),{cls:'cx-cert'});
+    carousel(document.querySelector('#certs .card-grid'),{cls:'cx-cert'});
     carousel(document.querySelector('#hosting .gallery'),{dynamic:true,forward:true});
     carousel(document.querySelector('#voiceover .card-grid'),{cls:'cx-wide'});
   })();
